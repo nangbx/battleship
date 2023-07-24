@@ -4,20 +4,42 @@
 #include <gui_generated/screen1_screen/Screen1ViewBase.hpp>
 #include <touchgfx/Color.hpp>
 #include <images/BitmapDatabase.hpp>
+#include <texts/TextKeysAndLanguages.hpp>
 
-Screen1ViewBase::Screen1ViewBase()
+Screen1ViewBase::Screen1ViewBase() :
+    buttonCallback(this, &Screen1ViewBase::buttonCallbackHandler)
 {
     __background.setPosition(0, 0, 240, 320);
     __background.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     add(__background);
 
-    image1.setXY(0, 0);
-    image1.setBitmap(touchgfx::Bitmap(BITMAP_TRACK4_ID));
+    box1.setPosition(0, 0, 240, 320);
+    box1.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    add(box1);
+
+    buttonWithLabel1.setXY(70, 187);
+    buttonWithLabel1.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_36_TINY_ROUND_INACTIVE_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_36_TINY_ROUND_INACTIVE_ID));
+    buttonWithLabel1.setLabelText(touchgfx::TypedText(T___SINGLEUSE_VA5V));
+    buttonWithLabel1.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    buttonWithLabel1.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    buttonWithLabel1.setAction(buttonCallback);
+    add(buttonWithLabel1);
+
+    image1.setXY(10, 40);
+    image1.setBitmap(touchgfx::Bitmap(BITMAP_BATTLESHIP_ID));
     add(image1);
 
-    car.setXY(95, 211);
-    car.setBitmap(touchgfx::Bitmap(BITMAP_REDCAR_ID));
-    add(car);
+    image2.setXY(182, 0);
+    image2.setBitmap(touchgfx::Bitmap(BITMAP_SHIP2_ID));
+    add(image2);
+
+    image3.setXY(84, 102);
+    image3.setBitmap(touchgfx::Bitmap(BITMAP_SHIP31_ID));
+    add(image3);
+
+    image4.setXY(21, 199);
+    image4.setBitmap(touchgfx::Bitmap(BITMAP_SHIP4_ID));
+    add(image4);
 }
 
 Screen1ViewBase::~Screen1ViewBase()
@@ -28,4 +50,15 @@ Screen1ViewBase::~Screen1ViewBase()
 void Screen1ViewBase::setupScreen()
 {
 
+}
+
+void Screen1ViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
+{
+    if (&src == &buttonWithLabel1)
+    {
+        //Interaction1
+        //When buttonWithLabel1 clicked change screen to Screen2
+        //Go to Screen2 with no screen transition
+        application().gotoScreen2ScreenNoTransition();
+    }
 }

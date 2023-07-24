@@ -5,20 +5,130 @@
         "Name": "Screen1",
         "Components": [
           {
-            "Type": "Image",
-            "Name": "image1",
+            "Type": "Box",
+            "Name": "box1",
             "Width": 240,
             "Height": 320,
-            "RelativeFilename": "track4.png"
+            "LockPosition": true
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "buttonWithLabel1",
+            "X": 70,
+            "Y": 187,
+            "Width": 100,
+            "Height": 36,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_36_tiny_round_inactive.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_36_tiny_round_inactive.png",
+            "TextId": "__SingleUse_VA5V",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0",
+            "Preset": "alternate_theme\\presets\\button\\regular\\height_36\\tiny_round_inactive.json"
           },
           {
             "Type": "Image",
-            "Name": "car",
-            "X": 95,
-            "Y": 211,
-            "Width": 50,
-            "Height": 85,
-            "RelativeFilename": "redcar.png"
+            "Name": "image1",
+            "X": 10,
+            "Y": 40,
+            "Width": 220,
+            "Height": 39,
+            "RelativeFilename": "Battleship.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "image2",
+            "X": 182,
+            "Width": 48,
+            "Height": 24,
+            "RelativeFilename": "ship2.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "image3",
+            "X": 84,
+            "Y": 102,
+            "Width": 72,
+            "Height": 24,
+            "RelativeFilename": "ship31.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "image4",
+            "X": 21,
+            "Y": 199,
+            "Width": 24,
+            "Height": 96,
+            "RelativeFilename": "ship4.png"
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "Interaction1",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonWithLabel1"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Screen2"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "Screen2",
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "box1",
+            "Width": 240,
+            "Height": 320,
+            "LockPosition": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1",
+            "X": 33,
+            "Y": 49,
+            "Width": 160,
+            "Height": 27,
+            "TextId": "__SingleUse_71PC",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "BoxProgress",
+            "Name": "boxProgress1",
+            "X": 20,
+            "Y": 169,
+            "Width": 200,
+            "Height": 10,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Direction": "Right",
+            "FileNameBackground": "__generated\\alternate_theme_images_widgets_boxprogress_normal_small.png",
+            "IndicatorPositionWidth": 200,
+            "IndicatorPositionHeight": 10,
+            "ProgressRangeMax": 100,
+            "ProgressRangeSteps": 10
           }
         ],
         "Interactions": []

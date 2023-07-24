@@ -6,8 +6,12 @@
 #include <touchgfx/hal/Types.hpp>
 #include <touchgfx/Bitmap.hpp>
 
-const uint16_t BITMAP_REDCAR_ID = 0;
-const uint16_t BITMAP_TRACK4_ID = 1;
+const uint16_t BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BOXPROGRESS_NORMAL_SMALL_ID = 0;
+const uint16_t BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_36_TINY_ROUND_INACTIVE_ID = 1;
+const uint16_t BITMAP_BATTLESHIP_ID = 2;
+const uint16_t BITMAP_SHIP2_ID = 3;
+const uint16_t BITMAP_SHIP31_ID = 4;
+const uint16_t BITMAP_SHIP4_ID = 5;
 
 namespace BitmapDatabase
 {

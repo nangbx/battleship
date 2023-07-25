@@ -1,2 +1,2 @@
-C:/TouchGFXProjects/MyApp/TouchGFX/generated/images/src/BitmapDatabase.cpp:29:37:const touchgfx::Bitmap::BitmapData* BitmapDatabase::getInstance()	0	static
-C:/TouchGFXProjects/MyApp/TouchGFX/generated/images/src/BitmapDatabase.cpp:34:10:uint16_t BitmapDatabase::getInstanceSize()	0	static
+C:/TouchGFXProjects/battleship/TouchGFX/generated/images/src/BitmapDatabase.cpp:29:37:const touchgfx::Bitmap::BitmapData* BitmapDatabase::getInstance()	0	static
+C:/TouchGFXProjects/battleship/TouchGFX/generated/images/src/BitmapDatabase.cpp:34:10:uint16_t BitmapDatabase::getInstanceSize()	0	static

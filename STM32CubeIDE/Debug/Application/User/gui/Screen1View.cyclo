@@ -5,4 +5,4 @@ Screen1View.hpp:11:13:Screen1View::~Screen1View()	1
 Screen1View.hpp:11:13:virtual Screen1View::~Screen1View()	1
 Screen1View.cpp:5:1:Screen1View::Screen1View()	1
 Screen1View.cpp:10:6:virtual void Screen1View::setupScreen()	1
-Screen1View.cpp:19:6:virtual void Screen1View::handleTickEvent()	4
+Screen1View.cpp:19:6:virtual void Screen1View::handleTickEvent()	1

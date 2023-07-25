@@ -11,13 +11,15 @@ Screen1ViewBase::Screen1ViewBase()
     __background.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     add(__background);
 
-    image1.setXY(0, 0);
-    image1.setBitmap(touchgfx::Bitmap(BITMAP_TRACK4_ID));
-    add(image1);
+    bg2.setBitmap(touchgfx::Bitmap(BITMAP_WHITE_ID));
+    bg2.setPosition(0, 0, 240, 320);
+    bg2.setScalingAlgorithm(touchgfx::ScalableImage::NEAREST_NEIGHBOR);
+    add(bg2);
 
-    car.setXY(95, 211);
-    car.setBitmap(touchgfx::Bitmap(BITMAP_REDCAR_ID));
-    add(car);
+    board2.setBitmap(touchgfx::Bitmap(BITMAP_BOARD2_ID));
+    board2.setPosition(5, 83, 230, 230);
+    board2.setScalingAlgorithm(touchgfx::ScalableImage::NEAREST_NEIGHBOR);
+    add(board2);
 }
 
 Screen1ViewBase::~Screen1ViewBase()

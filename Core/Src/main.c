@@ -662,6 +662,12 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
   HAL_GPIO_Init(GPIOE, &GPIO_InitStruct);
 
+  /*Configure GPIO pin : START_BUTTON_Pin */
+  GPIO_InitStruct.Pin = START_BUTTON_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(START_BUTTON_GPIO_Port, &GPIO_InitStruct);
+
   /*Configure GPIO pin : PC2 */
   GPIO_InitStruct.Pin = GPIO_PIN_2;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
@@ -669,12 +675,24 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
   HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
 
+  /*Configure GPIO pins : USER_BUTTON_Pin LEFT_BUTTON_Pin RIGHT_BUTTON_Pin */
+  GPIO_InitStruct.Pin = USER_BUTTON_Pin|LEFT_BUTTON_Pin|RIGHT_BUTTON_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+
   /*Configure GPIO pins : PD12 PD13 */
   GPIO_InitStruct.Pin = GPIO_PIN_12|GPIO_PIN_13;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
   HAL_GPIO_Init(GPIOD, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : UP_BUTTON_Pin DOWN_BUTTON_Pin */
+  GPIO_InitStruct.Pin = UP_BUTTON_Pin|DOWN_BUTTON_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(GPIOG, &GPIO_InitStruct);
 
 /* USER CODE BEGIN MX_GPIO_Init_2 */
 /* USER CODE END MX_GPIO_Init_2 */
@@ -1019,19 +1037,50 @@ void StartDefaultTask(void *argument)
   /* Infinite loop */
   for(;;)
   {
-	  uint8_t buffer;
 	  uint8_t command;
-	  /*if(HAL_UART_Receive(&huart1, &buffer, sizeof(buffer), HAL_MAX_DELAY) == HAL_OK){
-		  HAL_UART_Transmit(&huart5, &buffer, sizeof(buffer), HAL_MAX_DELAY);
-	  }*/
-	  if(HAL_UART_Receive(&huart5, &command, sizeof(command), HAL_MAX_DELAY) == HAL_OK){
-	  		  HAL_UART_Transmit(&huart1, &command, sizeof(command), HAL_MAX_DELAY);
-	  		  uint32_t count = osMessageQueueGetCount(Queue1Handle);
-	  		  if(count < 2){
-	  			  osMessageQueuePut(Queue1Handle, &command, 0, 200);
-	  		  }
-	  	  }
 
+	  if(HAL_GPIO_ReadPin(LEFT_BUTTON_GPIO_Port, LEFT_BUTTON_Pin) == GPIO_PIN_SET){
+		  command = 'L';
+		  uint32_t count = osMessageQueueGetCount(Queue1Handle);
+		  if(count < 2){
+			  osMessageQueuePut(Queue1Handle, &command, 0, 200);
+		  }
+	  }
+	  if(HAL_GPIO_ReadPin(GPIOA, RIGHT_BUTTON_Pin) == GPIO_PIN_SET){
+		  command = 'R';
+		  uint32_t count = osMessageQueueGetCount(Queue1Handle);
+		  if(count < 2){
+			  osMessageQueuePut(Queue1Handle, &command, 0, 200);
+		  }
+	  }
+	  if(HAL_GPIO_ReadPin(GPIOG, UP_BUTTON_Pin) == GPIO_PIN_SET){
+		  command = 'U';
+		  uint32_t count = osMessageQueueGetCount(Queue1Handle);
+		  if(count < 2){
+			  osMessageQueuePut(Queue1Handle, &command, 0, 200);
+		  }
+	  }
+	  if(HAL_GPIO_ReadPin(GPIOG, DOWN_BUTTON_Pin) == GPIO_PIN_SET){
+		  command = 'D';
+		  uint32_t count = osMessageQueueGetCount(Queue1Handle);
+		  if(count < 2){
+			  osMessageQueuePut(Queue1Handle, &command, 0, 200);
+	  	  }
+	  }
+	  if(HAL_GPIO_ReadPin(GPIOA, USER_BUTTON_Pin) == GPIO_PIN_SET){
+		  command = 'A';
+		  uint32_t count = osMessageQueueGetCount(Queue1Handle);
+		  if(count < 2){
+			  osMessageQueuePut(Queue1Handle, &command, 0, 200);
+		  }
+	  }
+	  if(HAL_GPIO_ReadPin(START_BUTTON_GPIO_Port, START_BUTTON_Pin) == GPIO_PIN_SET){
+		  command = 'S';
+		  uint32_t count = osMessageQueueGetCount(Queue1Handle);
+		  if(count < 2){
+			  osMessageQueuePut(Queue1Handle, &command, 0, 200);
+		  }
+	  }
     osDelay(100);
   }
   /* USER CODE END 5 */

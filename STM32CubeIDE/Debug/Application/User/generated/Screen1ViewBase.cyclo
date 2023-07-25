@@ -17,11 +17,10 @@ Screen.hpp:144:18:virtual void touchgfx::Screen::handleTickEvent()	1
 Screen.hpp:154:18:virtual void touchgfx::Screen::handleKeyEvent(uint8_t)	1
 Widget.hpp:45:18:virtual void touchgfx::Widget::getLastChild(int16_t, int16_t, touchgfx::Drawable**)	3
 View.hpp:36:7:touchgfx::View<Screen1Presenter>::~View()	1
-Screen1ViewBase.cpp:23:1:Screen1ViewBase::~Screen1ViewBase()	1
-Screen1ViewBase.cpp:28:6:virtual void Screen1ViewBase::setupScreen()	1
+Screen1ViewBase.cpp:25:1:Screen1ViewBase::~Screen1ViewBase()	1
+Screen1ViewBase.cpp:30:6:virtual void Screen1ViewBase::setupScreen()	1
 View.hpp:36:7:virtual touchgfx::View<Screen1Presenter>::~View()	1
-Screen1ViewBase.cpp:23:1:virtual Screen1ViewBase::~Screen1ViewBase()	1
+Screen1ViewBase.cpp:25:1:virtual Screen1ViewBase::~Screen1ViewBase()	1
 Drawable.hpp:121:18:virtual void touchgfx::Drawable::invalidateContent() const	2
-Drawable.hpp:343:10:void touchgfx::Drawable::setXY(int16_t, int16_t)	1
-Image.hpp:50:5:touchgfx::Image::Image(const touchgfx::Bitmap&)	1
+Drawable.hpp:233:10:void touchgfx::Drawable::setPosition(int16_t, int16_t, int16_t, int16_t)	1
 Screen1ViewBase.cpp:8:1:Screen1ViewBase::Screen1ViewBase()	1

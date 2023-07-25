@@ -2,23 +2,373 @@
   "Application": {
     "Screens": [
       {
+        "Name": "GameScreen",
+        "Components": [
+          {
+            "Type": "ScalableImage",
+            "Name": "bg",
+            "Width": 240,
+            "Height": 320,
+            "Filename": "white.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "board",
+            "X": 5,
+            "Y": 83,
+            "Width": 230,
+            "Height": 230,
+            "Filename": "board.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "Container",
+            "Name": "boat3_r",
+            "X": -34,
+            "Y": -68,
+            "Width": 23,
+            "Height": 68,
+            "Components": [
+              {
+                "Type": "ScalableImage",
+                "Name": "scalableImage1_1_1",
+                "Y": 22,
+                "Width": 23,
+                "Height": 23,
+                "Filename": "Boat.png",
+                "ScalingAlgorithm": "Nearest-neighbor"
+              },
+              {
+                "Type": "ScalableImage",
+                "Name": "scalableImage1_1",
+                "Width": 23,
+                "Height": 23,
+                "Filename": "Boat.png",
+                "ScalingAlgorithm": "Nearest-neighbor"
+              },
+              {
+                "Type": "ScalableImage",
+                "Name": "scalableImage1",
+                "Y": 44,
+                "Width": 23,
+                "Height": 23,
+                "Filename": "Boat.png",
+                "ScalingAlgorithm": "Nearest-neighbor"
+              }
+            ]
+          },
+          {
+            "Type": "Container",
+            "Name": "boat4_r",
+            "X": -103,
+            "Y": -92,
+            "Width": 23,
+            "Height": 90,
+            "Components": [
+              {
+                "Type": "ScalableImage",
+                "Name": "scalableImage1_1_1_2",
+                "Y": 22,
+                "Width": 23,
+                "Height": 23,
+                "Filename": "Boat.png",
+                "ScalingAlgorithm": "Nearest-neighbor"
+              },
+              {
+                "Type": "ScalableImage",
+                "Name": "scalableImage1_1_2",
+                "Width": 23,
+                "Height": 23,
+                "Filename": "Boat.png",
+                "ScalingAlgorithm": "Nearest-neighbor"
+              },
+              {
+                "Type": "ScalableImage",
+                "Name": "scalableImage1_3",
+                "Y": 44,
+                "Width": 23,
+                "Height": 23,
+                "Filename": "Boat.png",
+                "ScalingAlgorithm": "Nearest-neighbor"
+              },
+              {
+                "Type": "ScalableImage",
+                "Name": "scalableImage1_3_1",
+                "Y": 67,
+                "Width": 23,
+                "Height": 25,
+                "Filename": "Boat.png",
+                "ScalingAlgorithm": "Nearest-neighbor"
+              }
+            ]
+          },
+          {
+            "Type": "Container",
+            "Name": "boat5_r",
+            "X": -135,
+            "Y": -115,
+            "Width": 23,
+            "Height": 113,
+            "Components": [
+              {
+                "Type": "ScalableImage",
+                "Name": "scalableImage1_1_1_2_1",
+                "Y": 22,
+                "Width": 23,
+                "Height": 23,
+                "Filename": "Boat.png",
+                "ScalingAlgorithm": "Nearest-neighbor"
+              },
+              {
+                "Type": "ScalableImage",
+                "Name": "scalableImage1_1_2_1",
+                "Width": 23,
+                "Height": 23,
+                "Filename": "Boat.png",
+                "ScalingAlgorithm": "Nearest-neighbor"
+              },
+              {
+                "Type": "ScalableImage",
+                "Name": "scalableImage1_3_2",
+                "Y": 44,
+                "Width": 23,
+                "Height": 23,
+                "Filename": "Boat.png",
+                "ScalingAlgorithm": "Nearest-neighbor"
+              },
+              {
+                "Type": "ScalableImage",
+                "Name": "scalableImage1_3_1_1",
+                "Y": 67,
+                "Width": 23,
+                "Height": 25,
+                "Filename": "Boat.png",
+                "ScalingAlgorithm": "Nearest-neighbor"
+              },
+              {
+                "Type": "ScalableImage",
+                "Name": "scalableImage1_3_1_1_1",
+                "Y": 90,
+                "Width": 23,
+                "Height": 25,
+                "Filename": "Boat.png",
+                "ScalingAlgorithm": "Nearest-neighbor"
+              }
+            ]
+          },
+          {
+            "Type": "Container",
+            "Name": "boat2_r",
+            "X": -68,
+            "Y": -46,
+            "Width": 23,
+            "Height": 44,
+            "Components": [
+              {
+                "Type": "ScalableImage",
+                "Name": "scalableImage1_1_1_1",
+                "Width": 23,
+                "Height": 23,
+                "Filename": "Boat.png",
+                "ScalingAlgorithm": "Nearest-neighbor"
+              },
+              {
+                "Type": "ScalableImage",
+                "Name": "scalableImage1_2",
+                "Y": 22,
+                "Width": 23,
+                "Height": 23,
+                "Filename": "Boat.png",
+                "ScalingAlgorithm": "Nearest-neighbor"
+              }
+            ]
+          },
+          {
+            "Type": "Container",
+            "Name": "boat3",
+            "X": -79,
+            "Y": 72,
+            "Width": 68,
+            "Height": 23,
+            "Components": [
+              {
+                "Type": "ScalableImage",
+                "Name": "scalableImage2_2",
+                "X": 44,
+                "Width": 23,
+                "Height": 23,
+                "Filename": "Boat2.png",
+                "ScalingAlgorithm": "Nearest-neighbor"
+              },
+              {
+                "Type": "ScalableImage",
+                "Name": "scalableImage2_1",
+                "X": 22,
+                "Width": 23,
+                "Height": 23,
+                "Filename": "Boat2.png",
+                "ScalingAlgorithm": "Nearest-neighbor"
+              },
+              {
+                "Type": "ScalableImage",
+                "Name": "scalableImage2",
+                "Width": 23,
+                "Height": 23,
+                "Filename": "Boat2.png",
+                "ScalingAlgorithm": "Nearest-neighbor"
+              }
+            ]
+          },
+          {
+            "Type": "Container",
+            "Name": "boat4",
+            "X": -102,
+            "Y": 111,
+            "Width": 90,
+            "Height": 23,
+            "Components": [
+              {
+                "Type": "ScalableImage",
+                "Name": "scalableImage2_2_1",
+                "X": 44,
+                "Width": 23,
+                "Height": 23,
+                "Filename": "Boat2.png",
+                "ScalingAlgorithm": "Nearest-neighbor"
+              },
+              {
+                "Type": "ScalableImage",
+                "Name": "scalableImage2_2_1_1",
+                "X": 66,
+                "Width": 25,
+                "Height": 23,
+                "Filename": "Boat2.png",
+                "ScalingAlgorithm": "Nearest-neighbor"
+              },
+              {
+                "Type": "ScalableImage",
+                "Name": "scalableImage2_1_2",
+                "X": 22,
+                "Width": 23,
+                "Height": 23,
+                "Filename": "Boat2.png",
+                "ScalingAlgorithm": "Nearest-neighbor"
+              },
+              {
+                "Type": "ScalableImage",
+                "Name": "scalableImage2_4",
+                "Width": 23,
+                "Height": 23,
+                "Filename": "Boat2.png",
+                "ScalingAlgorithm": "Nearest-neighbor"
+              }
+            ]
+          },
+          {
+            "Type": "Container",
+            "Name": "boat5",
+            "X": -123,
+            "Y": 149,
+            "Width": 113,
+            "Height": 23,
+            "Components": [
+              {
+                "Type": "ScalableImage",
+                "Name": "scalableImage2_2_1_2",
+                "X": 44,
+                "Width": 23,
+                "Height": 23,
+                "Filename": "Boat2.png",
+                "ScalingAlgorithm": "Nearest-neighbor"
+              },
+              {
+                "Type": "ScalableImage",
+                "Name": "scalableImage2_2_1_1_1",
+                "X": 66,
+                "Width": 25,
+                "Height": 23,
+                "Filename": "Boat2.png",
+                "ScalingAlgorithm": "Nearest-neighbor"
+              },
+              {
+                "Type": "ScalableImage",
+                "Name": "scalableImage2_2_1_1_1_1",
+                "X": 90,
+                "Width": 25,
+                "Height": 23,
+                "Filename": "Boat2.png",
+                "ScalingAlgorithm": "Nearest-neighbor"
+              },
+              {
+                "Type": "ScalableImage",
+                "Name": "scalableImage2_1_2_1",
+                "X": 22,
+                "Width": 23,
+                "Height": 23,
+                "Filename": "Boat2.png",
+                "ScalingAlgorithm": "Nearest-neighbor"
+              },
+              {
+                "Type": "ScalableImage",
+                "Name": "scalableImage2_4_1",
+                "Width": 23,
+                "Height": 23,
+                "Filename": "Boat2.png",
+                "ScalingAlgorithm": "Nearest-neighbor"
+              }
+            ]
+          },
+          {
+            "Type": "Container",
+            "Name": "boat2",
+            "X": 6,
+            "Y": 83,
+            "Width": 44,
+            "Height": 23,
+            "Components": [
+              {
+                "Type": "ScalableImage",
+                "Name": "scalableImage2_1_1",
+                "X": 22,
+                "Width": 23,
+                "Height": 23,
+                "Filename": "Boat2.png",
+                "ScalingAlgorithm": "Nearest-neighbor"
+              },
+              {
+                "Type": "ScalableImage",
+                "Name": "scalableImage2_3",
+                "Width": 23,
+                "Height": 23,
+                "Filename": "Boat2.png",
+                "ScalingAlgorithm": "Nearest-neighbor"
+              }
+            ]
+          }
+        ],
+        "Interactions": []
+      },
+      {
         "Name": "Screen1",
         "Components": [
           {
-            "Type": "Image",
-            "Name": "image1",
+            "Type": "ScalableImage",
+            "Name": "bg2",
             "Width": 240,
             "Height": 320,
-            "RelativeFilename": "track4.png"
+            "Filename": "white.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
           },
           {
-            "Type": "Image",
-            "Name": "car",
-            "X": 95,
-            "Y": 211,
-            "Width": 50,
-            "Height": 85,
-            "RelativeFilename": "redcar.png"
+            "Type": "ScalableImage",
+            "Name": "board2",
+            "X": 5,
+            "Y": 83,
+            "Width": 230,
+            "Height": 230,
+            "Filename": "board2.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
           }
         ],
         "Interactions": []
@@ -31,7 +381,7 @@
       "Height": 320
     },
     "SelectedColorDepth": 16,
-    "StartupScreenName": "Screen1",
+    "StartupScreenName": "GameScreen",
     "SelectedStartupLanguage": "GB",
     "TouchGfxPath": "../Middlewares/ST/touchgfx",
     "UIPath": ".",

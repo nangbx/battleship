@@ -66,6 +66,18 @@ void Error_Handler(void);
 #define FRAME_RATE_GPIO_Port GPIOE
 #define MCU_ACTIVE_Pin GPIO_PIN_5
 #define MCU_ACTIVE_GPIO_Port GPIOE
+#define START_BUTTON_Pin GPIO_PIN_1
+#define START_BUTTON_GPIO_Port GPIOC
+#define USER_BUTTON_Pin GPIO_PIN_0
+#define USER_BUTTON_GPIO_Port GPIOA
+#define LEFT_BUTTON_Pin GPIO_PIN_1
+#define LEFT_BUTTON_GPIO_Port GPIOA
+#define RIGHT_BUTTON_Pin GPIO_PIN_2
+#define RIGHT_BUTTON_GPIO_Port GPIOA
+#define UP_BUTTON_Pin GPIO_PIN_13
+#define UP_BUTTON_GPIO_Port GPIOG
+#define DOWN_BUTTON_Pin GPIO_PIN_14
+#define DOWN_BUTTON_GPIO_Port GPIOG
 
 /* USER CODE BEGIN Private defines */
 

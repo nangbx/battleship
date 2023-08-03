@@ -2,6 +2,7 @@
 #include <random>
 #include <tuple>
 #include <cmsis_os.h>
+#include <images/BitmapDatabase.hpp>
 
 #define WIDTH_SQUARE 23
 #define MIN_BOARD 0
@@ -115,6 +116,25 @@ void OpponentScreenView::setupScreen()
 			}
 		}
 	}
+
+	for(int i = 0; i < 10; i++)
+	{
+		for(int j = 0; j < 10; j++)
+		{
+			if(board[i][j] == 0)
+			{
+				boxes[i][j].setBitmap(touchgfx::Bitmap(BITMAP_MISS_GRAY_ID));
+			}
+			else
+			{
+				boxes[i][j].setBitmap(touchgfx::Bitmap(BITMAP_HIT_ID));
+			}
+			boxes[i][j].setPosition(getXFromIndex(j), getYFromIndex(i), 23, 23);
+			boxes[i][j].setScalingAlgorithm(touchgfx::ScalableImage::NEAREST_NEIGHBOR);
+			boxes[i][j].setVisible(false);
+			add(boxes[i][j]);
+		}
+	}
 }
 
 void OpponentScreenView::tearDownScreen()
@@ -139,6 +159,13 @@ void OpponentScreenView::handleTickEvent() {
 				x = MAX_BOARD;
 			}
 			select.setX(getXFromIndex(x));
+		}
+		if(res == 'S')
+		{
+			boxes[y][x].setVisible(true);
+			//select.setVisible(false);
+
+			//application().gotoGameScreenScreenSlideTransitionEast();
 		}
 	}
 	if(count2 > 0){

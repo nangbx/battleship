@@ -1,5 +1,5 @@
 Application/User/gui/GameScreenView.o: \
- E:/Dev/battleship/TouchGFX/gui/src/gamescreen_screen/GameScreenView.cpp \
+ C:/TouchGFXProjects/battleship/TouchGFX/gui/src/gamescreen_screen/GameScreenView.cpp \
  ../../TouchGFX/gui/include/gui/gamescreen_screen/GameScreenView.hpp \
  ../../TouchGFX/generated/gui_generated/include/gui_generated/gamescreen_screen/GameScreenViewBase.hpp \
  ../../TouchGFX/gui/include/gui/common/FrontendApplication.hpp \

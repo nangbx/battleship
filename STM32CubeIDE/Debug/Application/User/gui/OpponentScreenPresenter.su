@@ -1,5 +1,5 @@
 ../../TouchGFX/gui/include/gui/opponentscreen_screen/OpponentScreenPresenter.hpp:28:13:OpponentScreenPresenter::~OpponentScreenPresenter()	0	static
-E:/Dev/battleship/TouchGFX/gui/src/opponentscreen_screen/OpponentScreenPresenter.cpp:10:6:virtual void OpponentScreenPresenter::activate()	0	static
+C:/TouchGFXProjects/battleship/TouchGFX/gui/src/opponentscreen_screen/OpponentScreenPresenter.cpp:10:6:virtual void OpponentScreenPresenter::activate()	0	static
 ../../TouchGFX/gui/include/gui/opponentscreen_screen/OpponentScreenPresenter.hpp:28:13:virtual OpponentScreenPresenter::~OpponentScreenPresenter()	8	static
 ../../TouchGFX/gui/include/gui/opponentscreen_screen/OpponentScreenPresenter.hpp:28:13:virtual void* OpponentScreenPresenter::_ZThn4_N23OpponentScreenPresenterD1Ev()	0	static
-E:/Dev/battleship/TouchGFX/gui/src/opponentscreen_screen/OpponentScreenPresenter.cpp:4:1:OpponentScreenPresenter::OpponentScreenPresenter(OpponentScreenView&)	8	static
+C:/TouchGFXProjects/battleship/TouchGFX/gui/src/opponentscreen_screen/OpponentScreenPresenter.cpp:4:1:OpponentScreenPresenter::OpponentScreenPresenter(OpponentScreenView&)	8	static

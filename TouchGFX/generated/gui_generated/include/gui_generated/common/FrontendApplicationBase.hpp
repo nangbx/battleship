@@ -17,19 +17,31 @@ public:
 
     virtual void changeToStartScreen()
     {
-        gotoGameScreenScreenNoTransition();
+        gotoHomeScreenScreenNoTransition();
     }
 
+    // HomeScreen
+    void gotoHomeScreenScreenNoTransition();
+
     // GameScreen
-    void gotoGameScreenScreenNoTransition();
+    void gotoGameScreenScreenSlideTransitionEast();
+
+    // OpponentScreen
+    void gotoOpponentScreenScreenSlideTransitionEast();
 
 protected:
     touchgfx::Callback<FrontendApplicationBase> transitionCallback;
     FrontendHeap& frontendHeap;
     Model& model;
 
+    // HomeScreen
+    void gotoHomeScreenScreenNoTransitionImpl();
+
     // GameScreen
-    void gotoGameScreenScreenNoTransitionImpl();
+    void gotoGameScreenScreenSlideTransitionEastImpl();
+
+    // OpponentScreen
+    void gotoOpponentScreenScreenSlideTransitionEastImpl();
 };
 
 #endif // FRONTENDAPPLICATIONBASE_HPP

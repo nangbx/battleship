@@ -4,12 +4,31 @@
     <Language Id="GB" />
   </Languages>
   <Texts>
-    <TextGroup Id="Group1" />
-    <TextGroup Id="Unsorted" />
+    <TextGroup Id="Unsorted">
+      <Text Id="AIRCRAFT_CARRIER" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Aircraft Carrier (5)</Translation>
+      </Text>
+      <Text Id="BATTLESHIP" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Battleship (4)</Translation>
+      </Text>
+      <Text Id="CRUISER" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Cruiser (3)</Translation>
+      </Text>
+      <Text Id="DESTROYER" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Destroyer (2)</Translation>
+      </Text>
+      <Text Id="__SingleUse_4OIJ" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Select: &lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_71D7" Alignment="Center" TypographyId="Medium">
+        <Translation Language="GB">Play</Translation>
+      </Text>
+    </TextGroup>
   </Texts>
   <Typographies>
-    <Typography Id="Default" Font="verdana.ttf" Size="20" Bpp="4" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="Default" Font="rechargebd.otf" Size="12" Bpp="4" Direction="LTR" FallbackCharacter="?" WildcardCharacterRanges="0x20-0x7E" />
     <Typography Id="Large" Font="verdana.ttf" Size="40" Bpp="4" Direction="LTR" FallbackCharacter="?" />
     <Typography Id="Small" Font="verdana.ttf" Size="10" Bpp="4" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="Medium" Font="rechargebd.otf" Size="30" Bpp="4" Direction="LTR" FallbackCharacter="?" />
   </Typographies>
 </TextDatabase>

@@ -1,0 +1,5 @@
+OpponentScreenPresenter.hpp:28:13:OpponentScreenPresenter::~OpponentScreenPresenter()	1
+OpponentScreenPresenter.cpp:10:6:virtual void OpponentScreenPresenter::activate()	1
+OpponentScreenPresenter.hpp:28:13:virtual OpponentScreenPresenter::~OpponentScreenPresenter()	1
+OpponentScreenPresenter.hpp:28:13:virtual void* OpponentScreenPresenter::_ZThn4_N23OpponentScreenPresenterD1Ev()	1
+OpponentScreenPresenter.cpp:4:1:OpponentScreenPresenter::OpponentScreenPresenter(OpponentScreenView&)	1

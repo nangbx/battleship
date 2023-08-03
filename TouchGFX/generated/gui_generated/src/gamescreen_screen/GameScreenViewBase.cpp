@@ -4,6 +4,7 @@
 #include <gui_generated/gamescreen_screen/GameScreenViewBase.hpp>
 #include <touchgfx/Color.hpp>
 #include <images/BitmapDatabase.hpp>
+#include <texts/TextKeysAndLanguages.hpp>
 
 GameScreenViewBase::GameScreenViewBase()
 {
@@ -11,10 +12,9 @@ GameScreenViewBase::GameScreenViewBase()
     __background.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     add(__background);
 
-    bg.setBitmap(touchgfx::Bitmap(BITMAP_WHITE_ID));
-    bg.setPosition(0, 0, 240, 320);
-    bg.setScalingAlgorithm(touchgfx::ScalableImage::NEAREST_NEIGHBOR);
-    add(bg);
+    box1.setPosition(0, 0, 240, 320);
+    box1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    add(box1);
 
     board.setBitmap(touchgfx::Bitmap(BITMAP_BOARD_ID));
     board.setPosition(5, 83, 230, 230);
@@ -184,6 +184,20 @@ GameScreenViewBase::GameScreenViewBase()
     boat2.add(scalableImage2_3);
 
     add(boat2);
+
+    textShip.setXY(6, 54);
+    textShip.setColor(touchgfx::Color::getColorFromRGB(20, 52, 168));
+    textShip.setLinespacing(0);
+    Unicode::snprintf(textShipBuffer, TEXTSHIP_SIZE, "%s", touchgfx::TypedText(T_DESTROYER).getText());
+    textShip.setWildcard(textShipBuffer);
+    textShip.resizeToCurrentText();
+    textShip.setTypedText(touchgfx::TypedText(T___SINGLEUSE_4OIJ));
+    add(textShip);
+
+    scalableImage3.setBitmap(touchgfx::Bitmap(BITMAP_YOUR_FLEET_ID));
+    scalableImage3.setPosition(6, 6, 229, 32);
+    scalableImage3.setScalingAlgorithm(touchgfx::ScalableImage::NEAREST_NEIGHBOR);
+    add(scalableImage3);
 }
 
 GameScreenViewBase::~GameScreenViewBase()

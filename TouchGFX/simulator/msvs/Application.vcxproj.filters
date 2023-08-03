@@ -190,11 +190,29 @@
     <Filter Include="Source Files\generated\gui_generated\gamescreen_screen">
       <UniqueIdentifier>418B56D0-E7E7-38A1-5199-F487F393D11C</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\generated\gui_generated\screen1_screen">
-      <UniqueIdentifier>F6ECEF40-19F9-AD2B-BC32-96E215F4AEFD</UniqueIdentifier>
+    <Filter Include="Header Files\gui\homescreen_screen">
+      <UniqueIdentifier>4F89DE75-AB86-581D-7410-7300D7599F4E</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\generated\gui_generated\screen1_screen">
-      <UniqueIdentifier>F98B20E3-22A8-6989-3090-B77EEDB63AA9</UniqueIdentifier>
+    <Filter Include="Source Files\gui\homescreen_screen">
+      <UniqueIdentifier>BC4EE38C-7F22-3556-CDC6-C8292E7F0639</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\opponentscreen_screen">
+      <UniqueIdentifier>3FC719F9-74BD-7826-D5C0-F5B74492CBF7</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\opponentscreen_screen">
+      <UniqueIdentifier>DF74B645-1D85-4E83-6DD6-4EF6482C9A38</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\opponentscreen_screen">
+      <UniqueIdentifier>C1C69B6A-9A3E-02D6-00B7-00BC10887279</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\opponentscreen_screen">
+      <UniqueIdentifier>F16F796C-89DD-F440-4D18-1D06181F66A8</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\homescreen_screen">
+      <UniqueIdentifier>1B1C31BA-3EE4-2251-0A50-FB497B687414</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\homescreen_screen">
+      <UniqueIdentifier>4F3973A1-AD58-AFC3-2C86-9F1B5C779814</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -240,11 +258,23 @@
     <ClCompile Include="..\..\generated\gui_generated\src\gamescreen_screen\GameScreenViewBase.cpp">
       <Filter>Source Files\generated\gui_generated\gamescreen_screen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\gui\src\screen1_screen\Screen1Presenter.cpp">
-      <Filter>Source Files\gui\screen1_screen</Filter>
+    <ClCompile Include="..\..\gui\src\homescreen_screen\HomeScreenPresenter.cpp">
+      <Filter>Source Files\gui\homescreen_screen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\generated\gui_generated\src\screen1_screen\Screen1ViewBase.cpp">
-      <Filter>Source Files\generated\gui_generated\screen1_screen</Filter>
+    <ClCompile Include="..\..\gui\src\homescreen_screen\HomeScreenView.cpp">
+      <Filter>Source Files\gui\homescreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\homescreen_screen\HomeScreenViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\homescreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\opponentscreen_screen\OpponentScreenPresenter.cpp">
+      <Filter>Source Files\gui\opponentscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\opponentscreen_screen\OpponentScreenView.cpp">
+      <Filter>Source Files\gui\opponentscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\opponentscreen_screen\OpponentScreenViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\opponentscreen_screen</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -700,11 +730,23 @@
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\gamescreen_screen\GameScreenViewBase.hpp">
       <Filter>Header Files\generated\gui_generated\gamescreen_screen</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\screen1_screen\Screen1Presenter.hpp">
-      <Filter>Header Files\gui\screen1_screen</Filter>
+    <ClInclude Include="..\..\gui\include\gui\homescreen_screen\HomeScreenPresenter.hpp">
+      <Filter>Header Files\gui\homescreen_screen</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\screen1_screen\Screen1ViewBase.hpp">
-      <Filter>Header Files\generated\gui_generated\screen1_screen</Filter>
+    <ClInclude Include="..\..\gui\include\gui\homescreen_screen\HomeScreenView.hpp">
+      <Filter>Header Files\gui\homescreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\homescreen_screen\HomeScreenViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\homescreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\opponentscreen_screen\OpponentScreenPresenter.hpp">
+      <Filter>Header Files\gui\opponentscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\opponentscreen_screen\OpponentScreenView.hpp">
+      <Filter>Header Files\gui\opponentscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\opponentscreen_screen\OpponentScreenViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\opponentscreen_screen</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

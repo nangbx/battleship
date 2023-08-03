@@ -10,6 +10,7 @@
 #include <touchgfx/widgets/Box.hpp>
 #include <touchgfx/widgets/ScalableImage.hpp>
 #include <touchgfx/containers/Container.hpp>
+#include <touchgfx/widgets/TextAreaWithWildcard.hpp>
 
 class GameScreenViewBase : public touchgfx::View<GameScreenPresenter>
 {
@@ -27,7 +28,7 @@ protected:
      * Member Declarations
      */
     touchgfx::Box __background;
-    touchgfx::ScalableImage bg;
+    touchgfx::Box box1;
     touchgfx::ScalableImage board;
     touchgfx::Container boat3_r;
     touchgfx::ScalableImage scalableImage1_1_1;
@@ -65,6 +66,14 @@ protected:
     touchgfx::Container boat2;
     touchgfx::ScalableImage scalableImage2_1_1;
     touchgfx::ScalableImage scalableImage2_3;
+    touchgfx::TextAreaWithOneWildcard textShip;
+    touchgfx::ScalableImage scalableImage3;
+
+    /*
+     * Wildcard Buffers
+     */
+    static const uint16_t TEXTSHIP_SIZE = 50;
+    touchgfx::Unicode::UnicodeChar textShipBuffer[TEXTSHIP_SIZE];
 
 private:
 

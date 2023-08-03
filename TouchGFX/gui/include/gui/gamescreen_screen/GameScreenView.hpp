@@ -15,6 +15,7 @@ public:
     bool checkOutOfDesk(int32_t x, int32_t y, int16_t countBoat);
     bool checkAvailable(int32_t x, int32_t y, int16_t countBoat);
 protected:
+    uint8_t gameMode;
     int32_t x;
     int32_t y;
     int16_t countBoat;

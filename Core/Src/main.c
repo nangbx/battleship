@@ -58,7 +58,7 @@
 
 /* Private macro -------------------------------------------------------------*/
 /* USER CODE BEGIN PM */
-
+#define DEBOUNCE_TIME 50
 /* USER CODE END PM */
 
 /* Private variables ---------------------------------------------------------*/
@@ -96,6 +96,31 @@ osMessageQueueId_t queue1;
 osMessageQueueId_t Queue1Handle;
 const osMessageQueueAttr_t Queue1_attributes = {
 		.name = "Queue1"
+};
+osMessageQueueId_t queue2;
+osMessageQueueId_t Queue2Handle;
+const osMessageQueueAttr_t Queue2_attributes = {
+		.name = "Queue2"
+};
+osMessageQueueId_t queue3;
+osMessageQueueId_t Queue3Handle;
+const osMessageQueueAttr_t Queue3_attributes = {
+		.name = "Queue3"
+};
+osMessageQueueId_t queue4;
+osMessageQueueId_t Queue4Handle;
+const osMessageQueueAttr_t Queue4_attributes = {
+		.name = "Queue4"
+};
+osMessageQueueId_t queue5;
+osMessageQueueId_t Queue5Handle;
+const osMessageQueueAttr_t Queue5_attributes = {
+		.name = "Queue5"
+};
+osMessageQueueId_t queue6;
+osMessageQueueId_t Queue6Handle;
+const osMessageQueueAttr_t Queue6_attributes = {
+		.name = "Queue6"
 };
 osStatus_t r_state;
 /* USER CODE END PV */
@@ -214,6 +239,12 @@ int main(void)
   /* USER CODE BEGIN RTOS_QUEUES */
   /* add queues, ... */
   Queue1Handle = osMessageQueueNew(8, sizeof(uint8_t), &Queue1_attributes);
+  Queue2Handle = osMessageQueueNew(8, sizeof(uint8_t), &Queue2_attributes);
+  Queue3Handle = osMessageQueueNew(8, sizeof(uint8_t), &Queue3_attributes);
+  Queue4Handle = osMessageQueueNew(8, sizeof(uint8_t), &Queue4_attributes);
+  Queue5Handle = osMessageQueueNew(8, sizeof(uint8_t), &Queue5_attributes);
+  Queue6Handle = osMessageQueueNew(8, sizeof(uint8_t), &Queue6_attributes);
+
   /* USER CODE END RTOS_QUEUES */
 
   /* Create the thread(s) */
@@ -647,26 +678,16 @@ static void MX_GPIO_Init(void)
   __HAL_RCC_GPIOD_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOE, VSYNC_FREQ_Pin|RENDER_TIME_Pin|FRAME_RATE_Pin|MCU_ACTIVE_Pin, GPIO_PIN_RESET);
-
-  /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOC, GPIO_PIN_2, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12|GPIO_PIN_13, GPIO_PIN_RESET);
 
-  /*Configure GPIO pins : VSYNC_FREQ_Pin RENDER_TIME_Pin FRAME_RATE_Pin MCU_ACTIVE_Pin */
-  GPIO_InitStruct.Pin = VSYNC_FREQ_Pin|RENDER_TIME_Pin|FRAME_RATE_Pin|MCU_ACTIVE_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
-  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
-  HAL_GPIO_Init(GPIOE, &GPIO_InitStruct);
-
-  /*Configure GPIO pin : START_BUTTON_Pin */
-  GPIO_InitStruct.Pin = START_BUTTON_Pin;
+  /*Configure GPIO pins : LEFT_BUTTON_Pin RIGHT_BUTTON_Pin UP_BUTTON_Pin DOWN_BUTTON_Pin */
+  GPIO_InitStruct.Pin = LEFT_BUTTON_Pin|RIGHT_BUTTON_Pin|UP_BUTTON_Pin|DOWN_BUTTON_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
-  HAL_GPIO_Init(START_BUTTON_GPIO_Port, &GPIO_InitStruct);
+  GPIO_InitStruct.Pull = GPIO_PULLUP;
+  HAL_GPIO_Init(GPIOE, &GPIO_InitStruct);
 
   /*Configure GPIO pin : PC2 */
   GPIO_InitStruct.Pin = GPIO_PIN_2;
@@ -675,23 +696,23 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
   HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : USER_BUTTON_Pin LEFT_BUTTON_Pin RIGHT_BUTTON_Pin */
-  GPIO_InitStruct.Pin = USER_BUTTON_Pin|LEFT_BUTTON_Pin|RIGHT_BUTTON_Pin;
+  /*Configure GPIO pin : USER_BUTTON_Pin */
+  GPIO_InitStruct.Pin = USER_BUTTON_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
-  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+  HAL_GPIO_Init(USER_BUTTON_GPIO_Port, &GPIO_InitStruct);
 
   /*Configure GPIO pins : PD12 PD13 */
   GPIO_InitStruct.Pin = GPIO_PIN_12|GPIO_PIN_13;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
-  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOD, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : UP_BUTTON_Pin DOWN_BUTTON_Pin */
-  GPIO_InitStruct.Pin = UP_BUTTON_Pin|DOWN_BUTTON_Pin;
+  /*Configure GPIO pins : START_BUTTON_Pin RESET_BUTTON_Pin */
+  GPIO_InitStruct.Pin = START_BUTTON_Pin|RESET_BUTTON_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Pull = GPIO_PULLUP;
   HAL_GPIO_Init(GPIOG, &GPIO_InitStruct);
 
 /* USER CODE BEGIN MX_GPIO_Init_2 */
@@ -992,25 +1013,25 @@ void LCD_IO_WriteReg(uint8_t Reg)
   */
 uint32_t LCD_IO_ReadData(uint16_t RegValue, uint8_t ReadSize)
 {
-  uint32_t readvalue = 0;
+	uint32_t readvalue = 0;
 
-  /* Select: Chip Select low */
-  HAL_GPIO_WritePin(GPIOC, GPIO_PIN_2, GPIO_PIN_RESET);
+	/* Select: Chip Select low */
+	HAL_GPIO_WritePin(GPIOC, GPIO_PIN_2, GPIO_PIN_RESET);
 
-  /* Reset WRX to send command */
-  HAL_GPIO_WritePin(GPIOD, GPIO_PIN_13, GPIO_PIN_RESET);
+	/* Reset WRX to send command */
+	HAL_GPIO_WritePin(GPIOD, GPIO_PIN_13, GPIO_PIN_RESET);
 
-  SPI5_Write(RegValue);
+	SPI5_Write(RegValue);
 
-  readvalue = SPI5_Read(ReadSize);
+	readvalue = SPI5_Read(ReadSize);
 
-  /* Set WRX to send data */
-  HAL_GPIO_WritePin(GPIOD, GPIO_PIN_13, GPIO_PIN_SET);
+	/* Set WRX to send data */
+	HAL_GPIO_WritePin(GPIOD, GPIO_PIN_13, GPIO_PIN_SET);
 
-  /* Deselect: Chip Select high */
-  HAL_GPIO_WritePin(GPIOC, GPIO_PIN_2, GPIO_PIN_SET);
+	/* Deselect: Chip Select high */
+	HAL_GPIO_WritePin(GPIOC, GPIO_PIN_2, GPIO_PIN_SET);
 
-  return readvalue;
+	return readvalue;
 }
 
 /**
@@ -1019,7 +1040,7 @@ uint32_t LCD_IO_ReadData(uint16_t RegValue, uint8_t ReadSize)
   */
 void LCD_Delay(uint32_t Delay)
 {
-  HAL_Delay(Delay);
+	HAL_Delay(Delay);
 }
 
 /* USER CODE END 4 */
@@ -1034,53 +1055,60 @@ void LCD_Delay(uint32_t Delay)
 void StartDefaultTask(void *argument)
 {
   /* USER CODE BEGIN 5 */
-  /* Infinite loop */
-  for(;;)
-  {
-	  uint8_t command;
+	/* Infinite loop */
+	for (;;)
+	{
+		uint8_t command;
 
-	  if(HAL_GPIO_ReadPin(LEFT_BUTTON_GPIO_Port, LEFT_BUTTON_Pin) == GPIO_PIN_SET){
-		  command = 'L';
-		  uint32_t count = osMessageQueueGetCount(Queue1Handle);
-		  if(count < 2){
-			  osMessageQueuePut(Queue1Handle, &command, 0, 200);
-		  }
-	  }
-	  if(HAL_GPIO_ReadPin(GPIOA, RIGHT_BUTTON_Pin) == GPIO_PIN_SET){
-		  command = 'R';
-		  uint32_t count = osMessageQueueGetCount(Queue1Handle);
-		  if(count < 2){
-			  osMessageQueuePut(Queue1Handle, &command, 0, 200);
-		  }
-	  }
-	  if(HAL_GPIO_ReadPin(GPIOG, UP_BUTTON_Pin) == GPIO_PIN_SET){
-		  command = 'U';
-		  uint32_t count = osMessageQueueGetCount(Queue1Handle);
-		  if(count < 2){
-			  osMessageQueuePut(Queue1Handle, &command, 0, 200);
-		  }
-	  }
-	  if(HAL_GPIO_ReadPin(GPIOG, DOWN_BUTTON_Pin) == GPIO_PIN_SET){
-		  command = 'D';
-		  uint32_t count = osMessageQueueGetCount(Queue1Handle);
-		  if(count < 2){
-			  osMessageQueuePut(Queue1Handle, &command, 0, 200);
-	  	  }
-	  }
-	  if(HAL_GPIO_ReadPin(GPIOA, USER_BUTTON_Pin) == GPIO_PIN_SET){
-		  command = 'A';
-		  uint32_t count = osMessageQueueGetCount(Queue1Handle);
-		  if(count < 2){
-			  osMessageQueuePut(Queue1Handle, &command, 0, 200);
-		  }
-	  }
-	  if(HAL_GPIO_ReadPin(START_BUTTON_GPIO_Port, START_BUTTON_Pin) == GPIO_PIN_SET){
-		  command = 'S';
-		  uint32_t count = osMessageQueueGetCount(Queue1Handle);
-		  if(count < 2){
-			  osMessageQueuePut(Queue1Handle, &command, 0, 200);
-		  }
-	  }
+		if (HAL_GPIO_ReadPin(LEFT_BUTTON_GPIO_Port, LEFT_BUTTON_Pin) == GPIO_PIN_SET) {
+			command = 'L';
+			uint32_t count = osMessageQueueGetCount(Queue1Handle);
+			if (count < 2) {
+				osMessageQueuePut(Queue1Handle, &command, 0, 200);
+			}
+		}
+		if (HAL_GPIO_ReadPin(RIGHT_BUTTON_GPIO_Port, RIGHT_BUTTON_Pin) == GPIO_PIN_SET) {
+			command = 'R';
+			uint32_t count = osMessageQueueGetCount(Queue2Handle);
+			if (count < 2) {
+				osMessageQueuePut(Queue2Handle, &command, 0, 200);
+			}
+		}
+		if (HAL_GPIO_ReadPin(UP_BUTTON_GPIO_Port, UP_BUTTON_Pin) == GPIO_PIN_SET) {
+			command = 'U';
+			uint32_t count = osMessageQueueGetCount(Queue3Handle);
+			if (count < 2) {
+				osMessageQueuePut(Queue3Handle, &command, 0, 200);
+			}
+		}
+		if (HAL_GPIO_ReadPin(DOWN_BUTTON_GPIO_Port, DOWN_BUTTON_Pin) == GPIO_PIN_SET) {
+			command = 'D';
+			uint32_t count = osMessageQueueGetCount(Queue4Handle);
+			if (count < 2) {
+				osMessageQueuePut(Queue4Handle, &command, 0, 200);
+			}
+		}
+		if (HAL_GPIO_ReadPin(GPIOA, USER_BUTTON_Pin) == GPIO_PIN_SET) {
+			command = 'S';
+			uint32_t count = osMessageQueueGetCount(Queue1Handle);
+			if (count < 2) {
+				osMessageQueuePut(Queue1Handle, &command, 0, 200);
+			}
+		}
+		if (HAL_GPIO_ReadPin(START_BUTTON_GPIO_Port, START_BUTTON_Pin) == GPIO_PIN_RESET) {
+			command = 'A';
+			uint32_t count = osMessageQueueGetCount(Queue5Handle);
+			if (count < 2) {
+				osMessageQueuePut(Queue5Handle, &command, 0, 200);
+			}
+		}
+		if (HAL_GPIO_ReadPin(RESET_BUTTON_GPIO_Port, RESET_BUTTON_Pin) == GPIO_PIN_RESET){
+			command = 'B';
+			uint32_t count = osMessageQueueGetCount(Queue6Handle);
+			if (count < 2) {
+				osMessageQueuePut(Queue6Handle, &command, 0, 200);
+			}
+		}
     osDelay(100);
   }
   /* USER CODE END 5 */

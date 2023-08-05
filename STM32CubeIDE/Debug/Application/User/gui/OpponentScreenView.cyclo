@@ -1,15 +1,17 @@
 Screen.hpp:104:18:virtual void touchgfx::Screen::afterTransition()	1
 Screen.hpp:154:18:virtual void touchgfx::Screen::handleKeyEvent(uint8_t)	1
-OpponentScreenView.cpp:140:6:virtual void OpponentScreenView::tearDownScreen()	1
-OpponentScreenView.cpp:144:6:virtual void OpponentScreenView::handleTickEvent()	14
-OpponentScreenView.hpp:11:13:OpponentScreenView::~OpponentScreenView()	2
-OpponentScreenView.hpp:11:13:virtual OpponentScreenView::~OpponentScreenView()	1
+OpponentScreenView.cpp:143:6:virtual void OpponentScreenView::tearDownScreen()	1
+OpponentScreenView.cpp:147:6:virtual void OpponentScreenView::handleTickEvent()	14
 Drawable.hpp:343:10:void touchgfx::Drawable::setXY(int16_t, int16_t)	1
 OpponentScreenView.cpp:29:1:OpponentScreenView::OpponentScreenView()	3
-OpponentScreenView.cpp:267:9:int32_t OpponentScreenView::getXFromIndex(int32_t)	1
-OpponentScreenView.cpp:270:9:int32_t OpponentScreenView::getYFromIndex(int32_t)	1
+OpponentScreenView.cpp:270:9:int32_t OpponentScreenView::getXFromIndex(int32_t)	1
+OpponentScreenView.cpp:273:9:int32_t OpponentScreenView::getYFromIndex(int32_t)	1
+stl_vector.h:553:7:std::vector<_Tp, _Alloc>::vector(const std::vector<_Tp, _Alloc>&) [with _Tp = std::vector<signed char>; _Alloc = std::allocator<std::vector<signed char> >]	6
+stl_vector.h:678:7:std::vector<_Tp, _Alloc>::~vector() [with _Tp = std::vector<signed char>; _Alloc = std::allocator<std::vector<signed char> >]	4
+OpponentScreenView.hpp:12:13:OpponentScreenView::~OpponentScreenView()	2
+OpponentScreenView.hpp:12:13:virtual OpponentScreenView::~OpponentScreenView()	1
 random.tcc:394:5:void std::mersenne_twister_engine<_UIntType, __w, __n, __m, __r, __a, __u, __d, __s, __b, __t, __c, __l, __f>::_M_gen_rand() [with _UIntType = unsigned int; unsigned int __w = 32; unsigned int __n = 624; unsigned int __m = 397; unsigned int __r = 31; _UIntType __a = 2567483615; unsigned int __u = 11; _UIntType __d = 4294967295; unsigned int __s = 7; _UIntType __b = 2636928640; unsigned int __t = 15; _UIntType __c = 4022730752; unsigned int __l = 18; _UIntType __f = 1812433253]	3
 random.tcc:450:5:std::mersenne_twister_engine<_UIntType, __w, __n, __m, __r, __a, __u, __d, __s, __b, __t, __c, __l, __f>::result_type std::mersenne_twister_engine<_UIntType, __w, __n, __m, __r, __a, __u, __d, __s, __b, __t, __c, __l, __f>::operator()() [with _UIntType = unsigned int; unsigned int __w = 32; unsigned int __n = 624; unsigned int __m = 397; unsigned int __r = 31; _UIntType __a = 2567483615; unsigned int __u = 11; _UIntType __d = 4294967295; unsigned int __s = 7; _UIntType __b = 2636928640; unsigned int __t = 15; _UIntType __c = 4022730752; unsigned int __l = 18; _UIntType __f = 1812433253]	2
 uniform_int_dist.h:188:2:std::uniform_int_distribution<_IntType>::result_type std::uniform_int_distribution<_IntType>::operator()(_UniformRandomNumberGenerator&) [with _UniformRandomNumberGenerator = std::mersenne_twister_engine<unsigned int, 32, 624, 397, 31, 2567483615, 11, 4294967295, 7, 2636928640, 15, 4022730752, 18, 1812433253>; _IntType = int]	3
-OpponentScreenView.cpp:206:27:std::tuple<int, int, int> randomIndexShip(int (*)[10], int)	10
+OpponentScreenView.cpp:209:27:std::tuple<int, int, int> randomIndexShip(int (*)[10], int)	10
 OpponentScreenView.cpp:34:6:virtual void OpponentScreenView::setupScreen()	16

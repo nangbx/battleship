@@ -17,16 +17,11 @@ Screen.hpp:144:18:virtual void touchgfx::Screen::handleTickEvent()	1
 Screen.hpp:154:18:virtual void touchgfx::Screen::handleKeyEvent(uint8_t)	1
 Widget.hpp:45:18:virtual void touchgfx::Widget::getLastChild(int16_t, int16_t, touchgfx::Drawable**)	3
 View.hpp:36:7:touchgfx::View<HomeScreenPresenter>::~View()	1
-HomeScreenViewBase.cpp:45:1:HomeScreenViewBase::~HomeScreenViewBase()	1
-HomeScreenViewBase.cpp:50:6:virtual void HomeScreenViewBase::setupScreen()	1
-Callback.hpp:357:8:touchgfx::Callback<HomeScreenViewBase, const touchgfx::AbstractButton&>::~Callback()	1
-Callback.hpp:386:18:void touchgfx::Callback<dest_type, T1, void, void>::execute(T1) [with dest_type = HomeScreenViewBase; T1 = const touchgfx::AbstractButton&]	2
-Callback.hpp:396:18:bool touchgfx::Callback<dest_type, T1, void, void>::isValid() const [with dest_type = HomeScreenViewBase; T1 = const touchgfx::AbstractButton&]	3
-Callback.hpp:357:8:virtual touchgfx::Callback<HomeScreenViewBase, const touchgfx::AbstractButton&>::~Callback()	1
+HomeScreenViewBase.cpp:43:1:HomeScreenViewBase::~HomeScreenViewBase()	1
+HomeScreenViewBase.cpp:48:6:virtual void HomeScreenViewBase::setupScreen()	1
 View.hpp:36:7:virtual touchgfx::View<HomeScreenPresenter>::~View()	1
-HomeScreenViewBase.cpp:45:1:virtual HomeScreenViewBase::~HomeScreenViewBase()	1
+HomeScreenViewBase.cpp:43:1:virtual HomeScreenViewBase::~HomeScreenViewBase()	1
 Drawable.hpp:121:18:virtual void touchgfx::Drawable::invalidateContent() const	2
-HomeScreenViewBase.cpp:55:6:void HomeScreenViewBase::buttonCallbackHandler(const touchgfx::AbstractButton&)	2
 Drawable.hpp:343:10:void touchgfx::Drawable::setXY(int16_t, int16_t)	1
 Drawable.hpp:233:10:void touchgfx::Drawable::setPosition(int16_t, int16_t, int16_t, int16_t)	1
 Box.hpp:33:5:touchgfx::Box::Box()	1

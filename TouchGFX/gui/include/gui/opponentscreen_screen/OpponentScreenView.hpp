@@ -3,6 +3,7 @@
 
 #include <gui_generated/opponentscreen_screen/OpponentScreenViewBase.hpp>
 #include <gui/opponentscreen_screen/OpponentScreenPresenter.hpp>
+#include <vector>
 
 class OpponentScreenView : public OpponentScreenViewBase
 {
@@ -31,6 +32,8 @@ protected:
 	int8_t y;
 
 	touchgfx::ScalableImage boxes[10][10];
+
+	std::vector<std::vector<int8_t>> OpponentDesk;
 };
 
 #endif // OPPONENTSCREENVIEW_HPP

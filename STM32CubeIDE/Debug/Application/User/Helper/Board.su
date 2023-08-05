@@ -1,0 +1,2 @@
+../Application/User/Helper/Board.cpp:9:1:Board::Board()	0	static
+../Application/User/Helper/Board.cpp:13:6:void Board::Init()	0	static

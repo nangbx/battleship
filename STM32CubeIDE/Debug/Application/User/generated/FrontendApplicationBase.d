@@ -36,6 +36,7 @@ Application/User/generated/FrontendApplicationBase.o: \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/transitions/Transition.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Widget.hpp \
  ../../TouchGFX/gui/include/gui/model/Model.hpp \
+ ../../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/types.hpp \
  ../../TouchGFX/gui/include/gui/common/FrontendHeap.hpp \
  ../../TouchGFX/generated/gui_generated/include/gui_generated/common/FrontendHeapBase.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/common/Meta.hpp \
@@ -105,6 +106,7 @@ Application/User/generated/FrontendApplicationBase.o: \
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/transitions/Transition.hpp:
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Widget.hpp:
 ../../TouchGFX/gui/include/gui/model/Model.hpp:
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/types.hpp:
 ../../TouchGFX/gui/include/gui/common/FrontendHeap.hpp:
 ../../TouchGFX/generated/gui_generated/include/gui_generated/common/FrontendHeapBase.hpp:
 ../../Middlewares/ST/touchgfx/framework/include/common/Meta.hpp:

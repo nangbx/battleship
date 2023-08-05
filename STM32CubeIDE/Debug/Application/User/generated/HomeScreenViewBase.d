@@ -38,6 +38,7 @@ Application/User/generated/HomeScreenViewBase.o: \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/transitions/Transition.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Widget.hpp \
  ../../TouchGFX/gui/include/gui/model/Model.hpp \
+ ../../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/types.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/mvp/View.hpp \
  ../../TouchGFX/gui/include/gui/homescreen_screen/HomeScreenPresenter.hpp \
  ../../TouchGFX/gui/include/gui/model/ModelListener.hpp \
@@ -89,6 +90,7 @@ Application/User/generated/HomeScreenViewBase.o: \
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/transitions/Transition.hpp:
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Widget.hpp:
 ../../TouchGFX/gui/include/gui/model/Model.hpp:
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/types.hpp:
 ../../Middlewares/ST/touchgfx/framework/include/mvp/View.hpp:
 ../../TouchGFX/gui/include/gui/homescreen_screen/HomeScreenPresenter.hpp:
 ../../TouchGFX/gui/include/gui/model/ModelListener.hpp:

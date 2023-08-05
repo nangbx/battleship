@@ -73,8 +73,7 @@
           {
             "InteractionName": "Interaction1",
             "Trigger": {
-              "Type": "TriggerClicked",
-              "TriggerComponent": "buttonWithLabel1"
+              "Type": "TriggerNone"
             },
             "Action": {
               "Type": "ActionGotoScreen",
@@ -439,7 +438,7 @@
             "X": 6,
             "Y": 54,
             "Width": 160,
-            "Height": 15,
+            "Height": 14,
             "TextId": "__SingleUse_4OIJ",
             "TextRotation": "0",
             "Color": {

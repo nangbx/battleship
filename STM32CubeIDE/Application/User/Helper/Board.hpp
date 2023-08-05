@@ -11,7 +11,7 @@
 class Board
 {
 private:
-	 uint8_t desk[10][10];
+
 
 public:
 	 Board();

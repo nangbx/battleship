@@ -5,19 +5,13 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
-../Application/User/Helper/Computer.cpp \
-../Application/User/Helper/Game.cpp \
-../Application/User/Helper/Player.cpp 
+../Application/User/Helper/Board.cpp 
 
 OBJS += \
-./Application/User/Helper/Computer.o \
-./Application/User/Helper/Game.o \
-./Application/User/Helper/Player.o 
+./Application/User/Helper/Board.o 
 
 CPP_DEPS += \
-./Application/User/Helper/Computer.d \
-./Application/User/Helper/Game.d \
-./Application/User/Helper/Player.d 
+./Application/User/Helper/Board.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes
@@ -27,7 +21,7 @@ Application/User/Helper/%.o Application/User/Helper/%.su Application/User/Helper
 clean: clean-Application-2f-User-2f-Helper
 
 clean-Application-2f-User-2f-Helper:
-	-$(RM) ./Application/User/Helper/Computer.cyclo ./Application/User/Helper/Computer.d ./Application/User/Helper/Computer.o ./Application/User/Helper/Computer.su ./Application/User/Helper/Game.cyclo ./Application/User/Helper/Game.d ./Application/User/Helper/Game.o ./Application/User/Helper/Game.su ./Application/User/Helper/Player.cyclo ./Application/User/Helper/Player.d ./Application/User/Helper/Player.o ./Application/User/Helper/Player.su
+	-$(RM) ./Application/User/Helper/Board.cyclo ./Application/User/Helper/Board.d ./Application/User/Helper/Board.o ./Application/User/Helper/Board.su
 
 .PHONY: clean-Application-2f-User-2f-Helper
 

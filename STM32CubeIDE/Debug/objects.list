@@ -1,7 +1,5 @@
 "./Application/Startup/startup_stm32f429zitx.o"
-"./Application/User/Helper/Computer.o"
-"./Application/User/Helper/Game.o"
-"./Application/User/Helper/Player.o"
+"./Application/User/Helper/Board.o"
 "./Application/User/TouchGFX/App/app_touchgfx.o"
 "./Application/User/TouchGFX/target/STM32TouchController.o"
 "./Application/User/TouchGFX/target/TouchGFXGPIO.o"

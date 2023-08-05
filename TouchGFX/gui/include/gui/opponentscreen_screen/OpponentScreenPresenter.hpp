@@ -27,6 +27,15 @@ public:
 
     virtual ~OpponentScreenPresenter() {}
 
+    void setDesk(int32_t i, int32_t j, int32_t status)
+        {
+            model->setDesk(i, j, status);
+        }
+    std::vector<std::vector<int8_t>> getDesk()
+        {
+            return model->getDesk();
+        }
+
 private:
     OpponentScreenPresenter();
 

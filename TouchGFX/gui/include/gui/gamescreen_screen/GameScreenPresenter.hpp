@@ -3,6 +3,7 @@
 
 #include <gui/model/ModelListener.hpp>
 #include <mvp/Presenter.hpp>
+#include <vector>
 
 using namespace touchgfx;
 
@@ -26,6 +27,15 @@ public:
     virtual void deactivate();
 
     virtual ~GameScreenPresenter() {}
+
+    void setDesk(int32_t i, int32_t j, int32_t status)
+    {
+        model->setDesk(i, j, status);
+    }
+    std::vector<std::vector<int8_t>> getDesk()
+    {
+        return model->getDesk();
+    }
 
 private:
     GameScreenPresenter();

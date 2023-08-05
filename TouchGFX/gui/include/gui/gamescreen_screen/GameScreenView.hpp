@@ -3,6 +3,7 @@
 
 #include <gui_generated/gamescreen_screen/GameScreenViewBase.hpp>
 #include <gui/gamescreen_screen/GameScreenPresenter.hpp>
+#include <vector>
 
 class GameScreenView : public GameScreenViewBase
 {
@@ -22,7 +23,8 @@ protected:
     bool is_vertical;
     touchgfx::Container* currentBoat;
     touchgfx::Container* currentBoatR;
-    uint8_t desk[10][10] = {{0, 0, 0, 0, 0, 0, 0, 0, 0},
+    std::vector<std::vector<int8_t>> desk =
+    						{{0, 0, 0, 0, 0, 0, 0, 0, 0},
     					  {0, 0, 0, 0, 0, 0, 0, 0, 0},
 						  {0, 0, 0, 0, 0, 0, 0, 0, 0},
 						  {0, 0, 0, 0, 0, 0, 0, 0, 0},

@@ -6,8 +6,7 @@
 #include <images/BitmapDatabase.hpp>
 #include <texts/TextKeysAndLanguages.hpp>
 
-HomeScreenViewBase::HomeScreenViewBase() :
-    buttonCallback(this, &HomeScreenViewBase::buttonCallbackHandler)
+HomeScreenViewBase::HomeScreenViewBase()
 {
     __background.setPosition(0, 0, 240, 320);
     __background.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
@@ -38,7 +37,6 @@ HomeScreenViewBase::HomeScreenViewBase() :
     buttonWithLabel1.setLabelText(touchgfx::TypedText(T___SINGLEUSE_71D7));
     buttonWithLabel1.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     buttonWithLabel1.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    buttonWithLabel1.setAction(buttonCallback);
     add(buttonWithLabel1);
 }
 
@@ -50,15 +48,4 @@ HomeScreenViewBase::~HomeScreenViewBase()
 void HomeScreenViewBase::setupScreen()
 {
 
-}
-
-void HomeScreenViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
-{
-    if (&src == &buttonWithLabel1)
-    {
-        //Interaction1
-        //When buttonWithLabel1 clicked change screen to GameScreen
-        //Go to GameScreen with screen transition towards East
-        application().gotoGameScreenScreenSlideTransitionEast();
-    }
 }

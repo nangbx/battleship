@@ -36,6 +36,8 @@ void OpponentScreenView::setupScreen()
     OpponentScreenViewBase::setupScreen();
 	x = 0;
 	y = 0;
+	OpponentDesk = presenter->getDesk();
+
 	for (int i = 2; i <= 5; i++) {
 		int x, y, direction;
 		std::tie(x, y, direction) = randomIndexShip(board, i);
@@ -121,7 +123,8 @@ void OpponentScreenView::setupScreen()
 	{
 		for(int j = 0; j < 10; j++)
 		{
-			if(board[i][j] == 0)
+			if(OpponentDesk[i][j] == 0)
+			//if(board[i][j] == 0)
 			{
 				boxes[i][j].setBitmap(touchgfx::Bitmap(BITMAP_MISS_GRAY_ID));
 			}

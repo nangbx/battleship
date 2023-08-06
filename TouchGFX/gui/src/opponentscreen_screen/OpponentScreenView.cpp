@@ -2,6 +2,7 @@
 #include <random>
 #include <tuple>
 #include <cmsis_os.h>
+#include <images/BitmapDatabase.hpp>
 
 #define WIDTH_SQUARE 23
 #define MIN_BOARD 0
@@ -35,6 +36,8 @@ void OpponentScreenView::setupScreen()
     OpponentScreenViewBase::setupScreen();
 	x = 0;
 	y = 0;
+	presenter->getDesk(playerDesk);
+
 	for (int i = 2; i <= 5; i++) {
 		int x, y, direction;
 		std::tie(x, y, direction) = randomIndexShip(board, i);
@@ -115,6 +118,23 @@ void OpponentScreenView::setupScreen()
 			}
 		}
 	}
+
+	for (int i = 0; i < 10; i++) {
+		for (int j = 0; j < 10; j++) {
+			if (playerDesk[i][j] == 0)
+			//if(board[i][j] == 0)
+			{
+				boxes[i][j].setBitmap(touchgfx::Bitmap(BITMAP_MISS_GRAY_ID));
+			} else {
+				boxes[i][j].setBitmap(touchgfx::Bitmap(BITMAP_HIT_ID));
+			}
+			boxes[i][j].setPosition(getXFromIndex(j), getYFromIndex(i), 23, 23);
+			boxes[i][j].setScalingAlgorithm(
+					touchgfx::ScalableImage::NEAREST_NEIGHBOR);
+			//boxes[i][j].setVisible(false);
+			add (boxes[i][j]);
+		}
+	}
 }
 
 void OpponentScreenView::tearDownScreen()
@@ -140,6 +160,13 @@ void OpponentScreenView::handleTickEvent() {
 			}
 			select.setX(getXFromIndex(x));
 		}
+		if (res == 'S') {
+			boxes[y][x].setVisible(true);
+			//select.setVisible(false);
+
+			//application().gotoGameScreenScreenSlideTransitionEast();
+		}
+
 	}
 	if(count2 > 0){
 		osMessageQueueGet(Queue2Handle, &res, NULL, osWaitForever);

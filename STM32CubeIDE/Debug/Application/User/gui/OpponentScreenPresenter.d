@@ -1,5 +1,5 @@
 Application/User/gui/OpponentScreenPresenter.o: \
- E:/Dev/battleship/TouchGFX/gui/src/opponentscreen_screen/OpponentScreenPresenter.cpp \
+ C:/TouchGFXProjects/test/TouchGFX/gui/src/opponentscreen_screen/OpponentScreenPresenter.cpp \
  ../../TouchGFX/gui/include/gui/opponentscreen_screen/OpponentScreenView.hpp \
  ../../TouchGFX/generated/gui_generated/include/gui_generated/opponentscreen_screen/OpponentScreenViewBase.hpp \
  ../../TouchGFX/gui/include/gui/common/FrontendApplication.hpp \
@@ -39,6 +39,7 @@ Application/User/gui/OpponentScreenPresenter.o: \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/transitions/Transition.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Widget.hpp \
  ../../TouchGFX/gui/include/gui/model/Model.hpp \
+ ../../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/types.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/mvp/View.hpp \
  ../../TouchGFX/gui/include/gui/opponentscreen_screen/OpponentScreenPresenter.hpp \
  ../../TouchGFX/gui/include/gui/model/ModelListener.hpp \
@@ -84,6 +85,7 @@ Application/User/gui/OpponentScreenPresenter.o: \
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/transitions/Transition.hpp:
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Widget.hpp:
 ../../TouchGFX/gui/include/gui/model/Model.hpp:
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/types.hpp:
 ../../Middlewares/ST/touchgfx/framework/include/mvp/View.hpp:
 ../../TouchGFX/gui/include/gui/opponentscreen_screen/OpponentScreenPresenter.hpp:
 ../../TouchGFX/gui/include/gui/model/ModelListener.hpp:

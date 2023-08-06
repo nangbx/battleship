@@ -3,6 +3,7 @@
 
 #include <gui_generated/opponentscreen_screen/OpponentScreenViewBase.hpp>
 #include <gui/opponentscreen_screen/OpponentScreenPresenter.hpp>
+#include <vector>
 
 class OpponentScreenView : public OpponentScreenViewBase
 {
@@ -29,6 +30,9 @@ protected:
 	};
 	int8_t x;
 	int8_t y;
+
+	touchgfx::ScalableImage boxes[10][10];
+	int32_t playerDesk[10][10];
 };
 
 #endif // OPPONENTSCREENVIEW_HPP

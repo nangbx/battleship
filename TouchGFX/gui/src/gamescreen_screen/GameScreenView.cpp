@@ -32,6 +32,7 @@ void GameScreenView::setupScreen() {
 	x = 0;
 	y = 0;
 	gameMode = 0; // Dat thuyen
+	presenter->getDesk(desk);
 }
 
 void GameScreenView::tearDownScreen() {
@@ -82,12 +83,14 @@ void GameScreenView::handleTickEvent() {
 				if (checkAvailable(x, y, countBoat)) {
 					if (is_vertical) {
 						for (int i = 0; i <= countBoat; i++) {
-							desk[x][y + i] = countBoat + 1;
+							presenter->setDesk(y + i, x, countBoat + 1);
+							//desk[x][y + i] = countBoat + 1;
 						}
 					}
 					else {
 						for (int i = 0; i <= countBoat; i++) {
-							desk[x + i][y] = countBoat + 1;
+							presenter->setDesk(y, x + i, countBoat + 1);
+							//desk[x + i][y] = countBoat + 1;
 						}
 					}
 					if (countBoat == 1) {
@@ -237,6 +240,7 @@ void GameScreenView::handleTickEvent() {
 	invalidate();
 }
 bool GameScreenView::checkOutOfDesk(int32_t x, int32_t y, int16_t countBoat) {
+	presenter->getDesk(desk);
 	if (is_vertical) {
 		if (x + countBoat > MAX_BOARD) {
 			return false;
@@ -250,6 +254,7 @@ bool GameScreenView::checkOutOfDesk(int32_t x, int32_t y, int16_t countBoat) {
 }
 
 bool GameScreenView::checkAvailable(int32_t x, int32_t y, int16_t countBoat) {
+	presenter->getDesk(desk);
 	if (is_vertical) {
 		for (int i = 0; i <= countBoat; i++) {
 			if (desk[x][y + i] > 0) {

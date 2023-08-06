@@ -17,12 +17,12 @@
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:154:18:virtual void touchgfx::Screen::handleKeyEvent(uint8_t)	0	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Widget.hpp:45:18:virtual void touchgfx::Widget::getLastChild(int16_t, int16_t, touchgfx::Drawable**)	0	static
 ../../Middlewares/ST/touchgfx/framework/include/mvp/View.hpp:36:7:touchgfx::View<OpponentScreenPresenter>::~View()	0	static
-E:/Dev/battleship/TouchGFX/generated/gui_generated/src/opponentscreen_screen/OpponentScreenViewBase.cpp:198:1:OpponentScreenViewBase::~OpponentScreenViewBase()	0	static
-E:/Dev/battleship/TouchGFX/generated/gui_generated/src/opponentscreen_screen/OpponentScreenViewBase.cpp:203:6:virtual void OpponentScreenViewBase::setupScreen()	0	static
+C:/TouchGFXProjects/test/TouchGFX/generated/gui_generated/src/opponentscreen_screen/OpponentScreenViewBase.cpp:198:1:OpponentScreenViewBase::~OpponentScreenViewBase()	0	static
+C:/TouchGFXProjects/test/TouchGFX/generated/gui_generated/src/opponentscreen_screen/OpponentScreenViewBase.cpp:203:6:virtual void OpponentScreenViewBase::setupScreen()	0	static
 ../../Middlewares/ST/touchgfx/framework/include/mvp/View.hpp:36:7:virtual touchgfx::View<OpponentScreenPresenter>::~View()	8	static
-E:/Dev/battleship/TouchGFX/generated/gui_generated/src/opponentscreen_screen/OpponentScreenViewBase.cpp:198:1:virtual OpponentScreenViewBase::~OpponentScreenViewBase()	8	static
+C:/TouchGFXProjects/test/TouchGFX/generated/gui_generated/src/opponentscreen_screen/OpponentScreenViewBase.cpp:198:1:virtual OpponentScreenViewBase::~OpponentScreenViewBase()	8	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:121:18:virtual void touchgfx::Drawable::invalidateContent() const	0	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:233:10:void touchgfx::Drawable::setPosition(int16_t, int16_t, int16_t, int16_t)	24	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/Container.hpp:43:5:touchgfx::Container::Container()	0	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Box.hpp:33:5:touchgfx::Box::Box()	0	static
-E:/Dev/battleship/TouchGFX/generated/gui_generated/src/opponentscreen_screen/OpponentScreenViewBase.cpp:8:1:OpponentScreenViewBase::OpponentScreenViewBase()	200	static
+C:/TouchGFXProjects/test/TouchGFX/generated/gui_generated/src/opponentscreen_screen/OpponentScreenViewBase.cpp:8:1:OpponentScreenViewBase::OpponentScreenViewBase()	200	static

@@ -4,7 +4,13 @@
 
 Model::Model() : modelListener(0), fire(std::make_pair(-1, -1))
 {
-
+	for(int i = 0; i < 10; i++)
+	{
+		for(int j = 0; j < 10; j++)
+		{
+			desk[i][j] = 0;
+		}
+	}
 }
 
 void Model::tick()

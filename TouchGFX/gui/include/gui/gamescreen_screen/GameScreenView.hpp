@@ -22,7 +22,8 @@ protected:
     bool is_vertical;
     touchgfx::Container* currentBoat;
     touchgfx::Container* currentBoatR;
-    uint8_t desk[10][10] = {{0, 0, 0, 0, 0, 0, 0, 0, 0},
+    int32_t desk[10][10];
+					 /*= {{0, 0, 0, 0, 0, 0, 0, 0, 0},
     					  {0, 0, 0, 0, 0, 0, 0, 0, 0},
 						  {0, 0, 0, 0, 0, 0, 0, 0, 0},
 						  {0, 0, 0, 0, 0, 0, 0, 0, 0},
@@ -32,7 +33,7 @@ protected:
 						  {0, 0, 0, 0, 0, 0, 0, 0, 0},
 						  {0, 0, 0, 0, 0, 0, 0, 0, 0},
 						  {0, 0, 0, 0, 0, 0, 0, 0, 0}
-    };
+    };*/
 };
 
 #endif // GAMESCREENVIEW_HPP

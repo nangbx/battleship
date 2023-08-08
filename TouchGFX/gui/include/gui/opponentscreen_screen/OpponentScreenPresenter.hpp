@@ -40,11 +40,17 @@ public:
 	void setDesk(int32_t i, int32_t j, int32_t status) {
 		model->setPlayer2Desk(i, j, status);
 	}
-	void setFire(int x, int y) {
-		model->setFire(x, y);
+	void setGameMode(int32_t gameMode) {
+		model->setGameMode(gameMode);
 	}
-	std::pair<int, int> getFire() {
-		return model->getFire();
+	int32_t getGameMode() {
+		return model->getGameMode();
+	}
+	bool getIsMultiPlayer() {
+		return model->getIsMultiPlayer();
+	}
+	void setWinner(int32_t winner) {
+		model->setWinner(winner);
 	}
 
 private:

@@ -3,6 +3,8 @@
 #include <tuple>
 #include <cmsis_os.h>
 #include <images/BitmapDatabase.hpp>
+#include <texts/TextKeysAndLanguages.hpp>
+#include <touchgfx/Color.hpp>
 
 #define WIDTH_SQUARE 23
 #define MIN_BOARD 0
@@ -28,7 +30,12 @@ std::tuple<int, int, int> randomIndexShip(int[][10], int);
 
 OpponentScreenView::OpponentScreenView()
 {
-
+	tickCount = 0;
+	currentCount = 0;
+	for(int i = 0; i < 4; i++)
+	{
+		ship[i] = 0;
+	}
 }
 
 void OpponentScreenView::setupScreen()
@@ -36,8 +43,14 @@ void OpponentScreenView::setupScreen()
     OpponentScreenViewBase::setupScreen();
 	x = 0;
 	y = 0;
-	std::pair<int, int> fire = presenter->getFire();
-	if (fire.first < 0 && fire.second < 0) {
+	gameMode = presenter->getGameMode();
+
+	Unicode::snprintf(txtRemainShip1Buffer, TXTREMAINSHIP1_SIZE, "%s", touchgfx::TypedText(T_DESTROYER).getText());
+	Unicode::snprintf(txtRemainShip2Buffer, TXTREMAINSHIP2_SIZE, "%s", touchgfx::TypedText(T_CRUISER).getText());
+	Unicode::snprintf(txtRemainShip3Buffer, TXTREMAINSHIP3_SIZE, "%s", touchgfx::TypedText(T_BATTLESHIP).getText());
+	Unicode::snprintf(txtRemainShip4Buffer, TXTREMAINSHIP4_SIZE, "%s", touchgfx::TypedText(T_AIRCRAFT_CARRIER).getText());
+
+	if (gameMode == 0) {
 		for (int i = 2; i <= 5; i++) {
 			int x, y, direction;
 			std::tie(x, y, direction) = randomIndexShip(board, i);
@@ -46,17 +59,17 @@ void OpponentScreenView::setupScreen()
 				case DIRECTION::HORIZONTAL: {
 					for (int j = 0; j < i; j++) {
 						presenter->setDesk(x + j, y, i);
-						// board[x + j][y] = i;
+						board[x + j][y] = i;
 					}
-					// boat2_r.setXY(getXFromIndex(y), getYFromIndex(x));
+					boat2_r.setXY(getXFromIndex(y), getYFromIndex(x));
 					break;
 				}
 				case DIRECTION::VERTICAL: {
 					for (int j = 0; j < i; j++) {
 						presenter->setDesk(x, y + j, i);
-						// board[x][y + j] = i;
+						board[x][y + j] = i;
 					}
-					// boat2.setXY(getXFromIndex(y), getYFromIndex(x));
+					boat2.setXY(getXFromIndex(y), getYFromIndex(x));
 					break;
 				}
 				default:
@@ -67,17 +80,17 @@ void OpponentScreenView::setupScreen()
 				case DIRECTION::HORIZONTAL: {
 					for (int j = 0; j < i; j++) {
 						presenter->setDesk(x + j, y, i);
-						// board[x + j][y] = i;
+						board[x + j][y] = i;
 					}
-					// boat3_r.setXY(getXFromIndex(y), getYFromIndex(x));
+					boat3_r.setXY(getXFromIndex(y), getYFromIndex(x));
 					break;
 				}
 				case DIRECTION::VERTICAL: {
 					for (int j = 0; j < i; j++) {
 						presenter->setDesk(x, y + j, i);
-						// board[x][y + j] = i;
+						board[x][y + j] = i;
 					}
-					// boat3.setXY(getXFromIndex(y), getYFromIndex(x));
+					 boat3.setXY(getXFromIndex(y), getYFromIndex(x));
 					break;
 				}
 				default:
@@ -88,7 +101,7 @@ void OpponentScreenView::setupScreen()
 				case DIRECTION::HORIZONTAL: {
 					for (int j = 0; j < i; j++) {
 						presenter->setDesk(x + j, y, i);
-						// board[x + j][y] = i;
+						board[x + j][y] = i;
 					}
 					boat4_r.setXY(getXFromIndex(y), getYFromIndex(x));
 					break;
@@ -96,9 +109,9 @@ void OpponentScreenView::setupScreen()
 				case DIRECTION::VERTICAL: {
 					for (int j = 0; j < i; j++) {
 						presenter->setDesk(x, y + j, i);
-						// board[x][y + j] = i;
+						board[x][y + j] = i;
 					}
-					// boat4.setXY(getXFromIndex(y), getYFromIndex(x));
+					boat4.setXY(getXFromIndex(y), getYFromIndex(x));
 					break;
 				}
 				default:
@@ -109,17 +122,17 @@ void OpponentScreenView::setupScreen()
 				case DIRECTION::HORIZONTAL: {
 					for (int j = 0; j < i; j++) {
 						presenter->setDesk(x + j, y, i);
-						// board[x + j][y] = i;
+						board[x + j][y] = i;
 					}
-					// boat5_r.setXY(getXFromIndex(y), getYFromIndex(x));
+					 boat5_r.setXY(getXFromIndex(y), getYFromIndex(x));
 					break;
 				}
 				case DIRECTION::VERTICAL: {
 					for (int j = 0; j < i; j++) {
 						presenter->setDesk(x, y + j, i);
-						// board[x][y + j] = i;
+						board[x][y + j] = i;
 					}
-					// boat5.setXY(getXFromIndex(y), getYFromIndex(x));
+					boat5.setXY(getXFromIndex(y), getYFromIndex(x));
 					break;
 				}
 				default:
@@ -127,14 +140,29 @@ void OpponentScreenView::setupScreen()
 				}
 			}
 		}
-		presenter->setFire(0, 0);
+		presenter->setGameMode(1);
 	}
 	presenter->getDesk(desk);
 	for (int i = 0; i < 10; i++) {
 		for (int j = 0; j < 10; j++) {
+			if(desk[i][j] == 2)
+			{
+				ship[0]++;
+			}
+			else if(desk[i][j] == 3)
+			{
+				ship[1]++;
+			}
+			else if(desk[i][j] == 4)
+			{
+				ship[2]++;
+			}
+			else if(desk[i][j] == 5)
+			{
+				ship[3]++;
+			}
 			if (desk[i][j] == -2)
-			//if(board[i][j] == 0)
-					{
+			{
 				boxes[i][j].setBitmap(touchgfx::Bitmap(BITMAP_MISS_GRAY_ID));
 			} else if(desk[i][j] == -1) {
 				boxes[i][j].setBitmap(touchgfx::Bitmap(BITMAP_HIT_ID));
@@ -146,6 +174,25 @@ void OpponentScreenView::setupScreen()
 			add (boxes[i][j]);
 		}
 	}
+	for(int i = 0; i < 4; i++)
+	{
+		if (ship[0] == 0) {
+			txtRemainShip1.setColor(
+					touchgfx::Color::getColorFromRGB(255, 0, 0));
+		}
+		if (ship[1] == 0) {
+			txtRemainShip2.setColor(
+					touchgfx::Color::getColorFromRGB(255, 0, 0));
+		}
+		if (ship[2] == 0) {
+			txtRemainShip3.setColor(
+					touchgfx::Color::getColorFromRGB(255, 0, 0));
+		}
+		if (ship[3] == 0) {
+			txtRemainShip4.setColor(
+					touchgfx::Color::getColorFromRGB(255, 0, 0));
+		}
+	}
 }
 
 void OpponentScreenView::tearDownScreen()
@@ -154,6 +201,7 @@ void OpponentScreenView::tearDownScreen()
 }
 void OpponentScreenView::handleTickEvent() {
     OpponentScreenViewBase::handleTickEvent();
+    tickCount++;
 	uint8_t res = 0;
 	uint32_t count1 = osMessageQueueGetCount(Queue1Handle);
 	uint32_t count2 = osMessageQueueGetCount(Queue2Handle);
@@ -174,13 +222,56 @@ void OpponentScreenView::handleTickEvent() {
 		if (res == 'S' && desk[y][x] >= 0) {
 			boxes[y][x].setVisible(true);
 			if(desk[y][x] > 0){
+				if(desk[y][x] == 2)
+				{
+					ship[0]--;
+					if(ship[0] == 0)
+					{
+						txtRemainShip1.setColor(touchgfx::Color::getColorFromRGB(255, 0, 0));
+					}
+				}
+				else if(desk[y][x] == 3)
+				{
+					ship[1]--;
+					if(ship[1] == 0)
+					{
+						txtRemainShip2.setColor(touchgfx::Color::getColorFromRGB(255, 0, 0));
+					}
+				}
+				else if(desk[y][x] == 4)
+				{
+					ship[2]--;
+					if(ship[2] == 0)
+					{
+						txtRemainShip3.setColor(touchgfx::Color::getColorFromRGB(255, 0, 0));
+					}
+				}
+				else if(desk[y][x] == 5)
+				{
+					ship[3]--;
+					if(ship[3] == 0)
+					{
+						txtRemainShip4.setColor(touchgfx::Color::getColorFromRGB(255, 0, 0));						}
+					}
 				presenter->setDesk(y, x, -1);
+				boxes[y][x].setBitmap(touchgfx::Bitmap(BITMAP_HIT_ID));
+				presenter->getDesk(desk);
+				if (OpponentScreenView::checkWinner(desk)) {
+					presenter->setWinner(1);
+					application().gotoEndGameScreenScreenSlideTransitionEast();
+				}
+
 			} else{
 				presenter->setDesk(y, x, -2);
+				boxes[y][x].setBitmap(touchgfx::Bitmap(BITMAP_MISS_GRAY_ID));
 			}
-			//select.setVisible(false);
-
-			application().gotoGameScreenScreenSlideTransitionEast();
+			boxes[y][x].setPosition(getXFromIndex(x), getYFromIndex(y), 23, 23);
+			boxes[y][x].setScalingAlgorithm(
+					touchgfx::ScalableImage::NEAREST_NEIGHBOR);
+			select.setVisible(false);
+			if(currentCount == 0){
+				currentCount = tickCount;
+			}
 		}
 	}
 	if(count2 > 0){
@@ -213,7 +304,9 @@ void OpponentScreenView::handleTickEvent() {
 			select.setY(getYFromIndex(y));
 		}
 	}
-
+	if(currentCount != 0 && tickCount > currentCount + 15){
+		application().gotoGameScreenScreenSlideTransitionEast();
+	}
     invalidate();
 }
 

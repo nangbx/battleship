@@ -17,12 +17,19 @@ public:
     }
     void tick();
 
-    void setFire(int x, int y) {
-        fire = std::make_pair(x, y);
+    void setGameMode(int32_t gameMode) {
+        this->gameMode = gameMode;
     }
-    std::pair<int, int> getFire() {
-        return fire;
+    int32_t getGameMode() {
+        return this->gameMode;
     }
+
+    void setIsMultiPlayer(bool b) {
+		this->isMultiPlayer = b;
+	}
+	bool getIsMultiPlayer() {
+		return this->isMultiPlayer;
+	}
 
     void getPlayer1Desk(int32_t(*arr)[10]){
     	for(int i = 0; i < 10; i++){
@@ -61,13 +68,23 @@ public:
 	int32_t getIndexHit(){
 		return this->indexHit;
 	}
+
+	void setWinner(int32_t winner) {
+		this->winner = winner;
+	}
+	int32_t getWinner() {
+		return this->winner;
+	}
+	void Init();
 protected:
     ModelListener* modelListener;
-    std::pair<int, int> fire;
     std::pair<int32_t, int32_t> hits[100];
     int32_t indexHit;
     int32_t player1Desk[10][10];
     int32_t player2Desk[10][10];
+    int32_t winner;
+    int32_t gameMode;
+    bool isMultiPlayer;
 };
 
 #endif // MODEL_HPP

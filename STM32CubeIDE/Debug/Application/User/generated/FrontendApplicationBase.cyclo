@@ -23,12 +23,19 @@ SlideTransition.hpp:146:18:void touchgfx::SlideTransition<templateDirection>::te
 SlideTransition.hpp:154:18:void touchgfx::SlideTransition<templateDirection>::init() [with touchgfx::Direction templateDirection = touchgfx::EAST]	3
 SlideTransition.hpp:87:18:void touchgfx::SlideTransition<templateDirection>::handleTickEvent() [with touchgfx::Direction templateDirection = touchgfx::EAST]	4
 MVPApplication.hpp:59:18:virtual void touchgfx::MVPApplication::handlePendingScreenTransition()	3
-FrontendApplicationBase.cpp:45:6:void FrontendApplicationBase::gotoHomeScreenScreenNoTransitionImpl()	8
+FrontendApplicationBase.cpp:49:6:void FrontendApplicationBase::gotoHomeScreenScreenNoTransitionImpl()	8
 HAL.hpp:268:17:static touchgfx::LCD& touchgfx::HAL::lcd()	3
-FrontendApplicationBase.cpp:21:1:FrontendApplicationBase::FrontendApplicationBase(Model&, FrontendHeap&)	1
-FrontendApplicationBase.cpp:39:6:void FrontendApplicationBase::gotoHomeScreenScreenNoTransition()	1
-FrontendApplicationBase.cpp:52:6:void FrontendApplicationBase::gotoGameScreenScreenSlideTransitionEast()	1
-FrontendApplicationBase.cpp:65:6:void FrontendApplicationBase::gotoOpponentScreenScreenSlideTransitionEast()	1
+FrontendApplicationBase.cpp:25:1:FrontendApplicationBase::FrontendApplicationBase(Model&, FrontendHeap&)	1
+FrontendApplicationBase.cpp:43:6:void FrontendApplicationBase::gotoHomeScreenScreenNoTransition()	1
+FrontendApplicationBase.cpp:54:6:void FrontendApplicationBase::gotoHomeScreenScreenSlideTransitionEast()	1
+FrontendApplicationBase.cpp:67:6:void FrontendApplicationBase::gotoLoadingScreenScreenSlideTransitionEast()	1
+FrontendApplicationBase.cpp:80:6:void FrontendApplicationBase::gotoGameScreenScreenSlideTransitionEast()	1
+FrontendApplicationBase.cpp:93:6:void FrontendApplicationBase::gotoOpponentScreenScreenSlideTransitionEast()	1
+FrontendApplicationBase.cpp:106:6:void FrontendApplicationBase::gotoEndGameScreenScreenSlideTransitionEast()	1
+AbstractPartition.hpp:135:8:T& touchgfx::AbstractPartition::at(uint16_t) [with T = touchgfx::SlideTransition<touchgfx::EAST>]	1
 SlideTransition.hpp:47:5:touchgfx::SlideTransition<templateDirection>::SlideTransition(uint8_t) [with touchgfx::Direction templateDirection = touchgfx::EAST]	2
-FrontendApplicationBase.cpp:71:6:void FrontendApplicationBase::gotoOpponentScreenScreenSlideTransitionEastImpl()	8
-FrontendApplicationBase.cpp:58:6:void FrontendApplicationBase::gotoGameScreenScreenSlideTransitionEastImpl()	8
+FrontendApplicationBase.cpp:112:6:void FrontendApplicationBase::gotoEndGameScreenScreenSlideTransitionEastImpl()	8
+FrontendApplicationBase.cpp:99:6:void FrontendApplicationBase::gotoOpponentScreenScreenSlideTransitionEastImpl()	8
+FrontendApplicationBase.cpp:86:6:void FrontendApplicationBase::gotoGameScreenScreenSlideTransitionEastImpl()	8
+FrontendApplicationBase.cpp:73:6:void FrontendApplicationBase::gotoLoadingScreenScreenSlideTransitionEastImpl()	8
+FrontendApplicationBase.cpp:60:6:void FrontendApplicationBase::gotoHomeScreenScreenSlideTransitionEastImpl()	8

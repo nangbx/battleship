@@ -4,11 +4,23 @@
 
 FONT_TABLE_LOCATION_FLASH_PRAGMA
 KEEP extern const touchgfx::GlyphNode glyphs_rechargebd_otf_30_4bpp[] FONT_TABLE_LOCATION_FLASH_ATTRIBUTE = {
-    {     0, 0x003F,  20,  22,  22,   0,  21,   0,   0, 0x00 }, // question
-    {   220, 0x0050,  27,  22,  22,   1,  28,   0,   0, 0x00 }, // P
-    {   528, 0x0061,  20,  17,  17,   0,  21,   0,   0, 0x00 }, // a
-    {   698, 0x006C,   6,  23,  23,   1,   8,   0,   0, 0x00 }, // l
-    {   767, 0x0079,  21,  24,  17,   1,  23,   0,   0, 0x00 }  // y
+    {     0, 0x0031,  12,  22,  22,   0,  13,   0,   0, 0x00 }, // one
+    {   132, 0x0032,  26,  22,  22,   1,  28,   0,   0, 0x00 }, // two
+    {   418, 0x003F,  20,  22,  22,   0,  21,   0,   2, 0x00 }, // question
+    {   638, 0x0041,  32,  22,  22,   0,  32,   2,   5, 0x00 }, // A
+    {   990, 0x0045,  26,  22,  22,   1,  28,   0,   0, 0x00 }, // E
+    {  1276, 0x0048,  28,  22,  22,   1,  30,   0,   0, 0x00 }, // H
+    {  1584, 0x004C,  25,  22,  22,   1,  26,   0,   0, 0x00 }, // L
+    {  1870, 0x0050,  27,  22,  22,   1,  28,   0,   0, 0x00 }, // P
+    {  2178, 0x0052,  26,  22,  22,   1,  27,   0,   0, 0x00 }, // R
+    {  2464, 0x0057,  37,  22,  22,   0,  37,   7,   1, 0x00 }, // W
+    {  2882, 0x0059,  28,  22,  22,   0,  28,   8,   4, 0x00 }, // Y
+    {  3190, 0x0065,  20,  17,  17,   1,  22,  12,   1, 0x00 }, // e
+    {  3360, 0x0069,   6,  24,  24,   1,   8,   0,   0, 0x00 }, // i
+    {  3432, 0x006D,  33,  17,  17,   1,  35,   0,   0, 0x00 }, // m
+    {  3721, 0x006E,  21,  17,  17,   1,  23,   0,   0, 0x00 }, // n
+    {  3908, 0x006F,  22,  17,  17,   1,  24,  13,   1, 0x00 }, // o
+    {  4095, 0x0072,  19,  17,  17,   1,  21,   0,   0, 0x00 }  // r
 };
 
 // rechargebd_otf_30_4bpp
@@ -26,6 +38,6 @@ touchgfx::GeneratedFont& getFont_rechargebd_otf_30_4bpp();
 
 touchgfx::GeneratedFont& getFont_rechargebd_otf_30_4bpp()
 {
-    static touchgfx::GeneratedFont rechargebd_otf_30_4bpp(glyphs_rechargebd_otf_30_4bpp, 5, 37, 30, 0, 0, 4, 1, 0, 0, unicodes_rechargebd_otf_30_4bpp, kerning_rechargebd_otf_30_4bpp, 63, 0, 0, 0);
+    static touchgfx::GeneratedFont rechargebd_otf_30_4bpp(glyphs_rechargebd_otf_30_4bpp, 17, 30, 30, 0, 0, 4, 1, 0, 0, unicodes_rechargebd_otf_30_4bpp, kerning_rechargebd_otf_30_4bpp, 63, 0, 0, 0);
     return rechargebd_otf_30_4bpp;
 }

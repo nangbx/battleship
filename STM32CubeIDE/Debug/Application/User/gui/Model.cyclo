@@ -1,2 +1,3 @@
+Model.cpp:10:6:void Model::tick()	1
+Model.cpp:15:6:void Model::Init()	1
 Model.cpp:5:1:Model::Model()	1
-Model.cpp:17:6:void Model::tick()	1

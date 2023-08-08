@@ -1,5 +1,5 @@
 Application/User/gui/GameScreenView.o: \
- E:/Dev/battleship/TouchGFX/gui/src/gamescreen_screen/GameScreenView.cpp \
+ C:/TouchGFXProjects/test/TouchGFX/gui/src/gamescreen_screen/GameScreenView.cpp \
  ../../TouchGFX/gui/include/gui/gamescreen_screen/GameScreenView.hpp \
  ../../TouchGFX/generated/gui_generated/include/gui_generated/gamescreen_screen/GameScreenViewBase.hpp \
  ../../TouchGFX/gui/include/gui/common/FrontendApplication.hpp \
@@ -87,8 +87,8 @@ Application/User/gui/GameScreenView.o: \
  ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
  ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
  ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
- E:/Dev/battleship/STM32CubeIDE/Application/User/src/Board.hpp \
- E:/Dev/battleship/STM32CubeIDE/Application/User/src/Queue.hpp \
+ C:/TouchGFXProjects/test/STM32CubeIDE/Application/User/src/Board.hpp \
+ C:/TouchGFXProjects/test/STM32CubeIDE/Application/User/src/Queue.hpp \
  ../../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os.h \
  ../../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h \
  ../../Core/Inc/FreeRTOSConfig.h \
@@ -189,8 +189,8 @@ Application/User/gui/GameScreenView.o: \
 ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h:
 ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h:
 ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:
-E:/Dev/battleship/STM32CubeIDE/Application/User/src/Board.hpp:
-E:/Dev/battleship/STM32CubeIDE/Application/User/src/Queue.hpp:
+C:/TouchGFXProjects/test/STM32CubeIDE/Application/User/src/Board.hpp:
+C:/TouchGFXProjects/test/STM32CubeIDE/Application/User/src/Queue.hpp:
 ../../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os.h:
 ../../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h:
 ../../Core/Inc/FreeRTOSConfig.h:

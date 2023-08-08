@@ -11,6 +11,7 @@ public:
     virtual ~HomeScreenView() {}
     virtual void setupScreen();
     virtual void tearDownScreen();
+    //void MultiMode();
 protected:
 };
 

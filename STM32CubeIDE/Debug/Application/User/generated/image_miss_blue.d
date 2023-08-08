@@ -1,4 +1,4 @@
 Application/User/generated/image_miss_blue.o: \
- E:/Dev/battleship/TouchGFX/generated/images/src/image_miss_blue.cpp \
+ C:/TouchGFXProjects/test/TouchGFX/generated/images/src/image_miss_blue.cpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/Config.hpp
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/Config.hpp:

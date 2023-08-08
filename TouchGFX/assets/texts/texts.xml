@@ -5,8 +5,44 @@
   </Languages>
   <Texts>
     <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_J6N9" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Loading...</Translation>
+      </Text>
+      <Text Id="__SingleUse_FBN5" Alignment="Center" TypographyId="BtnText">
+        <Translation Language="GB">WAITING FOR &#10;OTHERS PLAYERS</Translation>
+      </Text>
+      <Text Id="__SingleUse_RP4G" Alignment="Center" TypographyId="BtnText">
+        <Translation Language="GB">Multiplayer</Translation>
+      </Text>
+      <Text Id="__SingleUse_3B36" Alignment="Center" TypographyId="Medium">
+        <Translation Language="GB">Home</Translation>
+      </Text>
+      <Text Id="__SingleUse_4PHE" Alignment="Left" TypographyId="Medium">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="PLAYER2" Alignment="Left" TypographyId="Medium">
+        <Translation Language="GB">PLAYER2</Translation>
+      </Text>
+      <Text Id="PLAYER1" Alignment="Left" TypographyId="Medium">
+        <Translation Language="GB">PLAYER1</Translation>
+      </Text>
+      <Text Id="__SingleUse_FLUU" Alignment="Left" TypographyId="Medium">
+        <Translation Language="GB">Winner</Translation>
+      </Text>
+      <Text Id="__SingleUse_546Q" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_4QYS" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_AMBJ" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_S9QX" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
       <Text Id="AIRCRAFT_CARRIER" Alignment="Center" TypographyId="Default">
-        <Translation Language="GB">Aircraft Carrier (5)</Translation>
+        <Translation Language="GB">Aircraft (5)</Translation>
       </Text>
       <Text Id="BATTLESHIP" Alignment="Center" TypographyId="Default">
         <Translation Language="GB">Battleship (4)</Translation>
@@ -20,8 +56,8 @@
       <Text Id="__SingleUse_4OIJ" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">Select: &lt;value&gt;</Translation>
       </Text>
-      <Text Id="__SingleUse_71D7" Alignment="Center" TypographyId="Medium">
-        <Translation Language="GB">Play</Translation>
+      <Text Id="__SingleUse_71D7" Alignment="Center" TypographyId="BtnText">
+        <Translation Language="GB">Single</Translation>
       </Text>
     </TextGroup>
   </Texts>
@@ -30,5 +66,6 @@
     <Typography Id="Large" Font="verdana.ttf" Size="40" Bpp="4" Direction="LTR" FallbackCharacter="?" />
     <Typography Id="Small" Font="verdana.ttf" Size="10" Bpp="4" Direction="LTR" FallbackCharacter="?" />
     <Typography Id="Medium" Font="rechargebd.otf" Size="30" Bpp="4" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="BtnText" Font="rechargebd.otf" Size="20" Bpp="4" Direction="LTR" FallbackCharacter="?" />
   </Typographies>
 </TextDatabase>

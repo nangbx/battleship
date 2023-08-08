@@ -29,17 +29,24 @@ HomeScreenViewBase::HomeScreenViewBase() :
     image3.setBitmap(touchgfx::Bitmap(BITMAP_SHIP31_ID));
     add(image3);
 
-    image4.setXY(9, 137);
+    image4.setXY(5, 208);
     image4.setBitmap(touchgfx::Bitmap(BITMAP_SHIP4_ID));
     add(image4);
 
-    buttonWithLabel1.setXY(33, 208);
+    buttonWithLabel1.setXY(33, 160);
     buttonWithLabel1.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_SMALL_ROUND_ACTIVE_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_SMALL_ROUND_ACTIVE_ID));
     buttonWithLabel1.setLabelText(touchgfx::TypedText(T___SINGLEUSE_71D7));
     buttonWithLabel1.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     buttonWithLabel1.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
     buttonWithLabel1.setAction(buttonCallback);
     add(buttonWithLabel1);
+
+    buttonWithLabel1_1.setXY(33, 231);
+    buttonWithLabel1_1.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_SMALL_ROUND_ACTIVE_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_SMALL_ROUND_ACTIVE_ID));
+    buttonWithLabel1_1.setLabelText(touchgfx::TypedText(T___SINGLEUSE_RP4G));
+    buttonWithLabel1_1.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    buttonWithLabel1_1.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    add(buttonWithLabel1_1);
 }
 
 HomeScreenViewBase::~HomeScreenViewBase()

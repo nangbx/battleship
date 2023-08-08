@@ -11,10 +11,14 @@
 #include <platform/driver/lcd/LCD16bpp.hpp>
 #include <gui/homescreen_screen/HomeScreenView.hpp>
 #include <gui/homescreen_screen/HomeScreenPresenter.hpp>
+#include <gui/loadingscreen_screen/LoadingScreenView.hpp>
+#include <gui/loadingscreen_screen/LoadingScreenPresenter.hpp>
 #include <gui/gamescreen_screen/GameScreenView.hpp>
 #include <gui/gamescreen_screen/GameScreenPresenter.hpp>
 #include <gui/opponentscreen_screen/OpponentScreenView.hpp>
 #include <gui/opponentscreen_screen/OpponentScreenPresenter.hpp>
+#include <gui/endgamescreen_screen/EndGameScreenView.hpp>
+#include <gui/endgamescreen_screen/EndGameScreenPresenter.hpp>
 
 using namespace touchgfx;
 
@@ -47,6 +51,30 @@ void FrontendApplicationBase::gotoHomeScreenScreenNoTransitionImpl()
     touchgfx::makeTransition<HomeScreenView, HomeScreenPresenter, touchgfx::NoTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
 }
 
+void FrontendApplicationBase::gotoHomeScreenScreenSlideTransitionEast()
+{
+    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplicationBase::gotoHomeScreenScreenSlideTransitionEastImpl);
+    pendingScreenTransitionCallback = &transitionCallback;
+}
+
+void FrontendApplicationBase::gotoHomeScreenScreenSlideTransitionEastImpl()
+{
+    touchgfx::makeTransition<HomeScreenView, HomeScreenPresenter, touchgfx::SlideTransition<EAST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+}
+
+// LoadingScreen
+
+void FrontendApplicationBase::gotoLoadingScreenScreenSlideTransitionEast()
+{
+    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplicationBase::gotoLoadingScreenScreenSlideTransitionEastImpl);
+    pendingScreenTransitionCallback = &transitionCallback;
+}
+
+void FrontendApplicationBase::gotoLoadingScreenScreenSlideTransitionEastImpl()
+{
+    touchgfx::makeTransition<LoadingScreenView, LoadingScreenPresenter, touchgfx::SlideTransition<EAST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+}
+
 // GameScreen
 
 void FrontendApplicationBase::gotoGameScreenScreenSlideTransitionEast()
@@ -71,4 +99,17 @@ void FrontendApplicationBase::gotoOpponentScreenScreenSlideTransitionEast()
 void FrontendApplicationBase::gotoOpponentScreenScreenSlideTransitionEastImpl()
 {
     touchgfx::makeTransition<OpponentScreenView, OpponentScreenPresenter, touchgfx::SlideTransition<EAST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+}
+
+// EndGameScreen
+
+void FrontendApplicationBase::gotoEndGameScreenScreenSlideTransitionEast()
+{
+    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplicationBase::gotoEndGameScreenScreenSlideTransitionEastImpl);
+    pendingScreenTransitionCallback = &transitionCallback;
+}
+
+void FrontendApplicationBase::gotoEndGameScreenScreenSlideTransitionEastImpl()
+{
+    touchgfx::makeTransition<EndGameScreenView, EndGameScreenPresenter, touchgfx::SlideTransition<EAST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
 }

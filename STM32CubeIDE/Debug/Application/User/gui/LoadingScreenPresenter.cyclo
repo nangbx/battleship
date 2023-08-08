@@ -1,0 +1,5 @@
+LoadingScreenPresenter.hpp:28:13:LoadingScreenPresenter::~LoadingScreenPresenter()	1
+LoadingScreenPresenter.cpp:10:6:virtual void LoadingScreenPresenter::activate()	1
+LoadingScreenPresenter.hpp:28:13:virtual LoadingScreenPresenter::~LoadingScreenPresenter()	1
+LoadingScreenPresenter.hpp:28:13:virtual void* LoadingScreenPresenter::_ZThn4_N22LoadingScreenPresenterD1Ev()	1
+LoadingScreenPresenter.cpp:4:1:LoadingScreenPresenter::LoadingScreenPresenter(LoadingScreenView&)	1

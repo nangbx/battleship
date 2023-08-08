@@ -214,6 +214,30 @@
     <Filter Include="Source Files\generated\gui_generated\homescreen_screen">
       <UniqueIdentifier>4F3973A1-AD58-AFC3-2C86-9F1B5C779814</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\gui\endgamescreen_screen">
+      <UniqueIdentifier>B7D4C699-5522-2366-70BC-71CA59A003F3</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\endgamescreen_screen">
+      <UniqueIdentifier>F2202D5F-2A39-AC8F-DFEE-5383978DEAD0</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\endgamescreen_screen">
+      <UniqueIdentifier>C90EE77D-9BE4-4B98-5D1A-0AF242E8EFC5</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\endgamescreen_screen">
+      <UniqueIdentifier>8B74E66E-C3FA-80DD-4211-444CE6C45D17</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\loadingscreen_screen">
+      <UniqueIdentifier>845835AD-5DA0-1095-CFE0-83570CD865DB</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\loadingscreen_screen">
+      <UniqueIdentifier>01A697C3-17E4-7204-BDFA-9592230BE206</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\loadingscreen_screen">
+      <UniqueIdentifier>DEA3F733-409B-64F3-B843-4B5956E21270</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\loadingscreen_screen">
+      <UniqueIdentifier>F63C6CF9-C35A-8FB4-3132-251585CF492B</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(TouchGFXReleasePath)\framework\source\platform\driver\touch\SDL2TouchController.cpp">
@@ -275,6 +299,24 @@
     </ClCompile>
     <ClCompile Include="..\..\generated\gui_generated\src\opponentscreen_screen\OpponentScreenViewBase.cpp">
       <Filter>Source Files\generated\gui_generated\opponentscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\endgamescreen_screen\EndGameScreenPresenter.cpp">
+      <Filter>Source Files\gui\endgamescreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\endgamescreen_screen\EndGameScreenView.cpp">
+      <Filter>Source Files\gui\endgamescreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\endgamescreen_screen\EndGameScreenViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\endgamescreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\loadingscreen_screen\LoadingScreenPresenter.cpp">
+      <Filter>Source Files\gui\loadingscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\loadingscreen_screen\LoadingScreenView.cpp">
+      <Filter>Source Files\gui\loadingscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\loadingscreen_screen\LoadingScreenViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\loadingscreen_screen</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -747,6 +789,24 @@
     </ClInclude>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\opponentscreen_screen\OpponentScreenViewBase.hpp">
       <Filter>Header Files\generated\gui_generated\opponentscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\endgamescreen_screen\EndGameScreenPresenter.hpp">
+      <Filter>Header Files\gui\endgamescreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\endgamescreen_screen\EndGameScreenView.hpp">
+      <Filter>Header Files\gui\endgamescreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\endgamescreen_screen\EndGameScreenViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\endgamescreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\loadingscreen_screen\LoadingScreenPresenter.hpp">
+      <Filter>Header Files\gui\loadingscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\loadingscreen_screen\LoadingScreenView.hpp">
+      <Filter>Header Files\gui\loadingscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\loadingscreen_screen\LoadingScreenViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\loadingscreen_screen</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

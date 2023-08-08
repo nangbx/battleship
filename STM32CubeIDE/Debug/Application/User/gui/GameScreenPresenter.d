@@ -1,5 +1,5 @@
 Application/User/gui/GameScreenPresenter.o: \
- E:/Dev/battleship/TouchGFX/gui/src/gamescreen_screen/GameScreenPresenter.cpp \
+ C:/TouchGFXProjects/test/TouchGFX/gui/src/gamescreen_screen/GameScreenPresenter.cpp \
  ../../TouchGFX/gui/include/gui/gamescreen_screen/GameScreenView.hpp \
  ../../TouchGFX/generated/gui_generated/include/gui_generated/gamescreen_screen/GameScreenViewBase.hpp \
  ../../TouchGFX/gui/include/gui/common/FrontendApplication.hpp \
@@ -87,8 +87,8 @@ Application/User/gui/GameScreenPresenter.o: \
  ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
  ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
  ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
- E:/Dev/battleship/STM32CubeIDE/Application/User/src/Board.hpp \
- E:/Dev/battleship/STM32CubeIDE/Application/User/src/Queue.hpp
+ C:/TouchGFXProjects/test/STM32CubeIDE/Application/User/src/Board.hpp \
+ C:/TouchGFXProjects/test/STM32CubeIDE/Application/User/src/Queue.hpp
 ../../TouchGFX/gui/include/gui/gamescreen_screen/GameScreenView.hpp:
 ../../TouchGFX/generated/gui_generated/include/gui_generated/gamescreen_screen/GameScreenViewBase.hpp:
 ../../TouchGFX/gui/include/gui/common/FrontendApplication.hpp:
@@ -176,5 +176,5 @@ Application/User/gui/GameScreenPresenter.o: \
 ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h:
 ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h:
 ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:
-E:/Dev/battleship/STM32CubeIDE/Application/User/src/Board.hpp:
-E:/Dev/battleship/STM32CubeIDE/Application/User/src/Queue.hpp:
+C:/TouchGFXProjects/test/STM32CubeIDE/Application/User/src/Board.hpp:
+C:/TouchGFXProjects/test/STM32CubeIDE/Application/User/src/Queue.hpp:

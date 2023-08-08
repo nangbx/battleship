@@ -10,6 +10,7 @@
 #include <touchgfx/widgets/Box.hpp>
 #include <touchgfx/widgets/ScalableImage.hpp>
 #include <touchgfx/containers/Container.hpp>
+#include <touchgfx/widgets/TextAreaWithWildcard.hpp>
 
 class OpponentScreenViewBase : public touchgfx::View<OpponentScreenPresenter>
 {
@@ -66,7 +67,23 @@ protected:
     touchgfx::ScalableImage scalableImage1_1;
     touchgfx::ScalableImage scalableImage1_2_1;
     touchgfx::ScalableImage title2;
+    touchgfx::TextAreaWithOneWildcard txtRemainShip1;
+    touchgfx::TextAreaWithOneWildcard txtRemainShip3;
+    touchgfx::TextAreaWithOneWildcard txtRemainShip2;
+    touchgfx::TextAreaWithOneWildcard txtRemainShip4;
     touchgfx::ScalableImage select;
+
+    /*
+     * Wildcard Buffers
+     */
+    static const uint16_t TXTREMAINSHIP1_SIZE = 50;
+    touchgfx::Unicode::UnicodeChar txtRemainShip1Buffer[TXTREMAINSHIP1_SIZE];
+    static const uint16_t TXTREMAINSHIP3_SIZE = 50;
+    touchgfx::Unicode::UnicodeChar txtRemainShip3Buffer[TXTREMAINSHIP3_SIZE];
+    static const uint16_t TXTREMAINSHIP2_SIZE = 50;
+    touchgfx::Unicode::UnicodeChar txtRemainShip2Buffer[TXTREMAINSHIP2_SIZE];
+    static const uint16_t TXTREMAINSHIP4_SIZE = 50;
+    touchgfx::Unicode::UnicodeChar txtRemainShip4Buffer[TXTREMAINSHIP4_SIZE];
 
 private:
 

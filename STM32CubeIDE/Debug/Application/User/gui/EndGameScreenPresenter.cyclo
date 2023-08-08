@@ -1,0 +1,5 @@
+EndGameScreenPresenter.hpp:28:13:EndGameScreenPresenter::~EndGameScreenPresenter()	1
+EndGameScreenPresenter.cpp:10:6:virtual void EndGameScreenPresenter::activate()	1
+EndGameScreenPresenter.hpp:28:13:virtual EndGameScreenPresenter::~EndGameScreenPresenter()	1
+EndGameScreenPresenter.hpp:28:13:virtual void* EndGameScreenPresenter::_ZThn4_N22EndGameScreenPresenterD1Ev()	1
+EndGameScreenPresenter.cpp:4:1:EndGameScreenPresenter::EndGameScreenPresenter(EndGameScreenView&)	1

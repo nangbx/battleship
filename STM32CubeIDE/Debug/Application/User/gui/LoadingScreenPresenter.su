@@ -1,0 +1,5 @@
+../../TouchGFX/gui/include/gui/loadingscreen_screen/LoadingScreenPresenter.hpp:28:13:LoadingScreenPresenter::~LoadingScreenPresenter()	0	static
+C:/TouchGFXProjects/test/TouchGFX/gui/src/loadingscreen_screen/LoadingScreenPresenter.cpp:10:6:virtual void LoadingScreenPresenter::activate()	0	static
+../../TouchGFX/gui/include/gui/loadingscreen_screen/LoadingScreenPresenter.hpp:28:13:virtual LoadingScreenPresenter::~LoadingScreenPresenter()	8	static
+../../TouchGFX/gui/include/gui/loadingscreen_screen/LoadingScreenPresenter.hpp:28:13:virtual void* LoadingScreenPresenter::_ZThn4_N22LoadingScreenPresenterD1Ev()	0	static
+C:/TouchGFXProjects/test/TouchGFX/gui/src/loadingscreen_screen/LoadingScreenPresenter.cpp:4:1:LoadingScreenPresenter::LoadingScreenPresenter(LoadingScreenView&)	8	static

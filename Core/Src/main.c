@@ -141,7 +141,7 @@ static void MX_UART5_Init(void);
 static void MX_TIM7_Init(void);
 void StartDefaultTask(void *argument);
 extern void TouchGFX_Task(void *argument);
-void TIM6_DAC_IRQHandler(void);
+
 /* USER CODE BEGIN PFP */
 static void BSP_SDRAM_Initialization_Sequence(SDRAM_HandleTypeDef *hsdram, FMC_SDRAM_CommandTypeDef *Command);
 
@@ -1084,10 +1084,7 @@ void LCD_Delay(uint32_t Delay)
 {
 	HAL_Delay(Delay);
 }
-void TIM6_DAC_IRQHandler(void){
-	HAL_TIM_IRQHandler(&htim7);
-	TimerCount++;
-}
+
 
 /* USER CODE END 4 */
 

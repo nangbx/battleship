@@ -1,5 +1,5 @@
 Application/User/TouchGFX/target/generated/TouchGFXGeneratedHAL.o: \
- E:/Dev/battleship/TouchGFX/target/generated/TouchGFXGeneratedHAL.cpp \
+ C:/TouchGFXProjects/test/TouchGFX/target/generated/TouchGFXGeneratedHAL.cpp \
  ../../TouchGFX/target/generated/TouchGFXGeneratedHAL.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/HAL.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/platform/core/MCUInstrumentation.hpp \
@@ -60,12 +60,18 @@ Application/User/TouchGFX/target/generated/TouchGFXGeneratedHAL.o: \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Texts.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Button.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/AbstractButton.hpp \
+ ../../TouchGFX/gui/include/gui/loadingscreen_screen/LoadingScreenView.hpp \
+ ../../TouchGFX/generated/gui_generated/include/gui_generated/loadingscreen_screen/LoadingScreenViewBase.hpp \
+ ../../TouchGFX/gui/include/gui/loadingscreen_screen/LoadingScreenPresenter.hpp \
+ ../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/progress_indicators/BoxProgress.hpp \
+ ../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/progress_indicators/AbstractDirectionProgress.hpp \
+ ../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/progress_indicators/AbstractProgressIndicator.hpp \
+ ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextArea.hpp \
  ../../TouchGFX/gui/include/gui/gamescreen_screen/GameScreenView.hpp \
  ../../TouchGFX/generated/gui_generated/include/gui_generated/gamescreen_screen/GameScreenViewBase.hpp \
  ../../TouchGFX/gui/include/gui/gamescreen_screen/GameScreenPresenter.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/ScalableImage.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp \
- ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextArea.hpp \
  ../../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h \
  ../../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f429xx.h \
  ../../Drivers/CMSIS/Include/core_cm4.h \
@@ -103,11 +109,14 @@ Application/User/TouchGFX/target/generated/TouchGFXGeneratedHAL.o: \
  ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
  ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
  ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
- E:/Dev/battleship/STM32CubeIDE/Application/User/src/Board.hpp \
- E:/Dev/battleship/STM32CubeIDE/Application/User/src/Queue.hpp \
+ C:/TouchGFXProjects/test/STM32CubeIDE/Application/User/src/Board.hpp \
+ C:/TouchGFXProjects/test/STM32CubeIDE/Application/User/src/Queue.hpp \
  ../../TouchGFX/gui/include/gui/opponentscreen_screen/OpponentScreenView.hpp \
  ../../TouchGFX/generated/gui_generated/include/gui_generated/opponentscreen_screen/OpponentScreenViewBase.hpp \
  ../../TouchGFX/gui/include/gui/opponentscreen_screen/OpponentScreenPresenter.hpp \
+ ../../TouchGFX/gui/include/gui/endgamescreen_screen/EndGameScreenView.hpp \
+ ../../TouchGFX/generated/gui_generated/include/gui_generated/endgamescreen_screen/EndGameScreenViewBase.hpp \
+ ../../TouchGFX/gui/include/gui/endgamescreen_screen/EndGameScreenPresenter.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/GPIO.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/CWRVectorRenderer.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/VectorRenderer.hpp \
@@ -193,12 +202,18 @@ Application/User/TouchGFX/target/generated/TouchGFXGeneratedHAL.o: \
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Texts.hpp:
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Button.hpp:
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/AbstractButton.hpp:
+../../TouchGFX/gui/include/gui/loadingscreen_screen/LoadingScreenView.hpp:
+../../TouchGFX/generated/gui_generated/include/gui_generated/loadingscreen_screen/LoadingScreenViewBase.hpp:
+../../TouchGFX/gui/include/gui/loadingscreen_screen/LoadingScreenPresenter.hpp:
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/progress_indicators/BoxProgress.hpp:
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/progress_indicators/AbstractDirectionProgress.hpp:
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/progress_indicators/AbstractProgressIndicator.hpp:
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextArea.hpp:
 ../../TouchGFX/gui/include/gui/gamescreen_screen/GameScreenView.hpp:
 ../../TouchGFX/generated/gui_generated/include/gui_generated/gamescreen_screen/GameScreenViewBase.hpp:
 ../../TouchGFX/gui/include/gui/gamescreen_screen/GameScreenPresenter.hpp:
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/ScalableImage.hpp:
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp:
-../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextArea.hpp:
 ../../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h:
 ../../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f429xx.h:
 ../../Drivers/CMSIS/Include/core_cm4.h:
@@ -236,11 +251,14 @@ Application/User/TouchGFX/target/generated/TouchGFXGeneratedHAL.o: \
 ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h:
 ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h:
 ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:
-E:/Dev/battleship/STM32CubeIDE/Application/User/src/Board.hpp:
-E:/Dev/battleship/STM32CubeIDE/Application/User/src/Queue.hpp:
+C:/TouchGFXProjects/test/STM32CubeIDE/Application/User/src/Board.hpp:
+C:/TouchGFXProjects/test/STM32CubeIDE/Application/User/src/Queue.hpp:
 ../../TouchGFX/gui/include/gui/opponentscreen_screen/OpponentScreenView.hpp:
 ../../TouchGFX/generated/gui_generated/include/gui_generated/opponentscreen_screen/OpponentScreenViewBase.hpp:
 ../../TouchGFX/gui/include/gui/opponentscreen_screen/OpponentScreenPresenter.hpp:
+../../TouchGFX/gui/include/gui/endgamescreen_screen/EndGameScreenView.hpp:
+../../TouchGFX/generated/gui_generated/include/gui_generated/endgamescreen_screen/EndGameScreenViewBase.hpp:
+../../TouchGFX/gui/include/gui/endgamescreen_screen/EndGameScreenPresenter.hpp:
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/GPIO.hpp:
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/CWRVectorRenderer.hpp:
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/VectorRenderer.hpp:

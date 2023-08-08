@@ -1,0 +1,8 @@
+Screen.hpp:104:18:virtual void touchgfx::Screen::afterTransition()	1
+Screen.hpp:144:18:virtual void touchgfx::Screen::handleTickEvent()	1
+Screen.hpp:154:18:virtual void touchgfx::Screen::handleKeyEvent(uint8_t)	1
+EndGameScreenView.cpp:24:6:virtual void EndGameScreenView::tearDownScreen()	1
+EndGameScreenView.hpp:11:13:EndGameScreenView::~EndGameScreenView()	1
+EndGameScreenView.hpp:11:13:virtual EndGameScreenView::~EndGameScreenView()	1
+EndGameScreenView.cpp:4:1:EndGameScreenView::EndGameScreenView()	1
+EndGameScreenView.cpp:9:6:virtual void EndGameScreenView::setupScreen()	4

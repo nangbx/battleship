@@ -56,12 +56,18 @@ public:
 	int32_t getIndexHit(){
 		return model->getIndexHit();
 	}
-    void setFire(int x, int y){
-    	model->setFire(x, y);
-    }
-    std::pair<int, int> getFire(){
-    	return model->getFire();
-    }
+	void setGameMode(int32_t gameMode) {
+		model->setGameMode(gameMode);
+	}
+	int32_t getGameMode() {
+		return model->getGameMode();
+	}
+	bool getIsMultiPlayer() {
+		return model->getIsMultiPlayer();
+	}
+	void setWinner(int32_t winner) {
+		model->setWinner(winner);
+	}
 
 private:
     GameScreenPresenter();

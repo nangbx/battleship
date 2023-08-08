@@ -1,0 +1,5 @@
+../../TouchGFX/gui/include/gui/endgamescreen_screen/EndGameScreenPresenter.hpp:28:13:EndGameScreenPresenter::~EndGameScreenPresenter()	0	static
+C:/TouchGFXProjects/test/TouchGFX/gui/src/endgamescreen_screen/EndGameScreenPresenter.cpp:10:6:virtual void EndGameScreenPresenter::activate()	0	static
+../../TouchGFX/gui/include/gui/endgamescreen_screen/EndGameScreenPresenter.hpp:28:13:virtual EndGameScreenPresenter::~EndGameScreenPresenter()	8	static
+../../TouchGFX/gui/include/gui/endgamescreen_screen/EndGameScreenPresenter.hpp:28:13:virtual void* EndGameScreenPresenter::_ZThn4_N22EndGameScreenPresenterD1Ev()	0	static
+C:/TouchGFXProjects/test/TouchGFX/gui/src/endgamescreen_screen/EndGameScreenPresenter.cpp:4:1:EndGameScreenPresenter::EndGameScreenPresenter(EndGameScreenView&)	8	static

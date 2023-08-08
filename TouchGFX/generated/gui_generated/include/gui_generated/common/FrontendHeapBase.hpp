@@ -16,10 +16,14 @@
 
 #include <gui/homescreen_screen/HomeScreenView.hpp>
 #include <gui/homescreen_screen/HomeScreenPresenter.hpp>
+#include <gui/loadingscreen_screen/LoadingScreenView.hpp>
+#include <gui/loadingscreen_screen/LoadingScreenPresenter.hpp>
 #include <gui/gamescreen_screen/GameScreenView.hpp>
 #include <gui/gamescreen_screen/GameScreenPresenter.hpp>
 #include <gui/opponentscreen_screen/OpponentScreenView.hpp>
 #include <gui/opponentscreen_screen/OpponentScreenPresenter.hpp>
+#include <gui/endgamescreen_screen/EndGameScreenView.hpp>
+#include <gui/endgamescreen_screen/EndGameScreenPresenter.hpp>
 
 
 /**
@@ -43,9 +47,11 @@ public:
      * @note All view types used in the application MUST be added to this list!
      */
     typedef touchgfx::meta::TypeList< HomeScreenView,
+            touchgfx::meta::TypeList< LoadingScreenView,
             touchgfx::meta::TypeList< GameScreenView,
             touchgfx::meta::TypeList< OpponentScreenView,
-            touchgfx::meta::Nil > >
+            touchgfx::meta::TypeList< EndGameScreenView,
+            touchgfx::meta::Nil > > > >
             > GeneratedViewTypes;
 
     /**
@@ -58,9 +64,11 @@ public:
      * @note All presenter types used in the application MUST be added to this list!
      */
     typedef touchgfx::meta::TypeList< HomeScreenPresenter,
+            touchgfx::meta::TypeList< LoadingScreenPresenter,
             touchgfx::meta::TypeList< GameScreenPresenter,
             touchgfx::meta::TypeList< OpponentScreenPresenter,
-            touchgfx::meta::Nil > >
+            touchgfx::meta::TypeList< EndGameScreenPresenter,
+            touchgfx::meta::Nil > > > >
             > GeneratedPresenterTypes;
 
     /**

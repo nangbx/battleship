@@ -19,9 +19,9 @@ extern osMessageQueueId_t Queue6Handle;
 int32_t getXFromIndex(int32_t);
 int32_t getYFromIndex(int32_t);
 void displayNameShip(int16_t);
-bool checkWinner(int32_t [][10]);
 GameScreenView::GameScreenView() {
 	tickCount = 0;
+	currentCount = 0;
 }
 
 void GameScreenView::setupScreen() {
@@ -34,11 +34,12 @@ void GameScreenView::setupScreen() {
 	x = 0;
 	y = 0;
 	presenter->getDesk(desk);
-	std::pair<int, int> fire = presenter->getFire();
-	if(fire.first >= 0 && fire.second >= 0){
-		gameMode = 1;
+	gameMode = presenter->getGameMode();
+	isMultiPlayer = presenter->getIsMultiPlayer();
+	if(gameMode == 1){
 		indexHit = presenter->getIndexHit();
 		presenter->getHits(hits);
+		textShip.setVisible(false);
 		for(int i = 0; i < 10; i++){
 			for(int j = 0; j < 10; j++){
 				if (desk[i][j] == Board::HIT_VALUE)
@@ -113,7 +114,7 @@ void GameScreenView::handleTickEvent() {
 		if (count1 > 0) {
 			osMessageQueueGet(Queue1Handle, &res, NULL, osWaitForever);
 			if (res == 'S') {
-				if (checkAvailable(x, y, selected)) {
+				if (checkAvailable(y, x, selected)) {
 					if (is_vertical) {
 						for (int i = 0; i <= selected - 1; i++) {
 							presenter->setDesk(y + i, x, selected);
@@ -147,6 +148,7 @@ void GameScreenView::handleTickEvent() {
 						gameBoard.setSelected(selected + 1);
 					} else if (selected == 5) {
 						// HAL_Delay(5000);
+						presenter->getDesk(desk);
 						botHit(desk);
 						presenter->setHits(hits);
 						application().gotoOpponentScreenScreenSlideTransitionEast();
@@ -264,18 +266,40 @@ void GameScreenView::handleTickEvent() {
 		}
 	}
 	else if (gameMode == 1) {
-
 		// delay
-		std::pair<int32_t, int32_t> hit = hits[indexHit];
-		if(desk[hit.first][hit.second] > 0){
-			presenter->setDesk(hit.first, hit.second, Board::HIT_VALUE);
+		std::pair<int32_t, int32_t> hit;
+		if(!isMultiPlayer)
+		{
+			hit = hits[indexHit];
+		}
+		int32_t x = hit.first;
+		int32_t y = hit.second;
+		if(desk[x][y] > 0){
+			presenter->setDesk(x, y, Board::HIT_VALUE);
+			presenter->getDesk(desk);
+			if(GameScreenView::checkWinner(desk))
+			{
+				presenter->setWinner(2);
+				application().gotoEndGameScreenScreenSlideTransitionEast();
+			}
+		} else if(desk[x][y] == 0){
+			presenter->setDesk(x, y, Board::MISS_VALUE);
+			presenter->getDesk(desk);
+		} else if(desk[x][y] == Board::HIT_VALUE){
+			boxes[x][y].setBitmap(touchgfx::Bitmap(BITMAP_HIT_ID));
 		} else{
-			presenter->setDesk(hit.first, hit.second, Board::MISS_VALUE);
+			boxes[x][y].setBitmap(touchgfx::Bitmap(BITMAP_MISS_BLUE_ID));
 		}
+		boxes[x][y].setPosition(getXFromIndex(y), getYFromIndex(x), 23, 23);
+		boxes[x][y].setScalingAlgorithm(
+				touchgfx::ScalableImage::NEAREST_NEIGHBOR);
 		presenter->setIndexHit(indexHit + 1);
-		for(int i = 0; i < 3; i++){
-			HAL_Delay(1000);
+		if(currentCount == 0){
+			currentCount = tickCount;
 		}
+	}
+
+	if(currentCount > 0 && tickCount > currentCount + 15){
 		application().gotoOpponentScreenScreenSlideTransitionEast();
 	}
 	invalidate();
@@ -296,7 +320,7 @@ bool GameScreenView::checkOutOfDesk(int32_t x, int32_t y, int16_t countBoat) {
 
 bool GameScreenView::checkAvailable(int32_t x, int32_t y, int16_t countBoat) {
 	presenter->getDesk(desk);
-	if (is_vertical) {
+	if (!is_vertical) {
 		for (int i = 0; i <= countBoat; i++) {
 			if (desk[x][y + i] > 0) {
 				return false;
@@ -357,14 +381,4 @@ void GameScreenView::botHit(int32_t board[][10]) {
 		index++;
 	}
 
-}
-bool checkWinner(int32_t board[][10]) {
-	for (int i = 0; i < 10; i++) {
-		for (int j = 0; j < 10; j++) {
-			if (board[i][j] > 0) {
-				return false;
-			}
-		}
-	}
-	return true;
 }

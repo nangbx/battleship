@@ -4,6 +4,7 @@
 #include <gui_generated/opponentscreen_screen/OpponentScreenViewBase.hpp>
 #include <touchgfx/Color.hpp>
 #include <images/BitmapDatabase.hpp>
+#include <texts/TextKeysAndLanguages.hpp>
 
 OpponentScreenViewBase::OpponentScreenViewBase()
 {
@@ -11,7 +12,7 @@ OpponentScreenViewBase::OpponentScreenViewBase()
     __background.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     add(__background);
 
-    bg.setPosition(0, 0, 240, 320);
+    bg.setPosition(0, -1, 240, 320);
     bg.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     add(bg);
 
@@ -188,6 +189,42 @@ OpponentScreenViewBase::OpponentScreenViewBase()
     title2.setPosition(6, 6, 229, 32);
     title2.setScalingAlgorithm(touchgfx::ScalableImage::NEAREST_NEIGHBOR);
     add(title2);
+
+    txtRemainShip1.setXY(6, 42);
+    txtRemainShip1.setColor(touchgfx::Color::getColorFromRGB(20, 52, 168));
+    txtRemainShip1.setLinespacing(0);
+    Unicode::snprintf(txtRemainShip1Buffer, TXTREMAINSHIP1_SIZE, "%s", touchgfx::TypedText(T_DESTROYER).getText());
+    txtRemainShip1.setWildcard(txtRemainShip1Buffer);
+    txtRemainShip1.resizeToCurrentText();
+    txtRemainShip1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_S9QX));
+    add(txtRemainShip1);
+
+    txtRemainShip3.setXY(130, 42);
+    txtRemainShip3.setColor(touchgfx::Color::getColorFromRGB(20, 52, 168));
+    txtRemainShip3.setLinespacing(0);
+    Unicode::snprintf(txtRemainShip3Buffer, TXTREMAINSHIP3_SIZE, "%s", touchgfx::TypedText(T_BATTLESHIP).getText());
+    txtRemainShip3.setWildcard(txtRemainShip3Buffer);
+    txtRemainShip3.resizeToCurrentText();
+    txtRemainShip3.setTypedText(touchgfx::TypedText(T___SINGLEUSE_4QYS));
+    add(txtRemainShip3);
+
+    txtRemainShip2.setXY(6, 60);
+    txtRemainShip2.setColor(touchgfx::Color::getColorFromRGB(20, 52, 168));
+    txtRemainShip2.setLinespacing(0);
+    Unicode::snprintf(txtRemainShip2Buffer, TXTREMAINSHIP2_SIZE, "%s", touchgfx::TypedText(T_CRUISER).getText());
+    txtRemainShip2.setWildcard(txtRemainShip2Buffer);
+    txtRemainShip2.resizeToCurrentText();
+    txtRemainShip2.setTypedText(touchgfx::TypedText(T___SINGLEUSE_AMBJ));
+    add(txtRemainShip2);
+
+    txtRemainShip4.setXY(130, 60);
+    txtRemainShip4.setColor(touchgfx::Color::getColorFromRGB(20, 52, 168));
+    txtRemainShip4.setLinespacing(0);
+    Unicode::snprintf(txtRemainShip4Buffer, TXTREMAINSHIP4_SIZE, "%s", touchgfx::TypedText(T_AIRCRAFT_CARRIER).getText());
+    txtRemainShip4.setWildcard(txtRemainShip4Buffer);
+    txtRemainShip4.resizeToCurrentText();
+    txtRemainShip4.setTypedText(touchgfx::TypedText(T___SINGLEUSE_546Q));
+    add(txtRemainShip4);
 
     select.setBitmap(touchgfx::Bitmap(BITMAP_SELECT_ID));
     select.setPosition(5, 84, 23, 23);

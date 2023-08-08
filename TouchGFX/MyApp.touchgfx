@@ -40,8 +40,8 @@
           {
             "Type": "Image",
             "Name": "image4",
-            "X": 9,
-            "Y": 137,
+            "X": 5,
+            "Y": 208,
             "Width": 24,
             "Height": 96,
             "RelativeFilename": "ship4.png"
@@ -50,12 +50,34 @@
             "Type": "ButtonWithLabel",
             "Name": "buttonWithLabel1",
             "X": 33,
-            "Y": 208,
+            "Y": 160,
             "Width": 175,
             "Height": 50,
             "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_small_round_active.png",
             "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_small_round_active.png",
             "TextId": "__SingleUse_71D7",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0"
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "buttonWithLabel1_1",
+            "X": 33,
+            "Y": 231,
+            "Width": 175,
+            "Height": 50,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_small_round_active.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_small_round_active.png",
+            "TextId": "__SingleUse_RP4G",
             "ReleasedColor": {
               "Red": 255,
               "Green": 255,
@@ -82,8 +104,83 @@
               "ScreenTransitionDirection": "East",
               "ActionComponent": "GameScreen"
             }
+          },
+          {
+            "InteractionName": "Interaction4",
+            "Trigger": {
+              "Type": "TriggerNone"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "East",
+              "ActionComponent": "LoadingScreen"
+            }
           }
         ]
+      },
+      {
+        "Name": "LoadingScreen",
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "bg",
+            "Width": 240,
+            "Height": 320
+          },
+          {
+            "Type": "BoxProgress",
+            "Name": "boxProgress1",
+            "X": 20,
+            "Y": 192,
+            "Width": 200,
+            "Height": 10,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Direction": "Right",
+            "FileNameBackground": "__generated\\alternate_theme_images_widgets_boxprogress_normal_small.png",
+            "IndicatorPositionWidth": 200,
+            "IndicatorPositionHeight": 10,
+            "ProgressRangeMax": 100,
+            "ProgressInitialValue": 60
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1",
+            "X": 25,
+            "Y": 47,
+            "Width": 251,
+            "Height": 50,
+            "TextId": "__SingleUse_FBN5",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea2",
+            "X": 87,
+            "Y": 160,
+            "Width": 66,
+            "Height": 15,
+            "TextId": "__SingleUse_J6N9",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          }
+        ],
+        "Interactions": []
       },
       {
         "Name": "GameScreen",
@@ -438,8 +535,8 @@
             "Name": "textShip",
             "X": 6,
             "Y": 54,
-            "Width": 160,
-            "Height": 15,
+            "Width": 132,
+            "Height": 13,
             "TextId": "__SingleUse_4OIJ",
             "TextRotation": "0",
             "Color": {
@@ -477,6 +574,18 @@
               "ScreenTransitionDirection": "East",
               "ActionComponent": "OpponentScreen"
             }
+          },
+          {
+            "InteractionName": "Interaction2",
+            "Trigger": {
+              "Type": "TriggerNone"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "East",
+              "ActionComponent": "EndGameScreen"
+            }
           }
         ]
       },
@@ -486,6 +595,7 @@
           {
             "Type": "Box",
             "Name": "bg",
+            "Y": -1,
             "Width": 240,
             "Height": 320,
             "Color": {
@@ -839,6 +949,90 @@
             "ScalingAlgorithm": "Nearest-neighbor"
           },
           {
+            "Type": "TextArea",
+            "Name": "txtRemainShip1",
+            "X": 6,
+            "Y": 42,
+            "Width": 104,
+            "Height": 15,
+            "TextId": "__SingleUse_S9QX",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 20,
+              "Green": 52,
+              "Blue": 168
+            },
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "DESTROYER",
+              "UseBuffer": true,
+              "BufferSize": 50
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "txtRemainShip3",
+            "X": 130,
+            "Y": 42,
+            "Width": 99,
+            "Height": 15,
+            "TextId": "__SingleUse_4QYS",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 20,
+              "Green": 52,
+              "Blue": 168
+            },
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "BATTLESHIP",
+              "UseBuffer": true,
+              "BufferSize": 50
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "txtRemainShip2",
+            "X": 6,
+            "Y": 60,
+            "Width": 83,
+            "Height": 15,
+            "TextId": "__SingleUse_AMBJ",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 20,
+              "Green": 52,
+              "Blue": 168
+            },
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "CRUISER",
+              "UseBuffer": true,
+              "BufferSize": 50
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "txtRemainShip4",
+            "X": 130,
+            "Y": 60,
+            "Width": 87,
+            "Height": 15,
+            "TextId": "__SingleUse_546Q",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 20,
+              "Green": 52,
+              "Blue": 168
+            },
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "AIRCRAFT_CARRIER",
+              "UseBuffer": true,
+              "BufferSize": 50
+            }
+          },
+          {
             "Type": "ScalableImage",
             "Name": "select",
             "X": 5,
@@ -860,6 +1054,102 @@
               "ScreenTransitionType": "ScreenTransitionSlide",
               "ScreenTransitionDirection": "East",
               "ActionComponent": "GameScreen"
+            }
+          },
+          {
+            "InteractionName": "Interaction2",
+            "Trigger": {
+              "Type": "TriggerNone"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "East",
+              "ActionComponent": "EndGameScreen"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "EndGameScreen",
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "bg",
+            "Width": 240,
+            "Height": 320
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "buttonWithLabel1",
+            "X": 33,
+            "Y": 191,
+            "Width": 175,
+            "Height": 50,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_small_round_active.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_small_round_active.png",
+            "TextId": "__SingleUse_3B36",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1",
+            "X": 53,
+            "Y": 38,
+            "Width": 134,
+            "Height": 30,
+            "TextId": "__SingleUse_FLUU",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea2",
+            "X": 33,
+            "Y": 109,
+            "Width": 185,
+            "Height": 37,
+            "TextId": "__SingleUse_4PHE",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Wildcard1": {
+              "TextId": "PLAYER1",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "Interaction1",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonWithLabel1"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "East",
+              "ActionComponent": "HomeScreen"
             }
           }
         ]

@@ -23,11 +23,19 @@ public:
     // HomeScreen
     void gotoHomeScreenScreenNoTransition();
 
+    void gotoHomeScreenScreenSlideTransitionEast();
+
+    // LoadingScreen
+    void gotoLoadingScreenScreenSlideTransitionEast();
+
     // GameScreen
     void gotoGameScreenScreenSlideTransitionEast();
 
     // OpponentScreen
     void gotoOpponentScreenScreenSlideTransitionEast();
+
+    // EndGameScreen
+    void gotoEndGameScreenScreenSlideTransitionEast();
 
 protected:
     touchgfx::Callback<FrontendApplicationBase> transitionCallback;
@@ -37,11 +45,19 @@ protected:
     // HomeScreen
     void gotoHomeScreenScreenNoTransitionImpl();
 
+    void gotoHomeScreenScreenSlideTransitionEastImpl();
+
+    // LoadingScreen
+    void gotoLoadingScreenScreenSlideTransitionEastImpl();
+
     // GameScreen
     void gotoGameScreenScreenSlideTransitionEastImpl();
 
     // OpponentScreen
     void gotoOpponentScreenScreenSlideTransitionEastImpl();
+
+    // EndGameScreen
+    void gotoEndGameScreenScreenSlideTransitionEastImpl();
 };
 
 #endif // FRONTENDAPPLICATIONBASE_HPP

@@ -1,5 +1,5 @@
 Application/User/gui/HomeScreenView.o: \
- E:/Dev/battleship/TouchGFX/gui/src/homescreen_screen/HomeScreenView.cpp \
+ C:/TouchGFXProjects/test/TouchGFX/gui/src/homescreen_screen/HomeScreenView.cpp \
  ../../TouchGFX/gui/include/gui/homescreen_screen/HomeScreenView.hpp \
  ../../TouchGFX/generated/gui_generated/include/gui_generated/homescreen_screen/HomeScreenViewBase.hpp \
  ../../TouchGFX/gui/include/gui/common/FrontendApplication.hpp \

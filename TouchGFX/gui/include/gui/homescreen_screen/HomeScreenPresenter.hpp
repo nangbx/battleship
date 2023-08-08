@@ -27,6 +27,10 @@ public:
 
     virtual ~HomeScreenPresenter() {}
 
+    void setIsMultiPlayer(bool b) {
+		model->setIsMultiPlayer(b);
+	}
+
 private:
     HomeScreenPresenter();
 

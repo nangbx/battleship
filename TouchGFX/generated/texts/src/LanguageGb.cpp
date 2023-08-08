@@ -10,10 +10,22 @@ KEEP extern const uint32_t indicesGb[] TEXT_LOCATION_FLASH_ATTRIBUTE;
 // Remap all strings
 TEXT_LOCATION_FLASH_PRAGMA
 KEEP extern const uint32_t indicesGb[] TEXT_LOCATION_FLASH_ATTRIBUTE = {
-    0,  // T_AIRCRAFT_CARRIER: "Aircraft Carrier (5)"
-    31, // T_BATTLESHIP: "Battleship (4)"
-    60, // T_CRUISER: "Cruiser (3)"
-    46, // T_DESTROYER: "Destroyer (2)"
-    21, // T___SINGLEUSE_4OIJ: "Select: <>"
-    72  // T___SINGLEUSE_71D7: "Play"
+    104, // T___SINGLEUSE_J6N9: "Loading..."
+    0,   // T___SINGLEUSE_FBN5: "WAITING FOR \nOTHERS PLAYERS"
+    92,  // T___SINGLEUSE_RP4G: "Multiplayer"
+    145, // T___SINGLEUSE_3B36: "Home"
+    36,  // T___SINGLEUSE_4PHE: "<>"
+    123, // T_PLAYER2: "PLAYER2"
+    115, // T_PLAYER1: "PLAYER1"
+    138, // T___SINGLEUSE_FLUU: "Winner"
+    36,  // T___SINGLEUSE_546Q: "<>"
+    36,  // T___SINGLEUSE_4QYS: "<>"
+    36,  // T___SINGLEUSE_AMBJ: "<>"
+    36,  // T___SINGLEUSE_S9QX: "<>"
+    67,  // T_AIRCRAFT_CARRIER: "Aircraft (5)"
+    38,  // T_BATTLESHIP: "Battleship (4)"
+    80,  // T_CRUISER: "Cruiser (3)"
+    53,  // T_DESTROYER: "Destroyer (2)"
+    28,  // T___SINGLEUSE_4OIJ: "Select: <>"
+    131  // T___SINGLEUSE_71D7: "Single"
 };

@@ -29,6 +29,8 @@ protected:
 	};
 	int8_t x;
 	int8_t y;
+	touchgfx::ScalableImage boxes[10][10];
+	int32_t desk[10][10];
 };
 
 #endif // OPPONENTSCREENVIEW_HPP

@@ -1,13 +1,21 @@
 Screen.hpp:104:18:virtual void touchgfx::Screen::afterTransition()	1
 Screen.hpp:154:18:virtual void touchgfx::Screen::handleKeyEvent(uint8_t)	1
-GameScreenView.cpp:37:6:virtual void GameScreenView::tearDownScreen()	1
-GameScreenView.hpp:11:13:GameScreenView::~GameScreenView()	1
-GameScreenView.hpp:11:13:virtual GameScreenView::~GameScreenView()	1
+GameScreenView.cpp:70:6:virtual void GameScreenView::tearDownScreen()	1
+GameScreenView.hpp:14:13:GameScreenView::~GameScreenView()	2
+GameScreenView.hpp:14:13:virtual GameScreenView::~GameScreenView()	1
 Drawable.hpp:343:10:void touchgfx::Drawable::setXY(int16_t, int16_t)	1
-GameScreenView.cpp:22:1:GameScreenView::GameScreenView()	1
-GameScreenView.cpp:40:9:int32_t getXFromIndex(int32_t)	1
-GameScreenView.cpp:43:9:int32_t getYFromIndex(int32_t)	1
-GameScreenView.cpp:239:6:bool GameScreenView::checkOutOfDesk(int32_t, int32_t, int16_t)	2
-GameScreenView.cpp:252:6:bool GameScreenView::checkAvailable(int32_t, int32_t, int16_t)	6
-GameScreenView.cpp:26:6:virtual void GameScreenView::setupScreen()	1
-GameScreenView.cpp:46:6:virtual void GameScreenView::handleTickEvent()	51
+GameScreenPresenter.hpp:30:7:void GameScreenPresenter::getDesk(int32_t (*)[10])	1
+GameScreenPresenter.hpp:46:7:void GameScreenPresenter::getHits(std::pair<long int, long int>*)	3
+Queue.hpp:36:10:void Queue::enQueue(std::pair<long int, long int>)	4
+GameScreenView.cpp:23:1:GameScreenView::GameScreenView()	3
+GameScreenView.cpp:73:9:int32_t getXFromIndex(int32_t)	1
+GameScreenView.cpp:76:9:int32_t getYFromIndex(int32_t)	1
+GameScreenView.cpp:283:6:bool GameScreenView::checkOutOfDesk(int32_t, int32_t, int16_t)	2
+GameScreenView.cpp:297:6:bool GameScreenView::checkAvailable(int32_t, int32_t, int16_t)	6
+GameScreenView.cpp:361:6:bool checkWinner(int32_t (*)[10])	4
+random.tcc:394:5:void std::mersenne_twister_engine<_UIntType, __w, __n, __m, __r, __a, __u, __d, __s, __b, __t, __c, __l, __f>::_M_gen_rand() [with _UIntType = unsigned int; unsigned int __w = 32; unsigned int __n = 624; unsigned int __m = 397; unsigned int __r = 31; _UIntType __a = 2567483615; unsigned int __u = 11; _UIntType __d = 4294967295; unsigned int __s = 7; _UIntType __b = 2636928640; unsigned int __t = 15; _UIntType __c = 4022730752; unsigned int __l = 18; _UIntType __f = 1812433253]	3
+random.tcc:450:5:std::mersenne_twister_engine<_UIntType, __w, __n, __m, __r, __a, __u, __d, __s, __b, __t, __c, __l, __f>::result_type std::mersenne_twister_engine<_UIntType, __w, __n, __m, __r, __a, __u, __d, __s, __b, __t, __c, __l, __f>::operator()() [with _UIntType = unsigned int; unsigned int __w = 32; unsigned int __n = 624; unsigned int __m = 397; unsigned int __r = 31; _UIntType __a = 2567483615; unsigned int __u = 11; _UIntType __d = 4294967295; unsigned int __s = 7; _UIntType __b = 2636928640; unsigned int __t = 15; _UIntType __c = 4022730752; unsigned int __l = 18; _UIntType __f = 1812433253]	2
+uniform_int_dist.h:241:7:std::uniform_int_distribution<_IntType>::result_type std::uniform_int_distribution<_IntType>::operator()(_UniformRandomNumberGenerator&, const std::uniform_int_distribution<_IntType>::param_type&) [with _UniformRandomNumberGenerator = std::mersenne_twister_engine<unsigned int, 32, 624, 397, 31, 2567483615, 11, 4294967295, 7, 2636928640, 15, 4022730752, 18, 1812433253>; _IntType = int]	3
+GameScreenView.cpp:315:6:void GameScreenView::botHit(int32_t (*)[10])	15
+GameScreenView.cpp:79:6:virtual void GameScreenView::handleTickEvent()	52
+GameScreenView.cpp:27:6:virtual void GameScreenView::setupScreen()	12

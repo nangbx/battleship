@@ -2,6 +2,7 @@
 #include <random>
 #include <tuple>
 #include <cmsis_os.h>
+#include <images/BitmapDatabase.hpp>
 
 #define WIDTH_SQUARE 23
 #define MIN_BOARD 0
@@ -35,84 +36,114 @@ void OpponentScreenView::setupScreen()
     OpponentScreenViewBase::setupScreen();
 	x = 0;
 	y = 0;
-	for (int i = 2; i <= 5; i++) {
-		int x, y, direction;
-		std::tie(x, y, direction) = randomIndexShip(board, i);
-		if (i == 2) {
-			switch (direction) {
-			case DIRECTION::HORIZONTAL: {
-				for (int j = 0; j < i; j++) {
-					board[x + j][y] = i;
+	std::pair<int, int> fire = presenter->getFire();
+	if (fire.first < 0 && fire.second < 0) {
+		for (int i = 2; i <= 5; i++) {
+			int x, y, direction;
+			std::tie(x, y, direction) = randomIndexShip(board, i);
+			if (i == 2) {
+				switch (direction) {
+				case DIRECTION::HORIZONTAL: {
+					for (int j = 0; j < i; j++) {
+						presenter->setDesk(x + j, y, i);
+						// board[x + j][y] = i;
+					}
+					// boat2_r.setXY(getXFromIndex(y), getYFromIndex(x));
+					break;
 				}
-				boat2_r.setXY(getXFromIndex(y), getYFromIndex(x));
-				break;
-			}
-			case DIRECTION::VERTICAL: {
-				for (int j = 0; j < i; j++) {
-					board[x][y + j] = i;
+				case DIRECTION::VERTICAL: {
+					for (int j = 0; j < i; j++) {
+						presenter->setDesk(x, y + j, i);
+						// board[x][y + j] = i;
+					}
+					// boat2.setXY(getXFromIndex(y), getYFromIndex(x));
+					break;
 				}
-				boat2.setXY(getXFromIndex(y), getYFromIndex(x));
-				break;
-			}
-			default: break;
+				default:
+					break;
+				}
+			} else if (i == 3) {
+				switch (direction) {
+				case DIRECTION::HORIZONTAL: {
+					for (int j = 0; j < i; j++) {
+						presenter->setDesk(x + j, y, i);
+						// board[x + j][y] = i;
+					}
+					// boat3_r.setXY(getXFromIndex(y), getYFromIndex(x));
+					break;
+				}
+				case DIRECTION::VERTICAL: {
+					for (int j = 0; j < i; j++) {
+						presenter->setDesk(x, y + j, i);
+						// board[x][y + j] = i;
+					}
+					// boat3.setXY(getXFromIndex(y), getYFromIndex(x));
+					break;
+				}
+				default:
+					break;
+				}
+			} else if (i == 4) {
+				switch (direction) {
+				case DIRECTION::HORIZONTAL: {
+					for (int j = 0; j < i; j++) {
+						presenter->setDesk(x + j, y, i);
+						// board[x + j][y] = i;
+					}
+					boat4_r.setXY(getXFromIndex(y), getYFromIndex(x));
+					break;
+				}
+				case DIRECTION::VERTICAL: {
+					for (int j = 0; j < i; j++) {
+						presenter->setDesk(x, y + j, i);
+						// board[x][y + j] = i;
+					}
+					// boat4.setXY(getXFromIndex(y), getYFromIndex(x));
+					break;
+				}
+				default:
+					break;
+				}
+			} else if (i == 5) {
+				switch (direction) {
+				case DIRECTION::HORIZONTAL: {
+					for (int j = 0; j < i; j++) {
+						presenter->setDesk(x + j, y, i);
+						// board[x + j][y] = i;
+					}
+					// boat5_r.setXY(getXFromIndex(y), getYFromIndex(x));
+					break;
+				}
+				case DIRECTION::VERTICAL: {
+					for (int j = 0; j < i; j++) {
+						presenter->setDesk(x, y + j, i);
+						// board[x][y + j] = i;
+					}
+					// boat5.setXY(getXFromIndex(y), getYFromIndex(x));
+					break;
+				}
+				default:
+					break;
+				}
 			}
 		}
-		else if (i == 3) {
-			switch (direction) {
-			case DIRECTION::HORIZONTAL: {
-				for (int j = 0; j < i; j++) {
-					board[x + j][y] = i;
-				}
-				boat3_r.setXY(getXFromIndex(y), getYFromIndex(x));
-				break;
+		presenter->setFire(0, 0);
+	}
+	presenter->getDesk(desk);
+	for (int i = 0; i < 10; i++) {
+		for (int j = 0; j < 10; j++) {
+			if (desk[i][j] == -2)
+			//if(board[i][j] == 0)
+					{
+				boxes[i][j].setBitmap(touchgfx::Bitmap(BITMAP_MISS_GRAY_ID));
+			} else if(desk[i][j] == -1) {
+				boxes[i][j].setBitmap(touchgfx::Bitmap(BITMAP_HIT_ID));
 			}
-			case DIRECTION::VERTICAL: {
-				for (int j = 0; j < i; j++) {
-					board[x][y + j] = i;
-				}
-				boat3.setXY(getXFromIndex(y), getYFromIndex(x));
-				break;
-			}
-			default: break;
-			}
-		}
-		else if (i == 4) {
-			switch (direction) {
-			case DIRECTION::HORIZONTAL: {
-				for (int j = 0; j < i; j++) {
-					board[x + j][y] = i;
-				}
-				boat4_r.setXY(getXFromIndex(y), getYFromIndex(x));
-				break;
-			}
-			case DIRECTION::VERTICAL: {
-				for (int j = 0; j < i; j++) {
-					board[x][y + j] = i;
-				}
-				boat4.setXY(getXFromIndex(y), getYFromIndex(x));
-				break;
-			}
-			default: break;
-			}
-		}
-		else if (i == 5) {
-			switch (direction) {
-			case DIRECTION::HORIZONTAL: {
-				for (int j = 0; j < i; j++) {
-					board[x + j][y] = i;
-				}
-				boat5_r.setXY(getXFromIndex(y), getYFromIndex(x));
-				break;
-			}
-			case DIRECTION::VERTICAL: {
-				for (int j = 0; j < i; j++) {
-					board[x][y + j] = i;
-				}
-				boat5.setXY(getXFromIndex(y), getYFromIndex(x));
-				break;
-			}
-			default: break;
-			}
+			boxes[i][j].setPosition(getXFromIndex(j), getYFromIndex(i), 23, 23);
+			boxes[i][j].setScalingAlgorithm(
+					touchgfx::ScalableImage::NEAREST_NEIGHBOR);
+			// boxes[i][j].setVisible(false);
+			add (boxes[i][j]);
 		}
 	}
 }
@@ -139,6 +170,17 @@ void OpponentScreenView::handleTickEvent() {
 				x = MAX_BOARD;
 			}
 			select.setX(getXFromIndex(x));
+		}
+		if (res == 'S' && desk[y][x] >= 0) {
+			boxes[y][x].setVisible(true);
+			if(desk[y][x] > 0){
+				presenter->setDesk(y, x, -1);
+			} else{
+				presenter->setDesk(y, x, -2);
+			}
+			//select.setVisible(false);
+
+			application().gotoGameScreenScreenSlideTransitionEast();
 		}
 	}
 	if(count2 > 0){

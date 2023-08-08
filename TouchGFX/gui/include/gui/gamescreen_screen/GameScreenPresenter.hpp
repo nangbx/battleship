@@ -27,6 +27,42 @@ public:
 
     virtual ~GameScreenPresenter() {}
 
+	void getDesk(int32_t (*arr)[10]) {
+		int32_t data[10][10];
+		model->getPlayer1Desk(data);
+		for (int i = 0; i < 10; i++) {
+			for (int j = 0; j < 10; j++) {
+				arr[i][j] = data[i][j];
+			}
+		}
+	}
+    void setDesk(int32_t i, int32_t j, int32_t status)
+    {
+        model->setPlayer1Desk(i, j, status);
+    }
+	void setHits(std::pair<int32_t, int32_t> bot[100]) {
+		model->setHits(bot);
+	}
+	void getHits(std::pair<int32_t, int32_t>* bot) {
+		std::pair<int32_t, int32_t> t[100];
+		model->getHits(t);
+		for (int32_t i = 0; i < 100; i++) {
+			bot[i] = t[i];
+		}
+	}
+	void setIndexHit(int32_t index){
+		model->setIndexHit(index);
+	}
+	int32_t getIndexHit(){
+		return model->getIndexHit();
+	}
+    void setFire(int x, int y){
+    	model->setFire(x, y);
+    }
+    std::pair<int, int> getFire(){
+    	return model->getFire();
+    }
+
 private:
     GameScreenPresenter();
 

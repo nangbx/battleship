@@ -34,13 +34,13 @@ CPP_DEPS :=
 # Every subdirectory with source files must be described here
 SUBDIRS := \
 Application/Startup \
-Application/User/Helper \
 Application/User/TouchGFX/App \
 Application/User/TouchGFX/target \
 Application/User/TouchGFX/target/generated \
 Application/User \
 Application/User/generated \
 Application/User/gui \
+Application/User/src \
 Drivers/BSP/Components \
 Drivers/CMSIS \
 Drivers/STM32F4xx_HAL_Driver \

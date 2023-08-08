@@ -4,6 +4,7 @@
 #include <gui/model/ModelListener.hpp>
 #include <mvp/Presenter.hpp>
 
+
 using namespace touchgfx;
 
 class OpponentScreenView;
@@ -26,6 +27,25 @@ public:
     virtual void deactivate();
 
     virtual ~OpponentScreenPresenter() {}
+
+	void getDesk(int32_t (*arr)[10]) {
+		int32_t data[10][10];
+		model->getPlayer2Desk(data);
+		for (int i = 0; i < 10; i++) {
+			for (int j = 0; j < 10; j++) {
+				arr[i][j] = data[i][j];
+			}
+		}
+	}
+	void setDesk(int32_t i, int32_t j, int32_t status) {
+		model->setPlayer2Desk(i, j, status);
+	}
+	void setFire(int x, int y) {
+		model->setFire(x, y);
+	}
+	std::pair<int, int> getFire() {
+		return model->getFire();
+	}
 
 private:
     OpponentScreenPresenter();

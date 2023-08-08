@@ -238,6 +238,18 @@
     <Filter Include="Source Files\generated\gui_generated\loadingscreen_screen">
       <UniqueIdentifier>F63C6CF9-C35A-8FB4-3132-251585CF492B</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\gui\chooseturnscreen_screen">
+      <UniqueIdentifier>4F203765-422D-08DC-88B9-A9A19A8942DB</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\chooseturnscreen_screen">
+      <UniqueIdentifier>531905C0-6623-46C1-9EF1-0A4293AD93D1</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\chooseturnscreen_screen">
+      <UniqueIdentifier>6701671A-E669-D1F4-F5D2-B4FC649985C3</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\chooseturnscreen_screen">
+      <UniqueIdentifier>DA1CC9CE-E2A9-DCF4-2349-B03B27218309</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(TouchGFXReleasePath)\framework\source\platform\driver\touch\SDL2TouchController.cpp">
@@ -317,6 +329,15 @@
     </ClCompile>
     <ClCompile Include="..\..\generated\gui_generated\src\loadingscreen_screen\LoadingScreenViewBase.cpp">
       <Filter>Source Files\generated\gui_generated\loadingscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\chooseturnscreen_screen\ChooseTurnScreenPresenter.cpp">
+      <Filter>Source Files\gui\chooseturnscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\chooseturnscreen_screen\ChooseTurnScreenView.cpp">
+      <Filter>Source Files\gui\chooseturnscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\chooseturnscreen_screen\ChooseTurnScreenViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\chooseturnscreen_screen</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -807,6 +828,15 @@
     </ClInclude>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\loadingscreen_screen\LoadingScreenViewBase.hpp">
       <Filter>Header Files\generated\gui_generated\loadingscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\chooseturnscreen_screen\ChooseTurnScreenPresenter.hpp">
+      <Filter>Header Files\gui\chooseturnscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\chooseturnscreen_screen\ChooseTurnScreenView.hpp">
+      <Filter>Header Files\gui\chooseturnscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\chooseturnscreen_screen\ChooseTurnScreenViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\chooseturnscreen_screen</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

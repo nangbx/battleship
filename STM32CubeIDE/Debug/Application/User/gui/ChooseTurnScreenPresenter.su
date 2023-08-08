@@ -1,0 +1,5 @@
+../../TouchGFX/gui/include/gui/chooseturnscreen_screen/ChooseTurnScreenPresenter.hpp:28:13:ChooseTurnScreenPresenter::~ChooseTurnScreenPresenter()	0	static
+C:/TouchGFXProjects/test/TouchGFX/gui/src/chooseturnscreen_screen/ChooseTurnScreenPresenter.cpp:10:6:virtual void ChooseTurnScreenPresenter::activate()	0	static
+../../TouchGFX/gui/include/gui/chooseturnscreen_screen/ChooseTurnScreenPresenter.hpp:28:13:virtual ChooseTurnScreenPresenter::~ChooseTurnScreenPresenter()	8	static
+../../TouchGFX/gui/include/gui/chooseturnscreen_screen/ChooseTurnScreenPresenter.hpp:28:13:virtual void* ChooseTurnScreenPresenter::_ZThn4_N25ChooseTurnScreenPresenterD1Ev()	0	static
+C:/TouchGFXProjects/test/TouchGFX/gui/src/chooseturnscreen_screen/ChooseTurnScreenPresenter.cpp:4:1:ChooseTurnScreenPresenter::ChooseTurnScreenPresenter(ChooseTurnScreenView&)	8	static

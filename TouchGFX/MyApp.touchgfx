@@ -116,6 +116,17 @@
               "ScreenTransitionDirection": "East",
               "ActionComponent": "LoadingScreen"
             }
+          },
+          {
+            "InteractionName": "Interaction5",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonWithLabel1_1"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "MultiMode"
+            }
           }
         ]
       },
@@ -180,7 +191,117 @@
             "AutoSize": true
           }
         ],
-        "Interactions": []
+        "Interactions": [
+          {
+            "InteractionName": "Interaction1",
+            "Trigger": {
+              "Type": "TriggerNone"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "East",
+              "ActionComponent": "ChooseTurnScreen"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "ChooseTurnScreen",
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "bg",
+            "Width": 240,
+            "Height": 320
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1",
+            "X": 68,
+            "Y": 50,
+            "Width": 105,
+            "Height": 25,
+            "TextId": "__SingleUse_53H3",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "buttonWithLabel1",
+            "X": 13,
+            "Y": 142,
+            "Width": 100,
+            "Height": 100,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_icon_round_small_fill_pressed.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_icon_round_small_fill_active.png",
+            "TextId": "__SingleUse_ASRA",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0",
+            "Preset": "alternate_theme\\presets\\button\\icon\\round\\small_fill_active.json"
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "buttonWithLabel1_1",
+            "X": 132,
+            "Y": 142,
+            "Width": 100,
+            "Height": 100,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_icon_round_small_fill_pressed.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_icon_round_small_fill_active.png",
+            "TextId": "__SingleUse_VPBY",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0",
+            "Preset": "alternate_theme\\presets\\button\\icon\\round\\small_fill_active.json"
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "Interaction1",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonWithLabel1"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "btnFirstClicked"
+            }
+          },
+          {
+            "InteractionName": "Interaction2",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonWithLabel1_1"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "btnSecondClicked"
+            }
+          }
+        ]
       },
       {
         "Name": "GameScreen",

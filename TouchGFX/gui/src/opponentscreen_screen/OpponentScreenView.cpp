@@ -142,6 +142,8 @@ void OpponentScreenView::setupScreen()
 		}
 		presenter->setGameMode(1);
 	}
+
+	// gameMode == 1:
 	presenter->getDesk(desk);
 	for (int i = 0; i < 10; i++) {
 		for (int j = 0; j < 10; j++) {
@@ -220,6 +222,7 @@ void OpponentScreenView::handleTickEvent() {
 			select.setX(getXFromIndex(x));
 		}
 		if (res == 'S' && desk[y][x] >= 0) {
+
 			boxes[y][x].setVisible(true);
 			if(desk[y][x] > 0){
 				if(desk[y][x] == 2)

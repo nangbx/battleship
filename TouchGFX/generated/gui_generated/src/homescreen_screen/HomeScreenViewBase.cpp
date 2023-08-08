@@ -46,6 +46,7 @@ HomeScreenViewBase::HomeScreenViewBase() :
     buttonWithLabel1_1.setLabelText(touchgfx::TypedText(T___SINGLEUSE_RP4G));
     buttonWithLabel1_1.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     buttonWithLabel1_1.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    buttonWithLabel1_1.setAction(buttonCallback);
     add(buttonWithLabel1_1);
 }
 
@@ -67,5 +68,12 @@ void HomeScreenViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& s
         //When buttonWithLabel1 clicked change screen to GameScreen
         //Go to GameScreen with screen transition towards East
         application().gotoGameScreenScreenSlideTransitionEast();
+    }
+    if (&src == &buttonWithLabel1_1)
+    {
+        //Interaction5
+        //When buttonWithLabel1_1 clicked call virtual function
+        //Call MultiMode
+        MultiMode();
     }
 }

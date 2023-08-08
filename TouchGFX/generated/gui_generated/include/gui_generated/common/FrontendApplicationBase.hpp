@@ -28,6 +28,9 @@ public:
     // LoadingScreen
     void gotoLoadingScreenScreenSlideTransitionEast();
 
+    // ChooseTurnScreen
+    void gotoChooseTurnScreenScreenSlideTransitionEast();
+
     // GameScreen
     void gotoGameScreenScreenSlideTransitionEast();
 
@@ -49,6 +52,9 @@ protected:
 
     // LoadingScreen
     void gotoLoadingScreenScreenSlideTransitionEastImpl();
+
+    // ChooseTurnScreen
+    void gotoChooseTurnScreenScreenSlideTransitionEastImpl();
 
     // GameScreen
     void gotoGameScreenScreenSlideTransitionEastImpl();

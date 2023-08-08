@@ -5,6 +5,15 @@
   </Languages>
   <Texts>
     <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_VPBY" Alignment="Center" TypographyId="BtnText">
+        <Translation Language="GB">Second</Translation>
+      </Text>
+      <Text Id="__SingleUse_ASRA" Alignment="Center" TypographyId="BtnText">
+        <Translation Language="GB">First</Translation>
+      </Text>
+      <Text Id="__SingleUse_53H3" Alignment="Center" TypographyId="BtnText">
+        <Translation Language="GB">YOU GO</Translation>
+      </Text>
       <Text Id="__SingleUse_J6N9" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">Loading...</Translation>
       </Text>

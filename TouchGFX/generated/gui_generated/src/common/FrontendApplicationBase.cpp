@@ -13,6 +13,8 @@
 #include <gui/homescreen_screen/HomeScreenPresenter.hpp>
 #include <gui/loadingscreen_screen/LoadingScreenView.hpp>
 #include <gui/loadingscreen_screen/LoadingScreenPresenter.hpp>
+#include <gui/chooseturnscreen_screen/ChooseTurnScreenView.hpp>
+#include <gui/chooseturnscreen_screen/ChooseTurnScreenPresenter.hpp>
 #include <gui/gamescreen_screen/GameScreenView.hpp>
 #include <gui/gamescreen_screen/GameScreenPresenter.hpp>
 #include <gui/opponentscreen_screen/OpponentScreenView.hpp>
@@ -73,6 +75,19 @@ void FrontendApplicationBase::gotoLoadingScreenScreenSlideTransitionEast()
 void FrontendApplicationBase::gotoLoadingScreenScreenSlideTransitionEastImpl()
 {
     touchgfx::makeTransition<LoadingScreenView, LoadingScreenPresenter, touchgfx::SlideTransition<EAST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+}
+
+// ChooseTurnScreen
+
+void FrontendApplicationBase::gotoChooseTurnScreenScreenSlideTransitionEast()
+{
+    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplicationBase::gotoChooseTurnScreenScreenSlideTransitionEastImpl);
+    pendingScreenTransitionCallback = &transitionCallback;
+}
+
+void FrontendApplicationBase::gotoChooseTurnScreenScreenSlideTransitionEastImpl()
+{
+    touchgfx::makeTransition<ChooseTurnScreenView, ChooseTurnScreenPresenter, touchgfx::SlideTransition<EAST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
 }
 
 // GameScreen

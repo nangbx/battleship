@@ -18,6 +18,14 @@ public:
     virtual ~HomeScreenViewBase();
     virtual void setupScreen();
 
+    /*
+     * Virtual Action Handlers
+     */
+    virtual void MultiMode()
+    {
+        // Override and implement this function in HomeScreen
+    }
+
 protected:
     FrontendApplication& application() {
         return *static_cast<FrontendApplication*>(touchgfx::Application::getInstance());

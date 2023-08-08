@@ -21,6 +21,8 @@
 #include "main.h"
 #include "cmsis_os.h"
 #include "app_touchgfx.h"
+#include "time.h"
+#include "stdlib.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -139,8 +141,10 @@ static void MX_DMA2D_Init(void);
 static void MX_USART1_UART_Init(void);
 static void MX_UART5_Init(void);
 static void MX_TIM7_Init(void);
+void HAL_UART_RxCpltCallback(UART_HandleTypeDef *);
 void StartDefaultTask(void *argument);
 extern void TouchGFX_Task(void *argument);
+
 
 /* USER CODE BEGIN PFP */
 static void BSP_SDRAM_Initialization_Sequence(SDRAM_HandleTypeDef *hsdram, FMC_SDRAM_CommandTypeDef *Command);
@@ -179,6 +183,19 @@ static LCD_DrvTypeDef* LcdDrv;
 uint32_t TimerCount = 0;
 uint32_t I2c3Timeout = I2C3_TIMEOUT_MAX; /*<! Value of Timeout when I2C communication fails */
 uint32_t Spi5Timeout = SPI5_TIMEOUT_MAX; /*<! Value of Timeout when SPI communication fails */
+uint8_t state = 0;
+uint8_t Rx_data[10];
+uint8_t id;
+uint8_t first = -1;
+
+void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart){
+	if(huart->Instance == huart5.Instance){
+		if (Rx_data[0] == 'A') {
+			state = 1;
+		}
+		HAL_UART_Receive_IT(&huart5, Rx_data, 4);
+	}
+}
 /* USER CODE END 0 */
 
 /**
@@ -197,7 +214,7 @@ int main(void)
   HAL_Init();
 
   /* USER CODE BEGIN Init */
-
+  srand(time(0));
   /* USER CODE END Init */
 
   /* Configure the system clock */
@@ -222,7 +239,9 @@ int main(void)
   /* Call PreOsInit function */
   MX_TouchGFX_PreOSInit();
   /* USER CODE BEGIN 2 */
-
+  Rx_data[0] = 'W';
+  HAL_UART_Receive_IT(&huart5, Rx_data, 4);
+  id = (rand() % 9);
   /* USER CODE END 2 */
 
   /* Init scheduler */
@@ -1102,7 +1121,32 @@ void StartDefaultTask(void *argument)
 	for (;;)
 	{
 		uint8_t command;
+		if(state == 0){
+			Rx_data[0] = 'A';
+			Rx_data[1] = id;
+		} else if(state == 1){
+//			if (first == 1) {
+//				command = '1';
+//				uint32_t count = osMessageQueueGetCount(Queue6Handle);
+//				if (count < 2) {
+//					osMessageQueuePut(Queue6Handle, &command, 0, 200);
+//				}
+//			} else if(first == 2) {
+//				command = '2';
+//				uint32_t count = osMessageQueueGetCount(Queue6Handle);
+//				if (count < 2) {
+//					osMessageQueuePut(Queue6Handle, &command, 0, 200);
+//				}
+//			}
+			Rx_data[0] = 'S';
+			command = '1';
+			uint32_t count = osMessageQueueGetCount(Queue6Handle);
+			if (count < 2) {
+				osMessageQueuePut(Queue6Handle, &command, 0, 200);
+			}
 
+		}
+		HAL_UART_Transmit(&huart5, Rx_data, 2, 100);
 		if (HAL_GPIO_ReadPin(LEFT_BUTTON_GPIO_Port, LEFT_BUTTON_Pin) == GPIO_PIN_SET) {
 			command = 'L';
 			uint32_t count = osMessageQueueGetCount(Queue1Handle);

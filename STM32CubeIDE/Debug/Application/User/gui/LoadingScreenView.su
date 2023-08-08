@@ -1,8 +1,8 @@
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:104:18:virtual void touchgfx::Screen::afterTransition()	0	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:154:18:virtual void touchgfx::Screen::handleKeyEvent(uint8_t)	0	static
-C:/TouchGFXProjects/test/TouchGFX/gui/src/loadingscreen_screen/LoadingScreenView.cpp:13:6:virtual void LoadingScreenView::tearDownScreen()	0	static
+C:/TouchGFXProjects/test/TouchGFX/gui/src/loadingscreen_screen/LoadingScreenView.cpp:17:6:virtual void LoadingScreenView::tearDownScreen()	0	static
 ../../TouchGFX/gui/include/gui/loadingscreen_screen/LoadingScreenView.hpp:11:13:LoadingScreenView::~LoadingScreenView()	8	static
 ../../TouchGFX/gui/include/gui/loadingscreen_screen/LoadingScreenView.hpp:11:13:virtual LoadingScreenView::~LoadingScreenView()	8	static
-C:/TouchGFXProjects/test/TouchGFX/gui/src/loadingscreen_screen/LoadingScreenView.cpp:3:1:LoadingScreenView::LoadingScreenView()	8	static
-C:/TouchGFXProjects/test/TouchGFX/gui/src/loadingscreen_screen/LoadingScreenView.cpp:8:6:virtual void LoadingScreenView::setupScreen()	0	static
-C:/TouchGFXProjects/test/TouchGFX/gui/src/loadingscreen_screen/LoadingScreenView.cpp:18:6:virtual void LoadingScreenView::handleTickEvent()	24	static
+C:/TouchGFXProjects/test/TouchGFX/gui/src/loadingscreen_screen/LoadingScreenView.cpp:7:1:LoadingScreenView::LoadingScreenView()	8	static
+C:/TouchGFXProjects/test/TouchGFX/gui/src/loadingscreen_screen/LoadingScreenView.cpp:12:6:virtual void LoadingScreenView::setupScreen()	0	static
+C:/TouchGFXProjects/test/TouchGFX/gui/src/loadingscreen_screen/LoadingScreenView.cpp:22:6:virtual void LoadingScreenView::handleTickEvent()	40	static

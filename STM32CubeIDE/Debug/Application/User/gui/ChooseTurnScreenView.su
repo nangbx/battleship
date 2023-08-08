@@ -1,0 +1,10 @@
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:104:18:virtual void touchgfx::Screen::afterTransition()	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:144:18:virtual void touchgfx::Screen::handleTickEvent()	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:154:18:virtual void touchgfx::Screen::handleKeyEvent(uint8_t)	0	static
+C:/TouchGFXProjects/test/TouchGFX/gui/src/chooseturnscreen_screen/ChooseTurnScreenView.cpp:13:6:virtual void ChooseTurnScreenView::tearDownScreen()	0	static
+C:/TouchGFXProjects/test/TouchGFX/gui/src/chooseturnscreen_screen/ChooseTurnScreenView.cpp:18:6:virtual void ChooseTurnScreenView::btnFirstClicked()	8	static
+C:/TouchGFXProjects/test/TouchGFX/gui/src/chooseturnscreen_screen/ChooseTurnScreenView.cpp:24:6:virtual void ChooseTurnScreenView::btnSecondClicked()	8	static
+../../TouchGFX/gui/include/gui/chooseturnscreen_screen/ChooseTurnScreenView.hpp:11:13:ChooseTurnScreenView::~ChooseTurnScreenView()	8	static
+../../TouchGFX/gui/include/gui/chooseturnscreen_screen/ChooseTurnScreenView.hpp:11:13:virtual ChooseTurnScreenView::~ChooseTurnScreenView()	8	static
+C:/TouchGFXProjects/test/TouchGFX/gui/src/chooseturnscreen_screen/ChooseTurnScreenView.cpp:3:1:ChooseTurnScreenView::ChooseTurnScreenView()	8	static
+C:/TouchGFXProjects/test/TouchGFX/gui/src/chooseturnscreen_screen/ChooseTurnScreenView.cpp:8:6:virtual void ChooseTurnScreenView::setupScreen()	0	static

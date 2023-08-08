@@ -15,8 +15,8 @@ void HomeScreenView::tearDownScreen()
     HomeScreenViewBase::tearDownScreen();
 }
 
-/*void HomeScreenView::MultiMode()
+void HomeScreenView::MultiMode()
 {
 	presenter->setIsMultiPlayer(true);
 	application().gotoLoadingScreenScreenSlideTransitionEast();
-}*/
+}

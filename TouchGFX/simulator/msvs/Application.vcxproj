@@ -37,6 +37,9 @@
     <ClCompile Include="..\..\gui\src\loadingscreen_screen\LoadingScreenPresenter.cpp"/>
     <ClCompile Include="..\..\gui\src\loadingscreen_screen\LoadingScreenView.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\loadingscreen_screen\LoadingScreenViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\chooseturnscreen_screen\ChooseTurnScreenPresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\chooseturnscreen_screen\ChooseTurnScreenView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\chooseturnscreen_screen\ChooseTurnScreenViewBase.cpp"/>
   </ItemGroup>
   <ItemGroup>
     <None Include="$(ApplicationRoot)\assets\texts\texts.xml"/>
@@ -203,6 +206,9 @@
     <ClInclude Include="..\..\gui\include\gui\loadingscreen_screen\LoadingScreenPresenter.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\loadingscreen_screen\LoadingScreenView.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\loadingscreen_screen\LoadingScreenViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\chooseturnscreen_screen\ChooseTurnScreenPresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\chooseturnscreen_screen\ChooseTurnScreenView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\chooseturnscreen_screen\ChooseTurnScreenViewBase.hpp"/>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="$(ApplicationRoot)\generated\simulator\touchgfx.rc"/>

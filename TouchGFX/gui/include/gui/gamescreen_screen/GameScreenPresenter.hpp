@@ -65,6 +65,9 @@ public:
 	bool getIsMultiPlayer() {
 		return model->getIsMultiPlayer();
 	}
+	bool getIsGoFirst() {
+		return model->getIsGoFirst();
+	}
 	void setWinner(int32_t winner) {
 		model->setWinner(winner);
 	}

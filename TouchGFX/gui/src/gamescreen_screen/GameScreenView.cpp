@@ -9,6 +9,7 @@ extern osMessageQueueId_t Queue3Handle;
 extern osMessageQueueId_t Queue4Handle;
 extern osMessageQueueId_t Queue5Handle;
 extern osMessageQueueId_t Queue6Handle;
+extern UART_HandleTypeDef huart5;
 
 
 #define WIDTH_SQUARE 23
@@ -36,6 +37,8 @@ void GameScreenView::setupScreen() {
 	presenter->getDesk(desk);
 	gameMode = presenter->getGameMode();
 	isMultiPlayer = presenter->getIsMultiPlayer();
+	isGoFirst = presenter->getIsGoFirst();
+
 	if(gameMode == 1){
 		indexHit = presenter->getIndexHit();
 		presenter->getHits(hits);
@@ -88,6 +91,7 @@ void GameScreenView::handleTickEvent() {
 	uint32_t count5 = osMessageQueueGetCount(Queue5Handle);
 	uint32_t count6 = osMessageQueueGetCount(Queue6Handle);
 	int selected = gameBoard.getSelected();
+	uint8_t Rx_data[4];
 	// displayNameShip(countBoat);
 	if (gameMode == 0) {
 		switch (selected)
@@ -149,117 +153,134 @@ void GameScreenView::handleTickEvent() {
 					} else if (selected == 5) {
 						// HAL_Delay(5000);
 						presenter->getDesk(desk);
-						botHit(desk);
-						presenter->setHits(hits);
-						application().gotoOpponentScreenScreenSlideTransitionEast();
+						gameBoard.setSelected(selected + 1);
+						if(!isMultiPlayer){
+							botHit(desk);
+							presenter->setHits(hits);
+							application().gotoOpponentScreenScreenSlideTransitionEast();
+						}
+						else
+						{
+							presenter->setGameMode(1);
+							if(isGoFirst)
+							{
+								application().gotoOpponentScreenScreenSlideTransitionEast();
+							}
+							else
+							{
+								if(HAL_UART_Receive(&huart5, Rx_data, 4, 100) == HAL_OK){
+									application().gotoOpponentScreenScreenSlideTransitionEast();
+								}
+							}
+						}
 					}
+					selected = gameBoard.getSelected();
 				}
 
 			}
-			if (!is_vertical) {
-				if (res == 'L') {
-					x -= 1;
-					if (x < MIN_BOARD) {
-						x = MAX_BOARD - selected + 1;
+			if (selected <= 5) {
+				if (!is_vertical) {
+					if (res == 'L') {
+						x -= 1;
+						if (x < MIN_BOARD) {
+							x = MAX_BOARD - selected + 1;
+						}
+						currentBoat->setX(getXFromIndex(x));
 					}
-					currentBoat->setX(getXFromIndex(x));
-				}
-				
-			}
-			else {
-				if (res == 'L') {
-					x -= 1;
-					if (x < MIN_BOARD) {
-						x = MAX_BOARD;
+
+				} else {
+					if (res == 'L') {
+						x -= 1;
+						if (x < MIN_BOARD) {
+							x = MAX_BOARD;
+						}
+						currentBoatR->setX(getXFromIndex(x));
 					}
-					currentBoatR->setX(getXFromIndex(x));
 				}
 			}
 		}
-		if (count2 > 0) {
-			osMessageQueueGet(Queue2Handle, &res, NULL, osWaitForever);
-			if (!is_vertical) {
-				if (res == 'R') {
-					x += 1;
-					if (x > MAX_BOARD - selected + 1) {
-						x = MIN_BOARD;
+		if(selected <= 5){
+			if (count2 > 0) {
+				osMessageQueueGet(Queue2Handle, &res, NULL, osWaitForever);
+				if (!is_vertical) {
+					if (res == 'R') {
+						x += 1;
+						if (x > MAX_BOARD - selected + 1) {
+							x = MIN_BOARD;
+						}
+						currentBoat->setX(getXFromIndex(x));
 					}
-					currentBoat->setX(getXFromIndex(x));
-				}
-			}
-			else {
-				if (res == 'R') {
-					x += 1;
-					if (x > MAX_BOARD) {
-						x = MIN_BOARD;
-					}
-					currentBoatR->setX(getXFromIndex(x));
-				}
-			}
-		}
-		if (count3 > 0) {
-			osMessageQueueGet(Queue3Handle, &res, NULL, osWaitForever);
-			if (!is_vertical) {
-				if (res == 'U') {
-					y -= 1;
-					if (y < MIN_BOARD) {
-						y = MAX_BOARD;
-					}
-					currentBoat->setY(getYFromIndex(y));
-				}
-			}
-			else {
-				if (res == 'U') {
-					y -= 1;
-					if (y < MIN_BOARD) {
-						y = MAX_BOARD - selected + 1;
-					}
-					currentBoatR->setY(getYFromIndex(y));
-				}
-			}
-		}
-		if (count4 > 0) {
-			osMessageQueueGet(Queue4Handle, &res, NULL, osWaitForever);
-			if (!is_vertical) {
-				if (res == 'D') {
-					y += 1;
-					if (y > MAX_BOARD) {
-						y = MIN_BOARD;
-					}
-					currentBoat->setY(getYFromIndex(y));
-				}
-			}
-			else {
-				if (res == 'D') {
-					y += 1;
-					if (y > MAX_BOARD - selected + 1) {
-						y = MIN_BOARD;
-					}
-					currentBoatR->setY(getYFromIndex(y));
-				}
-			}
-		}
-		if (count5 > 0) {
-			osMessageQueueGet(Queue5Handle, &res, NULL, osWaitForever);
-			if (!is_vertical) {
-				if (res == 'A') {
-					if (checkOutOfDesk(x, y, selected - 1)) {
-						int16_t x = currentBoat->getX();
-						int16_t y = currentBoat->getY();
-						currentBoatR->setXY(x, y);
-						currentBoat->setXY(OUT_OF_BOARD_X, OUT_OF_BOARD_Y);
-						is_vertical = true;
+				} else {
+					if (res == 'R') {
+						x += 1;
+						if (x > MAX_BOARD) {
+							x = MIN_BOARD;
+						}
+						currentBoatR->setX(getXFromIndex(x));
 					}
 				}
 			}
-			else {
-				if (res == 'A') {
-					if (checkOutOfDesk(x, y, selected - 1)) {
-						int16_t x = currentBoatR->getX();
-						int16_t y = currentBoatR->getY();
-						currentBoat->setXY(x, y);
-						currentBoatR->setXY(OUT_OF_BOARD_X, OUT_OF_BOARD_Y);
-						is_vertical = false;
+			if (count3 > 0) {
+				osMessageQueueGet(Queue3Handle, &res, NULL, osWaitForever);
+				if (!is_vertical) {
+					if (res == 'U') {
+						y -= 1;
+						if (y < MIN_BOARD) {
+							y = MAX_BOARD;
+						}
+						currentBoat->setY(getYFromIndex(y));
+					}
+				} else {
+					if (res == 'U') {
+						y -= 1;
+						if (y < MIN_BOARD) {
+							y = MAX_BOARD - selected + 1;
+						}
+						currentBoatR->setY(getYFromIndex(y));
+					}
+				}
+			}
+			if (count4 > 0) {
+				osMessageQueueGet(Queue4Handle, &res, NULL, osWaitForever);
+				if (!is_vertical) {
+					if (res == 'D') {
+						y += 1;
+						if (y > MAX_BOARD) {
+							y = MIN_BOARD;
+						}
+						currentBoat->setY(getYFromIndex(y));
+					}
+				} else {
+					if (res == 'D') {
+						y += 1;
+						if (y > MAX_BOARD - selected + 1) {
+							y = MIN_BOARD;
+						}
+						currentBoatR->setY(getYFromIndex(y));
+					}
+				}
+			}
+			if (count5 > 0) {
+				osMessageQueueGet(Queue5Handle, &res, NULL, osWaitForever);
+				if (!is_vertical) {
+					if (res == 'A') {
+						if (checkOutOfDesk(x, y, selected - 1)) {
+							int16_t x = currentBoat->getX();
+							int16_t y = currentBoat->getY();
+							currentBoatR->setXY(x, y);
+							currentBoat->setXY(OUT_OF_BOARD_X, OUT_OF_BOARD_Y);
+							is_vertical = true;
+						}
+					}
+				} else {
+					if (res == 'A') {
+						if (checkOutOfDesk(x, y, selected - 1)) {
+							int16_t x = currentBoatR->getX();
+							int16_t y = currentBoatR->getY();
+							currentBoat->setXY(x, y);
+							currentBoatR->setXY(OUT_OF_BOARD_X, OUT_OF_BOARD_Y);
+							is_vertical = false;
+						}
 					}
 				}
 			}

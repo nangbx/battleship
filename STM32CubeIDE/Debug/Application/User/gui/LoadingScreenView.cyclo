@@ -1,8 +1,8 @@
 Screen.hpp:104:18:virtual void touchgfx::Screen::afterTransition()	1
 Screen.hpp:154:18:virtual void touchgfx::Screen::handleKeyEvent(uint8_t)	1
-LoadingScreenView.cpp:13:6:virtual void LoadingScreenView::tearDownScreen()	1
+LoadingScreenView.cpp:17:6:virtual void LoadingScreenView::tearDownScreen()	1
 LoadingScreenView.hpp:11:13:LoadingScreenView::~LoadingScreenView()	1
 LoadingScreenView.hpp:11:13:virtual LoadingScreenView::~LoadingScreenView()	1
-LoadingScreenView.cpp:3:1:LoadingScreenView::LoadingScreenView()	1
-LoadingScreenView.cpp:8:6:virtual void LoadingScreenView::setupScreen()	1
-LoadingScreenView.cpp:18:6:virtual void LoadingScreenView::handleTickEvent()	4
+LoadingScreenView.cpp:7:1:LoadingScreenView::LoadingScreenView()	1
+LoadingScreenView.cpp:12:6:virtual void LoadingScreenView::setupScreen()	1
+LoadingScreenView.cpp:22:6:virtual void LoadingScreenView::handleTickEvent()	6

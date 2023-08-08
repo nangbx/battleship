@@ -1,0 +1,5 @@
+ChooseTurnScreenPresenter.hpp:28:13:ChooseTurnScreenPresenter::~ChooseTurnScreenPresenter()	1
+ChooseTurnScreenPresenter.cpp:10:6:virtual void ChooseTurnScreenPresenter::activate()	1
+ChooseTurnScreenPresenter.hpp:28:13:virtual ChooseTurnScreenPresenter::~ChooseTurnScreenPresenter()	1
+ChooseTurnScreenPresenter.hpp:28:13:virtual void* ChooseTurnScreenPresenter::_ZThn4_N25ChooseTurnScreenPresenterD1Ev()	1
+ChooseTurnScreenPresenter.cpp:4:1:ChooseTurnScreenPresenter::ChooseTurnScreenPresenter(ChooseTurnScreenView&)	1

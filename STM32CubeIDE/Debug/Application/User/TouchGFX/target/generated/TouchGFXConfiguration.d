@@ -68,6 +68,9 @@ Application/User/TouchGFX/target/generated/TouchGFXConfiguration.o: \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/progress_indicators/AbstractDirectionProgress.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/progress_indicators/AbstractProgressIndicator.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextArea.hpp \
+ ../../TouchGFX/gui/include/gui/chooseturnscreen_screen/ChooseTurnScreenView.hpp \
+ ../../TouchGFX/generated/gui_generated/include/gui_generated/chooseturnscreen_screen/ChooseTurnScreenViewBase.hpp \
+ ../../TouchGFX/gui/include/gui/chooseturnscreen_screen/ChooseTurnScreenPresenter.hpp \
  ../../TouchGFX/gui/include/gui/gamescreen_screen/GameScreenView.hpp \
  ../../TouchGFX/generated/gui_generated/include/gui_generated/gamescreen_screen/GameScreenViewBase.hpp \
  ../../TouchGFX/gui/include/gui/gamescreen_screen/GameScreenPresenter.hpp \
@@ -194,6 +197,9 @@ Application/User/TouchGFX/target/generated/TouchGFXConfiguration.o: \
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/progress_indicators/AbstractDirectionProgress.hpp:
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/progress_indicators/AbstractProgressIndicator.hpp:
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextArea.hpp:
+../../TouchGFX/gui/include/gui/chooseturnscreen_screen/ChooseTurnScreenView.hpp:
+../../TouchGFX/generated/gui_generated/include/gui_generated/chooseturnscreen_screen/ChooseTurnScreenViewBase.hpp:
+../../TouchGFX/gui/include/gui/chooseturnscreen_screen/ChooseTurnScreenPresenter.hpp:
 ../../TouchGFX/gui/include/gui/gamescreen_screen/GameScreenView.hpp:
 ../../TouchGFX/generated/gui_generated/include/gui_generated/gamescreen_screen/GameScreenViewBase.hpp:
 ../../TouchGFX/gui/include/gui/gamescreen_screen/GameScreenPresenter.hpp:

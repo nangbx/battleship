@@ -1,4 +1,8 @@
 #include <gui/loadingscreen_screen/LoadingScreenView.hpp>
+#include <cmsis_os.h>
+
+extern osMessageQueueId_t Queue6Handle;
+
 
 LoadingScreenView::LoadingScreenView()
 {
@@ -29,6 +33,14 @@ void LoadingScreenView::handleTickEvent()
 	else if (currentValue == max)
 	{
 		increase = false;
+		uint8_t res = 0;
+		uint32_t count = osMessageQueueGetCount(Queue6Handle);
+		if (count > 0) {
+			osMessageQueueGet(Queue6Handle, &res, NULL, osWaitForever);
+			if (res == '1') {
+				application().gotoChooseTurnScreenScreenSlideTransitionEast();
+			}
+		}
 	}
 
 	if(increase)
@@ -36,8 +48,5 @@ void LoadingScreenView::handleTickEvent()
 		currentValue++;
 		boxProgress1.setValue(currentValue);
 	}
-	else
-	{
-		application().gotoGameScreenScreenSlideTransitionEast();
-	}
+
 }

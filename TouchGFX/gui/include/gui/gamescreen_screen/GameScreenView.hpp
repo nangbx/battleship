@@ -47,6 +47,7 @@ protected:
     std::pair<int32_t, int32_t> hits[100];
     int32_t indexHit;
     bool isMultiPlayer;
+    bool isGoFirst;
 };
 
 #endif // GAMESCREENVIEW_HPP

@@ -30,7 +30,12 @@ public:
 	bool getIsMultiPlayer() {
 		return this->isMultiPlayer;
 	}
-
+	void setIsGoFirst(bool b) {
+		this->isGoFirst = b;
+	}
+	bool getIsGoFirst() {
+		return this->isGoFirst;
+	}
     void getPlayer1Desk(int32_t(*arr)[10]){
     	for(int i = 0; i < 10; i++){
     		for(int j = 0; j < 10; j++){
@@ -85,6 +90,7 @@ protected:
     int32_t winner;
     int32_t gameMode;
     bool isMultiPlayer;
+    bool isGoFirst;
 };
 
 #endif // MODEL_HPP

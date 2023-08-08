@@ -265,6 +265,11 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/fonts/src/CachedFont.cpp</locationURI>
 		</link>
 		<link>
+			<name>Application/User/generated/ChooseTurnScreenViewBase.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/chooseturnscreen_screen/ChooseTurnScreenViewBase.cpp</locationURI>
+		</link>
+		<link>
 			<name>Application/User/generated/EndGameScreenViewBase.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/endgamescreen_screen/EndGameScreenViewBase.cpp</locationURI>
@@ -425,6 +430,16 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_alternate_theme_images_widgets_boxprogress_normal_small.cpp</locationURI>
 		</link>
 		<link>
+			<name>Application/User/generated/image_alternate_theme_images_widgets_button_icon_round_small_fill_active.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_alternate_theme_images_widgets_button_icon_round_small_fill_active.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_alternate_theme_images_widgets_button_icon_round_small_fill_pressed.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_alternate_theme_images_widgets_button_icon_round_small_fill_pressed.cpp</locationURI>
+		</link>
+		<link>
 			<name>Application/User/generated/image_alternate_theme_images_widgets_button_regular_height_50_small_round_active.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_alternate_theme_images_widgets_button_regular_height_50_small_round_active.cpp</locationURI>
@@ -483,6 +498,16 @@
 			<name>Application/User/generated/image_your_fleet.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_your_fleet.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/gui/ChooseTurnScreenPresenter.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/chooseturnscreen_screen/ChooseTurnScreenPresenter.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/gui/ChooseTurnScreenView.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/chooseturnscreen_screen/ChooseTurnScreenView.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/gui/EndGameScreenPresenter.cpp</name>

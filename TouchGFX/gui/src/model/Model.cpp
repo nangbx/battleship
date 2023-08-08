@@ -14,6 +14,7 @@ void Model::tick()
 
 void Model::Init()
 {
+	isGoFirst = true;
 	isMultiPlayer = false;
 	winner = 0;
 	gameMode = 0;

@@ -18,6 +18,8 @@
 #include <gui/homescreen_screen/HomeScreenPresenter.hpp>
 #include <gui/loadingscreen_screen/LoadingScreenView.hpp>
 #include <gui/loadingscreen_screen/LoadingScreenPresenter.hpp>
+#include <gui/chooseturnscreen_screen/ChooseTurnScreenView.hpp>
+#include <gui/chooseturnscreen_screen/ChooseTurnScreenPresenter.hpp>
 #include <gui/gamescreen_screen/GameScreenView.hpp>
 #include <gui/gamescreen_screen/GameScreenPresenter.hpp>
 #include <gui/opponentscreen_screen/OpponentScreenView.hpp>
@@ -48,10 +50,11 @@ public:
      */
     typedef touchgfx::meta::TypeList< HomeScreenView,
             touchgfx::meta::TypeList< LoadingScreenView,
+            touchgfx::meta::TypeList< ChooseTurnScreenView,
             touchgfx::meta::TypeList< GameScreenView,
             touchgfx::meta::TypeList< OpponentScreenView,
             touchgfx::meta::TypeList< EndGameScreenView,
-            touchgfx::meta::Nil > > > >
+            touchgfx::meta::Nil > > > > >
             > GeneratedViewTypes;
 
     /**
@@ -65,10 +68,11 @@ public:
      */
     typedef touchgfx::meta::TypeList< HomeScreenPresenter,
             touchgfx::meta::TypeList< LoadingScreenPresenter,
+            touchgfx::meta::TypeList< ChooseTurnScreenPresenter,
             touchgfx::meta::TypeList< GameScreenPresenter,
             touchgfx::meta::TypeList< OpponentScreenPresenter,
             touchgfx::meta::TypeList< EndGameScreenPresenter,
-            touchgfx::meta::Nil > > > >
+            touchgfx::meta::Nil > > > > >
             > GeneratedPresenterTypes;
 
     /**
